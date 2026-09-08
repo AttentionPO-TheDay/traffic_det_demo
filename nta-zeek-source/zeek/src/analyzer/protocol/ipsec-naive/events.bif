@@ -1,0 +1,5 @@
+## 每当产生基于裸的 IP 的 ESP 数据包（无 TCP/UDP 封装）时，都会生成此事件。
+event esp_message_over_ip%(c: connection, is_orig: bool, size: count%);
+
+## 每当产生基于裸的 IP 的 AH 数据包（无 TCP/UDP 封装）时，都会生成此事件。
+event ah_message_over_ip%(c: connection, is_orig: bool, size: count%);

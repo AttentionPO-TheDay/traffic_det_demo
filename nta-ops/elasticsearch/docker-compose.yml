@@ -1,0 +1,26 @@
+services:
+  es:
+    # 使用 6.8.13 版本
+    image: elasticsearch:6.8.13
+
+    # 把容器名称设成 es，不然太长了用起来很麻烦
+    container_name: es
+
+    # 若挂了则自动重启
+    restart: always
+
+    # 设置相关的环境变量
+    environment:
+      # 单节点
+      - "discovery.type=single-node"
+      
+    # 开放 9200（对外 RESTFul API 端口）
+    ports:
+      - "9200:9200"
+
+    volumes:
+      # 留下一个放 data 文件的入口
+      - "/root/data:/data"
+
+      # 用自定义的 elasticsearch.yml 覆盖默认的配置文件，实现 IP 地址白名单
+      - "./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml"

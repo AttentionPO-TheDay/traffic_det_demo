@@ -1,0 +1,48 @@
+FROM ubuntu:latest AS ubuntu-with-dependencies
+
+# 关闭 CLI 交互
+ENV DEBIAN_FRONTEND=noninteractive
+
+# SSL 证书地址
+ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+
+RUN echo "Asia/Shanghai" > /etc/timezone \
+    && \
+    ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && \
+    apt update \
+    && \
+    apt install -y \
+    cmake flex libfl-dev bison swig python3 python3-dev \
+    zlib1g-dev checkinstall build-essential libsasl2-dev \
+    libpthread-stubs0-dev linux-headers-`uname -r` \
+    && \
+    mkdir -p /zeek-libs /zeek
+
+COPY ./src /root/src
+
+# OpenSSL
+# cd /root/src/openssl
+# ./Configure --prefix=/zeek-libs --openssldir=/usr/lib/ssl zlib enable-md2 enable-rc5
+# make -j124 && make -j124 install
+
+# PF_RING
+# cd /root/src/pf-ring/userland/lib
+# ./configure --prefix=/zeek-libs --exec-prefix=/zeek-libs
+# make -j124 && make -j124 install
+# cd /root/src/pf-ring/userland/libpcap
+# ./configure --prefix=/zeek-libs --exec-prefix=/zeek-libs
+# make -j124 && make -j124 install
+
+# librdkafka
+# cd /root/src/librdkafka
+# ./configure --prefix=/zeek-libs --enable-sasl
+# make -j124 && make -j124 install
+
+# Zeek
+# OPENSSL_ROOT_DIR=/zeek-libs ./configure --with-pcap=/zeek-libs --prefix=/zeek --with-openssl=/zeek-libs
+# CMAKE_BUILD_PARALLEL_LEVEL=124 make -j124 && make -j124 install
+
+# zeek-kafka
+# OPENSSL_ROOT_DIR=/zeek-libs ./configure --with-librdkafka=/zeek-libs --with-openssl=/zeek-libs
+# CMAKE_BUILD_PARALLEL_LEVEL=124 make -j124 && make -j124 install

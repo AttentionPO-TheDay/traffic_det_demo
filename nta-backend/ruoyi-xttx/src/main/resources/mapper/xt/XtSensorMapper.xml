@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xt.mapper.XtSensorMapper">
+
+    <resultMap type="XtSensor" id="XtSensorResult">
+        <result property="sensorId" column="sensor_id"/>
+        <result property="type" column="type"/>
+        <result property="hostId" column="hostid"/>
+    </resultMap>
+
+    <sql id="selectXtSensorVo">
+        select sensor_id, type, hostid
+        from xt_sensor
+    </sql>
+
+    <select id="selectXtSensorList" resultMap="XtSensorResult">
+        <include refid="selectXtSensorVo"/>
+    </select>
+
+    <select id="selectXtSensorById" resultMap="XtSensorResult">
+        <include refid="selectXtSensorVo"/>
+        <where>
+            <if test="id != null">sensor_id =#{id}</if>
+        </where>
+    </select>
+
+
+    <select id="selectXtSensorBySensorId" parameterType="String" resultMap="XtSensorResult">
+        <include refid="selectXtSensorVo"/>
+        where sensor_id = #{sensorId}
+    </select>
+
+    <select id="selectXtSensorBySensorName" parameterType="String" resultMap="XtSensorResult">
+        <include refid="selectXtSensorVo"/>
+        where sensor_name = #{name}
+    </select>
+
+
+</mapper>

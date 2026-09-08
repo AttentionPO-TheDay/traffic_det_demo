@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xt.mapper.XtHostMapper">
+
+    <resultMap type="XtHost" id="XtHostResult">
+        <result property="hostid" column="hostid"/>
+        <result property="hostname" column="hostname"/>
+        <result property="address" column="address"/>
+        <result property="userid" column="userId"/>
+    </resultMap>
+
+    <sql id="selectXtHostVo">
+        select hostid, hostname, address, userId
+        from xt_host
+    </sql>
+
+    <select id="selectXtHostList" parameterType="XtHost" resultMap="XtHostResult">
+        <include refid="selectXtHostVo"/>
+        <where>
+            <if test="hostname != null  and hostname != ''">and hostname like concat('%', #{hostname}, '%')</if>
+            <if test="address != null  and address != ''">and address = #{address}</if>
+            <if test="userid != null  and userid != ''">and userId = #{userid}</if>
+        </where>
+    </select>
+
+    <select id="selectXtHostByHostid" parameterType="String" resultMap="XtHostResult">
+        <include refid="selectXtHostVo"/>
+        where hostid = #{hostid}
+    </select>
+
+    <insert id="insertXtHost" parameterType="XtHost">
+        insert into xt_host
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="hostid != null">hostid,</if>
+            <if test="hostname != null">hostname,</if>
+            <if test="address != null and address != ''">address,</if>
+            <if test="userid != null">userId,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="hostid != null">#{hostid},</if>
+            <if test="hostname != null">#{hostname},</if>
+            <if test="address != null and address != ''">#{address},</if>
+            <if test="userid != null">#{userid},</if>
+        </trim>
+    </insert>
+
+    <insert id="insertXtHosts" parameterType="java.util.List">
+        insert into xt_host
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="list[0].hostid != null">hostid,</if>
+            <if test="list[0].hostname != null">hostname,</if>
+            <if test="list[0].address != null and list[0].address != ''">address,</if>
+            <if test="list[0].userid != null">userId,</if>
+        </trim>
+        values
+        <foreach collection="list" item="item" separator=",">
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="item.hostid != null">#{item.hostid},</if>
+                <if test="item.hostname != null">#{item.hostname},</if>
+                <if test="item.address != null and item.address != ''">#{item.address},</if>
+                <if test="item.userid != null">#{item.userid},</if>
+            </trim>
+        </foreach>
+    </insert>
+
+    <update id="updateXtHost" parameterType="XtHost">
+        update xt_host
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="hostname != null">hostname = #{hostname},</if>
+            <if test="address != null and address != ''">address = #{address},</if>
+            <if test="userid != null">userId = #{userid},</if>
+        </trim>
+        where hostid = #{hostid}
+    </update>
+
+    <delete id="deleteXtHostByHostid" parameterType="String">
+        delete
+        from xt_host
+        where hostid = #{hostid}
+    </delete>
+
+    <delete id="deleteXtHostByHostids" parameterType="String">
+        delete from xt_host where hostid in
+        <foreach item="hostid" collection="array" open="(" separator="," close=")">
+            #{hostid}
+        </foreach>
+    </delete>
+</mapper>

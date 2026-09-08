@@ -1,0 +1,20 @@
+# @TEST-EXEC-FAIL: spicyz %INPUT -o x.hlto >output 2>&1
+# @TEST-EXEC: btest-diff output
+
+protocol analyzer spicy::SSH over TCP:
+    port 123456/udp;
+
+@TEST-START-NEXT
+
+protocol analyzer spicy::SSH over TCP:
+    port -1/udp;
+
+@TEST-START-NEXT
+
+protocol analyzer spicy::SSH over TCP:
+    port 1/udp-2/tcp;
+
+@TEST-START-NEXT
+
+protocol analyzer spicy::SSH over TCP:
+    port 2/udp-1/udp;

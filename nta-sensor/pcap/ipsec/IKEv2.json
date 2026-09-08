@@ -1,0 +1,1233 @@
+{
+    "uid": "COXhmv1h9UMhV6wGg4",
+    "hash": "421c5088976db4a67e08e1796b581780",
+    "source": "zeek-1",
+    "ip": {
+        "src": "2003:51:6012::4",
+        "dst": "2003:51:6012::2",
+        "protocol": 17,
+        "version": 6,
+        "length": 6592,
+        "payload": [
+            {
+                "timestamp": 1498561868.006624,
+                "length": 224,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561900.015457,
+                "length": 224,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561900.036216,
+                "length": 224,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561900.052965,
+                "length": 296,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561900.06648,
+                "length": 280,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561902.025782,
+                "length": 392,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561902.070557,
+                "length": 392,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561907.006814,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561907.00744,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.006723,
+                "length": 224,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.007723,
+                "length": 224,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.027924,
+                "length": 280,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.085987,
+                "length": 280,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.097258,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.097989,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.117994,
+                "length": 392,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.144998,
+                "length": 392,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.242266,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.243521,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.245762,
+                "length": 344,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.251524,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.252274,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.296787,
+                "length": 344,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561913.007016,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561913.007767,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561918.006811,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561918.007562,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561923.006863,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561923.007605,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561928.006898,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561928.00753,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561933.006817,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561933.007442,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561938.006737,
+                "length": 104,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561938.007485,
+                "length": 104,
+                "is_orig": true
+            }
+        ]
+    },
+    "udp": {
+        "src": 500,
+        "dst": 500,
+        "packet_up": 18,
+        "packet_dn": 17,
+        "byte_up": 3256,
+        "byte_dn": 3056,
+        "payload": [
+            {
+                "timestamp": 1498561868.006624,
+                "length": 216,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561900.015457,
+                "length": 216,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561900.036216,
+                "length": 216,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561900.052965,
+                "length": 288,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561900.06648,
+                "length": 272,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561902.025782,
+                "length": 384,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561902.070557,
+                "length": 384,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561907.006814,
+                "length": 96,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561907.00744,
+                "length": 96,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561908.006723,
+                "length": 216,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.007723,
+                "length": 216,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561908.027924,
+                "length": 272,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.085987,
+                "length": 272,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561908.097258,
+                "length": 96,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.097989,
+                "length": 96,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561908.117994,
+                "length": 384,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.144998,
+                "length": 384,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561908.242266,
+                "length": 96,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.243521,
+                "length": 96,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561908.245762,
+                "length": 336,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561908.251524,
+                "length": 96,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561908.252274,
+                "length": 96,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561908.296787,
+                "length": 336,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561913.007016,
+                "length": 96,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561913.007767,
+                "length": 96,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561918.006811,
+                "length": 96,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561918.007562,
+                "length": 96,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561923.006863,
+                "length": 96,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561923.007605,
+                "length": 96,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561928.006898,
+                "length": 96,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561928.00753,
+                "length": 96,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561933.006817,
+                "length": 96,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561933.007442,
+                "length": 96,
+                "is_orig": false
+            },
+            {
+                "timestamp": 1498561938.006737,
+                "length": 96,
+                "is_orig": true
+            },
+            {
+                "timestamp": 1498561938.007485,
+                "length": 96,
+                "is_orig": false
+            }
+        ]
+    },
+    "ipsec": {
+        "isakmp": {
+            "8": {
+                "id": 8,
+                "has_major_info": true,
+                "init_spi": "5bxnVQ/U0+o=",
+                "resp_spi": "tRzbWvDvo6w=",
+                "maj_version": 2,
+                "min_version": 0,
+                "length": 96,
+                "sa_doi": 0,
+                "sa_situation": "",
+                "src_key_exchange_dh": {
+                    "id": 37,
+                    "name": "INFORMATIONAL"
+                },
+                "src_vendors": [],
+                "dst_vendors": [],
+                "src_attributes": [],
+                "dst_attributes": [],
+                "src_sa": [],
+                "dst_sa": [],
+                "src_certs": [],
+                "dst_certs": [],
+                "notify_payload": [],
+                "key_exchange_payload": [],
+                "nonce_payload": [],
+                "id_payload": [],
+                "sig_payload": [],
+                "private_payload": [],
+                "nat_d_payload": [],
+                "encrypted": [
+                    {
+                        "timestamp": 1498561933.006817,
+                        "length": 64,
+                        "is_orig": true,
+                        "payload": "BxFNGpgbeyiyr7acodDuC64R35kXYp0a8eJJAaJoFmf0Bdew6njGzXwt1WfQ/FrfxzbuQo2y5BbVnzjIKeR49w=="
+                    },
+                    {
+                        "timestamp": 1498561933.007442,
+                        "length": 64,
+                        "is_orig": false,
+                        "payload": "FOe3IiUbGINTfjMsUu4r/lkUyoBqjNVFiLaj2hofHjd+Ji7BHiqPga/jGJxpXJO6qffxbVqRv+E97oyo4328Nw=="
+                    }
+                ],
+                "unknown_payload": [],
+                "flag_encryption": false,
+                "flag_commit": false,
+                "flag_authentication": false,
+                "flag_i": true,
+                "flag_v": false,
+                "flag_r": false
+            },
+            "6": {
+                "id": 6,
+                "has_major_info": true,
+                "init_spi": "5bxnVQ/U0+o=",
+                "resp_spi": "tRzbWvDvo6w=",
+                "maj_version": 2,
+                "min_version": 0,
+                "length": 96,
+                "sa_doi": 0,
+                "sa_situation": "",
+                "src_key_exchange_dh": {
+                    "id": 37,
+                    "name": "INFORMATIONAL"
+                },
+                "src_vendors": [],
+                "dst_vendors": [],
+                "src_attributes": [],
+                "dst_attributes": [],
+                "src_sa": [],
+                "dst_sa": [],
+                "src_certs": [],
+                "dst_certs": [],
+                "notify_payload": [],
+                "key_exchange_payload": [],
+                "nonce_payload": [],
+                "id_payload": [],
+                "sig_payload": [],
+                "private_payload": [],
+                "nat_d_payload": [],
+                "encrypted": [
+                    {
+                        "timestamp": 1498561923.006863,
+                        "length": 64,
+                        "is_orig": true,
+                        "payload": "Xfm/CYat5SW4Pn0YpE446BjelCQMKFZ6WGZ1ru7roh3BcS03roWu9lh0umJTR6cmVq1dNByDfEwEkGGGNZIeZg=="
+                    },
+                    {
+                        "timestamp": 1498561923.007605,
+                        "length": 64,
+                        "is_orig": false,
+                        "payload": "Oi0q34qmoUGIDDaNRB1eEGXgqpmXHHzjaMeqbsc9CX/4v8YDB2nSUfUL0WwjQrDFcVN26MGqp8dSivVuFragZA=="
+                    }
+                ],
+                "unknown_payload": [],
+                "flag_encryption": false,
+                "flag_commit": false,
+                "flag_authentication": false,
+                "flag_i": true,
+                "flag_v": false,
+                "flag_r": false
+            },
+            "0": {
+                "id": 0,
+                "has_major_info": true,
+                "init_spi": "5bxnVQ/U0+o=",
+                "resp_spi": "AAAAAAAAAAA=",
+                "maj_version": 2,
+                "min_version": 0,
+                "length": 216,
+                "sa_doi": 0,
+                "sa_situation": "",
+                "src_key_exchange_dh": {
+                    "id": 34,
+                    "name": "IKE_SA_INIT"
+                },
+                "src_vendors": [],
+                "dst_vendors": [],
+                "src_attributes": [
+                    {
+                        "attr": {
+                            "id": 14,
+                            "name": "Key Length",
+                            "value": 256
+                        },
+                        "auto_format": true
+                    },
+                    {
+                        "attr": {
+                            "id": 14,
+                            "name": "Key Length",
+                            "value": 256
+                        },
+                        "auto_format": true
+                    },
+                    {
+                        "attr": {
+                            "id": 14,
+                            "name": "Key Length",
+                            "value": 256
+                        },
+                        "auto_format": true
+                    }
+                ],
+                "dst_attributes": [
+                    {
+                        "attr": {
+                            "id": 14,
+                            "name": "Key Length",
+                            "value": 256
+                        },
+                        "auto_format": true
+                    },
+                    {
+                        "attr": {
+                            "id": 14,
+                            "name": "Key Length",
+                            "value": 256
+                        },
+                        "auto_format": true
+                    }
+                ],
+                "src_sa": [],
+                "dst_sa": [],
+                "src_certs": [],
+                "dst_certs": [],
+                "notify_payload": [],
+                "key_exchange_payload": [],
+                "nonce_payload": [
+                    {
+                        "timestamp": 1498561868.006624,
+                        "length": 32,
+                        "is_orig": true,
+                        "payload": "FXYdFV1KBh2VN/WGSqNmSflRR5L7dEnPUbm49WLP9lY="
+                    },
+                    {
+                        "timestamp": 1498561900.015457,
+                        "length": 32,
+                        "is_orig": false,
+                        "payload": "RwkldG1hdBs8VR9Zm8kFgHiVWV4cLXshfSaHYXWPEhY="
+                    },
+                    {
+                        "timestamp": 1498561900.036216,
+                        "length": 32,
+                        "is_orig": true,
+                        "payload": "kzEP7wthV0DyKUv5GBb774zAlNd3Vk2se1tugSfcnfM="
+                    },
+                    {
+                        "timestamp": 1498561908.006723,
+                        "length": 32,
+                        "is_orig": true,
+                        "payload": "FXYdFV1KBh2VN/WGSqNmSflRR5L7dEnPUbm49WLP9lY="
+                    },
+                    {
+                        "timestamp": 1498561908.007723,
+                        "length": 32,
+                        "is_orig": false,
+                        "payload": "W/Nuf/MWKnED9ihRGyuNAJJ43dbNT7DYNmHm86r/XDI="
+                    }
+                ],
+                "id_payload": [],
+                "sig_payload": [],
+                "private_payload": [],
+                "nat_d_payload": [],
+                "encrypted": [
+                    {
+                        "timestamp": 1498561907.006814,
+                        "length": 64,
+                        "is_orig": true,
+                        "payload": "ES06IL+BCbgarZtQVoIXUXxy0VIpm9Lk524t5Hl5bX+ZaMHXfMZ42YOCfHqc90fdNcJrr2aIM2vEq2MfO4FJRA=="
+                    },
+                    {
+                        "timestamp": 1498561907.00744,
+                        "length": 64,
+                        "is_orig": false,
+                        "payload": "8pNuk9XF1nW1MsDXXN9xt+MUrviDffmqZXU4H6iRyu0E+nm8gUDJbqSXxHX2LgP5rRaM3p7t3SQGM/sdKYM2hw=="
+                    },
+                    {
+                        "timestamp": 1498561908.245762,
+                        "length": 304,
+                        "is_orig": false,
+                        "payload": "RFU2UdbDi26ln3Fj6+nvOPUJPxDEpdS5UN2bQLzNFfpHYgOZiQcaU14CbrYHJbpnk1UHZ40JbCPy3f4KIPoHub0CcogIect0LwyWs9afou3rTfRHOlAZAWcKEGbde6isne5oBEhv6JmhOQUdzbe/IYCfxCINbIa0Saq8lIcs+1QU97WMeFVzETZTS7LeQOkRQ7pnckTLN8YhNfh2xX0fzRrmC6p0iqhFxpmh86YJj4VwkXg1FRzlwc92b7ojunnY+FfJyPYC7+zSD07j8fiBv292h9oA9GpTh46Q4gPSZ32IGbvHkdEFwOSiOqaIJZUHOe5DwkeYKEeMXUxmndccDTaNr9OA91726VdtckQETe7em2rI4L911RgPSetDrjYdO8wgjhivgy5Ae1p4roZSbA=="
+                    },
+                    {
+                        "timestamp": 1498561908.296787,
+                        "length": 304,
+                        "is_orig": true,
+                        "payload": "18oA0bU9KAqT9A4/NVM852POdlBZ4WjCLiQBIJ//RmHlnYMCeCbSwCWZzlZWVmmLHvn9QcQ9CKUltBDquboKOcPBy5W7DbZU6FYTtXfxwjLHTbnyTsfQYZrZkN2FSLJkb6MvnmDdTLFUPZ9eyVzIOYWudc0mMQwz/8yfTINqskN2qs5zphMZ1sc89+gUFA0kR6T7Lk+YSeQob7SysOBlrldYLLd87png1uwVPviUR/NnNyUImkkUnml30gEAtiaWY/0dNxipi1Xh/bh71UQWthIceyiyzK81uwhPz18y9VFNOp8r7l6PQ5475Tcf5L6NKiyNhTl6YZY1b51Wx8mnMXeeqg5ct1QiOyMbCvNFrPdKPJuZiS578zdP1oNNc99agmpQCaBUxnih4X4qf8RvwQ=="
+                    }
+                ],
+                "unknown_payload": [],
+                "flag_encryption": false,
+                "flag_commit": false,
+                "flag_authentication": false,
+                "flag_i": true,
+                "flag_v": false,
+                "flag_r": false
+            },
+            "5": {
+                "id": 5,
+                "has_major_info": true,
+                "init_spi": "5bxnVQ/U0+o=",
+                "resp_spi": "tRzbWvDvo6w=",
+                "maj_version": 2,
+                "min_version": 0,
+                "length": 96,
+                "sa_doi": 0,
+                "sa_situation": "",
+                "src_key_exchange_dh": {
+                    "id": 37,
+                    "name": "INFORMATIONAL"
+                },
+                "src_vendors": [],
+                "dst_vendors": [],
+                "src_attributes": [],
+                "dst_attributes": [],
+                "src_sa": [],
+                "dst_sa": [],
+                "src_certs": [],
+                "dst_certs": [],
+                "notify_payload": [],
+                "key_exchange_payload": [],
+                "nonce_payload": [],
+                "id_payload": [],
+                "sig_payload": [],
+                "private_payload": [],
+                "nat_d_payload": [],
+                "encrypted": [
+                    {
+                        "timestamp": 1498561918.006811,
+                        "length": 64,
+                        "is_orig": true,
+                        "payload": "qKxnDRSB/jAm20pvb7tgUwW/PCwcqT7S74CioD5w/d3egHeJOtild3BaHprd2HnCvIVbH+RQUjGf/IKVUQvgdw=="
+                    },
+                    {
+                        "timestamp": 1498561918.007562,
+                        "length": 64,
+                        "is_orig": false,
+                        "payload": "INqgLREEqB4HMkQfdZcGJ1mji8GUQPTJSejZrzdxnyqB6DjRu4bc7t8nXFO1axJPIHToLxjRPJFaz0O1vLEEZA=="
+                    }
+                ],
+                "unknown_payload": [],
+                "flag_encryption": false,
+                "flag_commit": false,
+                "flag_authentication": false,
+                "flag_i": true,
+                "flag_v": false,
+                "flag_r": false
+            },
+            "4": {
+                "id": 4,
+                "has_major_info": true,
+                "init_spi": "5bxnVQ/U0+o=",
+                "resp_spi": "tRzbWvDvo6w=",
+                "maj_version": 2,
+                "min_version": 0,
+                "length": 96,
+                "sa_doi": 0,
+                "sa_situation": "",
+                "src_key_exchange_dh": {
+                    "id": 37,
+                    "name": "INFORMATIONAL"
+                },
+                "src_vendors": [],
+                "dst_vendors": [],
+                "src_attributes": [],
+                "dst_attributes": [],
+                "src_sa": [],
+                "dst_sa": [],
+                "src_certs": [],
+                "dst_certs": [],
+                "notify_payload": [],
+                "key_exchange_payload": [],
+                "nonce_payload": [],
+                "id_payload": [],
+                "sig_payload": [],
+                "private_payload": [],
+                "nat_d_payload": [],
+                "encrypted": [
+                    {
+                        "timestamp": 1498561913.007016,
+                        "length": 64,
+                        "is_orig": true,
+                        "payload": "i+qxvDXvvthQ4bQ4IpNMuKPqYni/IyABjfnYj3Gy4aCdhY5SIiiQrD8BxnkkCiRIDUICYYqwS7v7PtysqY63tA=="
+                    },
+                    {
+                        "timestamp": 1498561913.007767,
+                        "length": 64,
+                        "is_orig": false,
+                        "payload": "rOwycJNKEizUrO518LVUuDGSVEpHTdwWa3D9O2FQdvINPeffKXj3NxNIgejnAhUwp0evNJlGgbVgz4XGcICAeA=="
+                    }
+                ],
+                "unknown_payload": [],
+                "flag_encryption": false,
+                "flag_commit": false,
+                "flag_authentication": false,
+                "flag_i": true,
+                "flag_v": false,
+                "flag_r": false
+            },
+            "1": {
+                "id": 1,
+                "has_major_info": true,
+                "init_spi": "e0UshCvE6JE=",
+                "resp_spi": "jnd5RkBEZz4=",
+                "maj_version": 2,
+                "min_version": 0,
+                "length": 288,
+                "sa_doi": 0,
+                "sa_situation": "",
+                "dst_key_exchange_dh": {
+                    "id": 35,
+                    "name": "IKE_AUTH"
+                },
+                "src_vendors": [],
+                "dst_vendors": [],
+                "src_attributes": [],
+                "dst_attributes": [],
+                "src_sa": [],
+                "dst_sa": [],
+                "src_certs": [],
+                "dst_certs": [],
+                "notify_payload": [],
+                "key_exchange_payload": [],
+                "nonce_payload": [],
+                "id_payload": [],
+                "sig_payload": [],
+                "private_payload": [],
+                "nat_d_payload": [],
+                "encrypted": [
+                    {
+                        "timestamp": 1498561900.052965,
+                        "length": 256,
+                        "is_orig": false,
+                        "payload": "tJCN+fqEKX7EDt7mILiiEfG3cHsnmEi6lLr7Fvw41iXQnX3y1RXn1S0evwcAZS7I5l/UdyZhsWpBD2KkhgZ+UAUbUDgdlSljSbhpmRdxxBYmfNtyAzT432OQ2bQGkKrmXguwixiuxBbsPybtu/IQ/x8rVIWiGYtCw/NxrDr3OCXaDTk8QuSU+haAmPKE8N/P8FXPlYfMvgz7aUEgWgv2YR6LlRXZImVCATI6yFW6B/bDsnGUJwglc+RDDg2sivmbJi2qBcmJptAxxocAR0gNj5CP3mMPcswH43mA4cQZT/hSz412qE2eyyHrrKlKxgNcd3S5WfJaPUfJdgHgKmnkGA=="
+                    },
+                    {
+                        "timestamp": 1498561900.06648,
+                        "length": 240,
+                        "is_orig": true,
+                        "payload": "mtkS49zjx1TFzpK+e6Eju1Qm0OMhYY+Z2eeuCdHrgoEuUQ4Lis/MaNntwq2yOn2XN0yiGdwmy6B4cZREgviSg3QwrOX3FSuwd4ZNwhXwJzWiARB81Xuycgnnm4CETheybYl2fYVyNPH1zqyXXYB1SlzUaLrudw5LhEb8lSVSkk6wKXjxSXKAa5TUaQPIeXcVyYD0/5jB6Lo7l5PD0SFIBr62nvj97t6KQ/zysFiv7YHl2/BcAayqSj0r2cdT7Xw8MrrQNIiQZ5QK3jqGk4NEsEvUq7Rs0upi/yPuDWZBk5u+P5inaV7LZFyq46hmIYTf"
+                    },
+                    {
+                        "timestamp": 1498561908.027924,
+                        "length": 240,
+                        "is_orig": true,
+                        "payload": "ydWYkxKvwpt89rCPFBWvcF5PTgY4Nxxq/t9vo3n+YR/ehvs8UuURa1hkQ8PR/72PlSh56k6JxO/pVzFNQk7XTSQR555Ea7cclclnHFFtpqHsCvj6UCO8PXBNfFxc6OaTJs9dp4iNLgwfA6qSBY2v8uw59D7Mfh9ZYVk/Bs9Ml4HShxZNev1J/eOUzvle6fiSkZMR2tkRenVPNfy2qA29wwH2JQU7jYkxce/4jO3xN0ok1i2hJzlL78sDKgPwuxHIGXnD3koNYVSZtVdCL7gHUMzzQizqvZ3fXBcQBpFjDp+LwKd5UcMEAsazH5Zl60aK"
+                    },
+                    {
+                        "timestamp": 1498561908.085987,
+                        "length": 240,
+                        "is_orig": false,
+                        "payload": "Qj/s/StGk7Pxyla7oGCf8U15zLu/12z3vabn8ORkdwopw1XR478DjcUE9khewqEo5runosZlCPPYDR2mk47L4p8z+iDAETn5sGDKV5LV0/fOIg0lKtJAETwraiX8YVLx8YDr60tX2UtVdUHIAuzDjryBOQyWvumdkogKwsIa01iF6etzzkf44rq4fsxLqNNz7pcz1aStuooQIHPp/pv8Wios5q8jdecmr6GMtpijzyEcpkBNCMS4kRzzp+JpsDuD3BQ3XRU3CkjLp5nahzYg6bVKehXHJ7apy57gKgMJCUUBzfM93ZxHokv5Hlv07bDK"
+                    },
+                    {
+                        "timestamp": 1498561908.242266,
+                        "length": 64,
+                        "is_orig": true,
+                        "payload": "HNzE7jXTU+t8zzfqWo6wdn2Ebg581ncCeRP2AzmP4fcitIvkzDzpkM8maSPYFRvEpUb8s/zDlAmOBd17kaB96g=="
+                    },
+                    {
+                        "timestamp": 1498561908.243521,
+                        "length": 64,
+                        "is_orig": false,
+                        "payload": "ckPY0l3y6AwGPsUykq2U+ayRyyFzKq/u+MVT/9VCfN4pDVmxyTL8BIel1ESamwf3kWuEa/l/SizmOH3UmpKhyA=="
+                    }
+                ],
+                "unknown_payload": [],
+                "flag_encryption": false,
+                "flag_commit": false,
+                "flag_authentication": false,
+                "flag_i": true,
+                "flag_v": false,
+                "flag_r": false
+            },
+            "7": {
+                "id": 7,
+                "has_major_info": true,
+                "init_spi": "5bxnVQ/U0+o=",
+                "resp_spi": "tRzbWvDvo6w=",
+                "maj_version": 2,
+                "min_version": 0,
+                "length": 96,
+                "sa_doi": 0,
+                "sa_situation": "",
+                "src_key_exchange_dh": {
+                    "id": 37,
+                    "name": "INFORMATIONAL"
+                },
+                "src_vendors": [],
+                "dst_vendors": [],
+                "src_attributes": [],
+                "dst_attributes": [],
+                "src_sa": [],
+                "dst_sa": [],
+                "src_certs": [],
+                "dst_certs": [],
+                "notify_payload": [],
+                "key_exchange_payload": [],
+                "nonce_payload": [],
+                "id_payload": [],
+                "sig_payload": [],
+                "private_payload": [],
+                "nat_d_payload": [],
+                "encrypted": [
+                    {
+                        "timestamp": 1498561928.006898,
+                        "length": 64,
+                        "is_orig": true,
+                        "payload": "wIM7g3Y10tat1L0FXCgM/aOVE+zijICt8dEzt6vHk5gAao+0ym8t3B28ItR8bTwpn4cFD1XmRCxYb+5hFQRKAg=="
+                    },
+                    {
+                        "timestamp": 1498561928.00753,
+                        "length": 64,
+                        "is_orig": false,
+                        "payload": "2CBc6N0dQZDoxWGw0isdu+XQJSkEsgwFR1kMwKmrjFf9sSJ1P8qFIdrWWn+JoVdJtPbJtZ9SdUKGt42/rcOajQ=="
+                    }
+                ],
+                "unknown_payload": [],
+                "flag_encryption": false,
+                "flag_commit": false,
+                "flag_authentication": false,
+                "flag_i": true,
+                "flag_v": false,
+                "flag_r": false
+            },
+            "3": {
+                "id": 3,
+                "has_major_info": true,
+                "init_spi": "5bxnVQ/U0+o=",
+                "resp_spi": "tRzbWvDvo6w=",
+                "maj_version": 2,
+                "min_version": 0,
+                "length": 384,
+                "sa_doi": 0,
+                "sa_situation": "",
+                "src_key_exchange_dh": {
+                    "id": 36,
+                    "name": "CREATE_CHILD_SA"
+                },
+                "src_vendors": [],
+                "dst_vendors": [],
+                "src_attributes": [],
+                "dst_attributes": [],
+                "src_sa": [],
+                "dst_sa": [],
+                "src_certs": [],
+                "dst_certs": [],
+                "notify_payload": [],
+                "key_exchange_payload": [],
+                "nonce_payload": [],
+                "id_payload": [],
+                "sig_payload": [],
+                "private_payload": [],
+                "nat_d_payload": [],
+                "encrypted": [
+                    {
+                        "timestamp": 1498561908.117994,
+                        "length": 352,
+                        "is_orig": true,
+                        "payload": "QCt9KFHagBwgp242OKr3DKeEuIbc2pDklKS+2aSKMYF2VQXnsgm3OUbIhmnJbVwph4TdP7D/0PWwYuxowSIrn77nDth+3VCt22MsaNUbjMeabW7fqawla8YpLaf9IEqv2YzEx8P8Pszwtb33XpDSICH5RXABTSraSk2L2Oa64Icshq7iOQtU2eXa33N/SX+uKd9co8R+FsZRG9tIssLIUXGfhWleBVgnJGo2nYUSQCE7iqtge1mZzotmChZP5KzPTTi6Vv/R+oLjOIscn6ZpWJtOnZbcIcajPHD/wU/qA82q0bdG830as0gkfcX5juqPi1kGlMmS92FTAqTt5otTGkvnCn23toL+NhyzuQojIzWz86D8O5IP1k1WFc6twRjaLIFvjJs9SqhAppwNYOEW0ozD65laEB558DyDDOPQh0LPWvhLug627hqj769qPKmJ6eNuXO50mso1iP2H/JND7g=="
+                    },
+                    {
+                        "timestamp": 1498561908.144998,
+                        "length": 352,
+                        "is_orig": false,
+                        "payload": "lksl9NrJ3TuFm+SQmEdO07+U4tGA1OCsg8joL7HvDxiTH0qXGmnUbBtdQiwDBTXq6vbCDmHaKQdrNhNcvUh9PWmvHsGqKcaY3QK0miHXAQBcTlgpCKM1dFOdnEtjRIK1RPbAaWeQTMFOQKArTAyLgTOqcCCH71oHyIjRGp8O5CLiZOCijoseYu8W7yv+aeKI19JAyMhNBfsne7B1jkbnKyhZB/X/XsZVE84UPReNX1ZpERmCChS3ujud/221dAhs+14CuZPy1ser7tTiXfDnosDqZLHwvDJYsHw1Y/E5LBrbhCOAQSQWMYi/8Qs6WFiSSOAfk+g8dLUrbR7A33zcml2YU0yHL/DfmwoufIVFzJo1VBrtanqX1jujvAs/MnaNn1ytZOYmx6vOY0ZOATlo3xe8O2z+8MgHowa4SFTkZkX6SbrMamrFPMkbqYoVSorlBUbuWq+CIl8sYmH+jhlf8g=="
+                    }
+                ],
+                "unknown_payload": [],
+                "flag_encryption": false,
+                "flag_commit": false,
+                "flag_authentication": false,
+                "flag_i": true,
+                "flag_v": false,
+                "flag_r": false
+            },
+            "2": {
+                "id": 2,
+                "has_major_info": true,
+                "init_spi": "e0UshCvE6JE=",
+                "resp_spi": "jnd5RkBEZz4=",
+                "maj_version": 2,
+                "min_version": 0,
+                "length": 384,
+                "sa_doi": 0,
+                "sa_situation": "",
+                "dst_key_exchange_dh": {
+                    "id": 36,
+                    "name": "CREATE_CHILD_SA"
+                },
+                "src_vendors": [],
+                "dst_vendors": [],
+                "src_attributes": [],
+                "dst_attributes": [],
+                "src_sa": [],
+                "dst_sa": [],
+                "src_certs": [],
+                "dst_certs": [],
+                "notify_payload": [],
+                "key_exchange_payload": [],
+                "nonce_payload": [],
+                "id_payload": [],
+                "sig_payload": [],
+                "private_payload": [],
+                "nat_d_payload": [],
+                "encrypted": [
+                    {
+                        "timestamp": 1498561902.025782,
+                        "length": 352,
+                        "is_orig": false,
+                        "payload": "cxrshbvM1G7clfAm9VzLCxAo06rgFo2awOHI/B5wjRjRj8M5/sr4iQLLm3amHSdh3Odq4ngkCJ8FPjr1zD+In7QN9R+pLv2GgA7iQbHzBO1O6LoivYeOMNdTmvktC4K+/LwJcczPoDHrbPC8YNyY4FPyTKJ4MF3xvQ4In/gBKkZZ1uRc47bJJwrfxNJan70cCSq7Vi5EHIke5jxENqA8MwPlx+BTFF413gH5GSq0kuypIzAAD2H2s7nw4Q1OUHFpq1+PX7YtG1ZMTaFJmx8zX4drBBg3/fexMkkAAU94yg1dRp6flPoCTSZ+mVNsfDQuoGBPkidqMxyfB0GYh4fBnJTtQhm+R34v6XqcwvSBUW19iLIDz6jnFpX61Y2RviWzteocoNJczAiN6Qdnm0k8b/4aiGxSlHSIabLslRe+2F7zE28G7ou0ohEqrzeDesCevhCQqVXLhF6wkYZmH78VEw=="
+                    },
+                    {
+                        "timestamp": 1498561902.070557,
+                        "length": 352,
+                        "is_orig": true,
+                        "payload": "BdivuPV0XQ/OQWCRCZDmttcWdEczTV3GoIgDMTalE7D0MnOykEEPbSLImPoEm2eeM6De3UPsYrzZtOfXEhDSATQzMvyOadhyeWrGNKLSIW45Jwk+HuWjopaI5l9rlLoAXeOY2Dd/PTsQBH77JMviaLi+HBeuAfTZdIUnIa9K2taTJf1E9kL83kPCtXh79HEP1OFOMAWeRHW3CBPcIkPc5g/Ye9c0VAfQTfzn8mMn+sM6KjjXtyCLGs1GS2clzAsISqja/Ek0f6qArye+eRfdZarJ+x3qXgaC9z5C6ZAhU98vVc7aTSOyxh7MaE1lTJpoyPpMn2e9nOPVONqfVitSjKNxP3sCaTKKGQVXKjxTGQjWgo38A96n7iDb9E2NUX/RxHb398sMQSZZ7EoILtnM8POz2HiRTr7pSY1vtVaxByQk+jU+uzBDleK5uuq44Oi0wmZZo8I194+eBPAFvdWjHA=="
+                    },
+                    {
+                        "timestamp": 1498561908.097258,
+                        "length": 64,
+                        "is_orig": true,
+                        "payload": "70X0O/v+77R7fPdSn/2shlN3oX/SRj2XKJHlUBxyjDASseKHESBHxkeDjvjggwg+iPr2+y2alrDm8GogYKaf7Q=="
+                    },
+                    {
+                        "timestamp": 1498561908.097989,
+                        "length": 64,
+                        "is_orig": false,
+                        "payload": "uHEqryKO1oWr8q/lvmY+3NNtvNOEk9QQfc14Wlr8ArnL8uBtwG4cHdavP6h78cyf7IO5mhV3e8R2qWxTkxsb/g=="
+                    },
+                    {
+                        "timestamp": 1498561908.251524,
+                        "length": 64,
+                        "is_orig": true,
+                        "payload": "qKwJdSAAer0wqeUKv0E9iEyed9BWEgbNBdU0v1nyQFE/V7NMxWSSi1NSK8/7bzjN5EX7ZPiRAcMyNIdHKVYZiA=="
+                    },
+                    {
+                        "timestamp": 1498561908.252274,
+                        "length": 64,
+                        "is_orig": false,
+                        "payload": "odBLHo6IRJMijMO0WO+90ivNf30+mhtPlHzLZvOflakg3jV5V6a7/WF+Dpin63uK9SSp/TA7zZV8mhUGnMG4gg=="
+                    }
+                ],
+                "unknown_payload": [],
+                "flag_encryption": false,
+                "flag_commit": false,
+                "flag_authentication": false,
+                "flag_i": true,
+                "flag_v": false,
+                "flag_r": false
+            },
+            "9": {
+                "id": 9,
+                "has_major_info": true,
+                "init_spi": "5bxnVQ/U0+o=",
+                "resp_spi": "tRzbWvDvo6w=",
+                "maj_version": 2,
+                "min_version": 0,
+                "length": 96,
+                "sa_doi": 0,
+                "sa_situation": "",
+                "src_key_exchange_dh": {
+                    "id": 37,
+                    "name": "INFORMATIONAL"
+                },
+                "src_vendors": [],
+                "dst_vendors": [],
+                "src_attributes": [],
+                "dst_attributes": [],
+                "src_sa": [],
+                "dst_sa": [],
+                "src_certs": [],
+                "dst_certs": [],
+                "notify_payload": [],
+                "key_exchange_payload": [],
+                "nonce_payload": [],
+                "id_payload": [],
+                "sig_payload": [],
+                "private_payload": [],
+                "nat_d_payload": [],
+                "encrypted": [
+                    {
+                        "timestamp": 1498561938.006737,
+                        "length": 64,
+                        "is_orig": true,
+                        "payload": "GH0KnBKp5sHwZvC4UhANj+BQCN8JPcmikzDX9nd0byAN5LoSgp6SUj4EJw9MdmhvqXuR1XbuUoqijYtMgqzQjQ=="
+                    },
+                    {
+                        "timestamp": 1498561938.007485,
+                        "length": 64,
+                        "is_orig": false,
+                        "payload": "SRSwK1zI9wiuv4KUtnNWKl5c2kQVj1SKGXnBqLxTKk9r5YCOcZ4fq7/ieswl/m3rsBLCpSQUWhJ6j7yX5M0Fjw=="
+                    }
+                ],
+                "unknown_payload": [],
+                "flag_encryption": false,
+                "flag_commit": false,
+                "flag_authentication": false,
+                "flag_i": true,
+                "flag_v": false,
+                "flag_r": false
+            }
+        },
+        "payloads": [
+            {
+                "timestamp": 1498561868.006624,
+                "length": 216,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561900.015457,
+                "length": 216,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561900.036216,
+                "length": 216,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561900.052965,
+                "length": 288,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561900.06648,
+                "length": 272,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561902.025782,
+                "length": 384,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561902.070557,
+                "length": 384,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561907.006814,
+                "length": 96,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561907.00744,
+                "length": 96,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.006723,
+                "length": 216,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.007723,
+                "length": 216,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.027924,
+                "length": 272,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.085987,
+                "length": 272,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.097258,
+                "length": 96,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.097989,
+                "length": 96,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.117994,
+                "length": 384,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.144998,
+                "length": 384,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.242266,
+                "length": 96,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.243521,
+                "length": 96,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.245762,
+                "length": 336,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.251524,
+                "length": 96,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.252274,
+                "length": 96,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561908.296787,
+                "length": 336,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561913.007016,
+                "length": 96,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561913.007767,
+                "length": 96,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561918.006811,
+                "length": 96,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561918.007562,
+                "length": 96,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561923.006863,
+                "length": 96,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561923.007605,
+                "length": 96,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561928.006898,
+                "length": 96,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561928.00753,
+                "length": 96,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561933.006817,
+                "length": 96,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561933.007442,
+                "length": 96,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561938.006737,
+                "length": 96,
+                "is_orig": true,
+                "type_name": "IKEv2"
+            },
+            {
+                "timestamp": 1498561938.007485,
+                "length": 96,
+                "is_orig": false,
+                "type_name": "IKEv2"
+            }
+        ]
+    }
+}

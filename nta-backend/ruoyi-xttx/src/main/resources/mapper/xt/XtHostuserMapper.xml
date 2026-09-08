@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xt.mapper.XtHostuserMapper">
+
+    <resultMap type="XtHostuser" id="XtHostuserResult">
+        <result property="userId" column="user_id"/>
+        <result property="name" column="name"/>
+        <result property="phone" column="phone"/>
+        <result property="departure" column="departure"/>
+        <result property="job" column="job"/>
+        <result property="description" column="description"/>
+    </resultMap>
+
+    <sql id="selectXtHostuserVo">
+        select user_id, name, phone, departure, job, description
+        from xt_hostuser
+    </sql>
+
+    <select id="selectXtHostuserList" parameterType="XtHostuser" resultMap="XtHostuserResult">
+        <include refid="selectXtHostuserVo"/>
+        <where>
+            <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+            <if test="phone != null  and phone != ''">and phone = #{phone}</if>
+            <if test="departure != null  and departure != ''">and departure = #{departure}</if>
+            <if test="job != null  and job != ''">and job = #{job}</if>
+            <if test="description != null  and description != ''">and description = #{description}</if>
+        </where>
+    </select>
+
+    <select id="selectXtHostuserByUserId" parameterType="String" resultMap="XtHostuserResult">
+        <include refid="selectXtHostuserVo"/>
+        where user_id = #{userId}
+    </select>
+
+    <insert id="insertXtHostuser" parameterType="XtHostuser">
+        insert into xt_hostuser
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="name != null">name,</if>
+            <if test="phone != null">phone,</if>
+            <if test="departure != null">departure,</if>
+            <if test="job != null">job,</if>
+            <if test="description != null">description,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="name != null">#{name},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="departure != null">#{departure},</if>
+            <if test="job != null">#{job},</if>
+            <if test="description != null">#{description},</if>
+        </trim>
+    </insert>
+
+    <update id="updateXtHostuser" parameterType="XtHostuser">
+        update xt_hostuser
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="departure != null">departure = #{departure},</if>
+            <if test="job != null">job = #{job},</if>
+            <if test="description != null">description = #{description},</if>
+        </trim>
+        where user_id = #{userId}
+    </update>
+
+    <delete id="deleteXtHostuserByUserId" parameterType="String">
+        delete
+        from xt_hostuser
+        where user_id = #{userId}
+    </delete>
+
+    <delete id="deleteXtHostuserByUserIds" parameterType="String">
+        delete from xt_hostuser where user_id in
+        <foreach item="userId" collection="array" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+    </delete>
+</mapper>

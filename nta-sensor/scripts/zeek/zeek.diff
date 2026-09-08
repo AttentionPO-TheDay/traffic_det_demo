@@ -1,0 +1,263 @@
+diff --git a/.vscode/settings.json b/.vscode/settings.json
+new file mode 100644
+index 0000000..f196582
+--- /dev/null
++++ b/.vscode/settings.json
+@@ -0,0 +1,9 @@
++{
++    "files.associations": {
++        "*.pac": "zeek",
++        "*.zeek": "zeek",
++        "*.spicy": "zeek",
++        "*.bif": "zeek",
++        "*.sig": "zeek"
++    },
++}
+\ No newline at end of file
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6343653..b587e84 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -248,6 +248,42 @@ FindRequiredPackage(OpenSSL)
+ FindRequiredPackage(BIND)
+ FindRequiredPackage(ZLIB)
+ 
++# 默认 GmSSL 会编译到
++# - /usr/local/include/gmssl
++# - /usr/local/lib
++# 
++# 因此以 /usr/local 作为根目录进行搜索
++
++# FindRequiredPackage(GmSSL)
++find_path(GmSSL_ROOT_DIR
++    NAMES include/gmssl/sm2.h
++    HINTS /usr/local
++)
++
++find_path(GmSSL_INCLUDE_DIR
++    NAMES sm2.h
++    HINTS ${GmSSL_ROOT_DIR}/include/gmssl
++)
++
++find_library(GmSSL_LIBRARY
++    NAMES libgmssl.a
++    HINTS ${GmSSL_ROOT_DIR}/lib
++)
++
++include(FindPackageHandleStandardArgs)
++
++find_package_handle_standard_args(GmSSL DEFAULT_MSG
++    GmSSL_LIBRARY
++    GmSSL_INCLUDE_DIR
++)
++
++mark_as_advanced(
++    GmSSL_ROOT_DIR
++    GmSSL_INCLUDE_DIR
++    GmSSL_LIBRARY
++)
++
++
+ # Installation directory for the distribution's Python modules. An
+ # override via configure's --python-dir wins, specifying a directory
+ # explicitly. Next is --python-prefix, which includes a versioned
+@@ -454,6 +490,7 @@ set(zeekdeps ${zeekdeps}
+     ${BIND_LIBRARY}
+     ${ZLIB_LIBRARY}
+     ${JEMALLOC_LIBRARIES}
++    ${GmSSL_LIBRARY}
+     ${OPTLIBS}
+ )
+ 
+diff --git a/scripts/base/init-bare.zeek b/scripts/base/init-bare.zeek
+index 34795cc..a874d82 100644
+--- a/scripts/base/init-bare.zeek
++++ b/scripts/base/init-bare.zeek
+@@ -4263,6 +4263,10 @@ export {
+ 		key_length: count &optional &log;	##< Key length in bits
+ 		exponent: string &optional &log;	##< Exponent, if RSA-certificate
+ 		curve: string &optional &log;	##< Curve, if EC-certificate
++		modulus: string &optional &log;
++		x: string &optional &log;
++		y: string &optional &log;
++		raw_pkey: string &optional &log;
+ 	};
+ 
+ 	type Extension: record {
+diff --git a/scripts/base/protocols/ssl/consts.zeek b/scripts/base/protocols/ssl/consts.zeek
+index 0b642ec..a83412a 100644
+--- a/scripts/base/protocols/ssl/consts.zeek
++++ b/scripts/base/protocols/ssl/consts.zeek
+@@ -7,6 +7,7 @@ export {
+ 	const TLSv11 = 0x0302;
+ 	const TLSv12 = 0x0303;
+ 	const TLSv13 = 0x0304;
++	const TLSGuoMi = 0x0101;
+ 
+ 	const DTLSv10 = 0xFEFF;
+ 	# DTLSv11 does not exist
+@@ -21,7 +22,8 @@ export {
+ 		[TLSv12] = "TLSv12",
+ 		[TLSv13] = "TLSv13",
+ 		[DTLSv10] = "DTLSv10",
+-		[DTLSv12] = "DTLSv12"
++		[DTLSv12] = "DTLSv12",
++		[TLSGuoMi] = "TLSGuoMi"
+ 	} &default=function(i: count):string
+ 		{
+ 		if ( i/0xFF == 0x7F ) # TLS 1.3 draft
+diff --git a/scripts/policy/protocols/ssl/heartbleed.zeek b/scripts/policy/protocols/ssl/heartbleed.zeek
+index aabafbf..27d20b1 100644
+--- a/scripts/policy/protocols/ssl/heartbleed.zeek
++++ b/scripts/policy/protocols/ssl/heartbleed.zeek
+@@ -168,7 +168,7 @@ event ssl_encrypted_heartbeat(c: connection, is_orig: bool, length: count)
+ 
+ 	# Examine request lengths based on used cipher...
+ 	local min_length_choice: vector of min_length;
+-	if ( (c$ssl$version == "TLSv11") || (c$ssl$version == "TLSv12") ) # tls 1.1+ have different lengths for CBC
++	if ( (c$ssl$version == "TLSv11") || (c$ssl$version == "TLSv12") || (c$ssl$version == "TLSGuoMi")) # tls 1.1+ have different lengths for CBC
+ 		min_length_choice = min_lengths_tls11;
+ 	else
+ 		min_length_choice = min_lengths;
+diff --git a/src/analyzer/protocol/ssl/ssl-defs.pac b/src/analyzer/protocol/ssl/ssl-defs.pac
+index 9c84c52..2018045 100644
+--- a/src/analyzer/protocol/ssl/ssl-defs.pac
++++ b/src/analyzer/protocol/ssl/ssl-defs.pac
+@@ -77,6 +77,7 @@ function version_ok(vers : uint16) : bool
+ 	case TLSv13:
+ 	case DTLSv10:
+ 	case DTLSv12:
++	case TLSGuoMi:
+ 		return true;
+ 
+ 	default:
+@@ -118,6 +119,7 @@ enum SSLVersions {
+ 	TLSv12		= 0x0303,
+ 	TLSv13		= 0x0304,
+ 	TLSv13_draft	= 0x7F00, # the second byte actually defines the draft.
++	TLSGuoMi    = 0x0101,
+ 
+ 	DTLSv10   = 0xFEFF,
+ 	# DTLSv11 does not exist.
+diff --git a/src/analyzer/protocol/ssl/ssl-protocol.pac b/src/analyzer/protocol/ssl/ssl-protocol.pac
+index 57b7f19..65b564f 100644
+--- a/src/analyzer/protocol/ssl/ssl-protocol.pac
++++ b/src/analyzer/protocol/ssl/ssl-protocol.pac
+@@ -195,7 +195,7 @@ refine connection SSL_Conn += {
+ 			{
+ 			uint16 version = (head1<<8) | head2;
+ 			if ( version != SSLv30 && version != TLSv10 &&
+-			     version != TLSv11 && version != TLSv12 )
++			     version != TLSv11 && version != TLSv12 && version != TLSGuoMi)
+ 				{
+ 				zeek_analyzer()->ProtocolViolation(zeek::util::fmt("Invalid version late in TLS connection. Packet reported version: %d", version));
+ 				zeek_analyzer()->SetSkip(true);
+@@ -212,7 +212,7 @@ refine connection SSL_Conn += {
+ 				{
+ 				uint16 version = (head3 << 8) | head4;
+ 				if ( version != SSLv20 && version != SSLv30 && version != TLSv10 &&
+-				     version != TLSv11 && version != TLSv12 )
++				     version != TLSv11 && version != TLSv12 && version != TLSGuoMi )
+ 					{
+ 					zeek_analyzer()->ProtocolViolation(zeek::util::fmt("Invalid version in SSL client hello. Version: %d", version));
+ 					zeek_analyzer()->SetSkip(true);
+@@ -239,7 +239,7 @@ refine connection SSL_Conn += {
+ 
+ 		uint16 version = (head1<<8) | head2;
+ 		if ( version != SSLv30 && version != TLSv10 &&
+-		     version != TLSv11 && version != TLSv12 )
++		     version != TLSv11 && version != TLSv12 && version != TLSGuoMi)
+ 			{
+ 			zeek_analyzer()->ProtocolViolation(zeek::util::fmt("Invalid version in TLS connection. Version: %d", version));
+ 			zeek_analyzer()->SetSkip(true);
+diff --git a/src/file_analysis/analyzer/x509/X509.cc b/src/file_analysis/analyzer/x509/X509.cc
+index 47a8a4a..3609c4c 100644
+--- a/src/file_analysis/analyzer/x509/X509.cc
++++ b/src/file_analysis/analyzer/x509/X509.cc
+@@ -13,6 +13,9 @@
+ #include <openssl/asn1.h>
+ #include <openssl/opensslconf.h>
+ #include <openssl/err.h>
++#include <openssl/evp.h>
++
++#include <gmssl/sm2.h>
+ 
+ #include "zeek/Event.h"
+ #include "zeek/file_analysis/File.h"
+@@ -199,7 +202,12 @@ RecordValPtr X509::ParseCertificate(X509Val* cert_val,
+ 	// Things we can do when we have the key...
+ 	EVP_PKEY *pkey = X509_extract_key(ssl_cert);
+ 	if ( pkey != NULL )
+-		{
++	{
++		unsigned char* pkey_buf = (unsigned char*)buf;
++		size_t len = i2d_PUBKEY(pkey, &pkey_buf);
++		pX509Cert->Assign(16, make_intrusive<StringVal>(len, buf));
++		buf[0] = 0;
++		
+ 		if ( EVP_PKEY_base_id(pkey) == EVP_PKEY_DSA )
+ 			pX509Cert->Assign(9, make_intrusive<StringVal>("dsa"));
+ 
+@@ -207,22 +215,55 @@ RecordValPtr X509::ParseCertificate(X509Val* cert_val,
+ 			{
+ 			pX509Cert->Assign(9, make_intrusive<StringVal>("rsa"));
+ 
+-			const BIGNUM *e;
+-			RSA_get0_key(EVP_PKEY_get0_RSA(pkey), NULL, &e, NULL);
+-			char *exponent = BN_bn2dec(e);
+-			if ( exponent != NULL )
++			const BIGNUM *n, *e;
++			RSA_get0_key(EVP_PKEY_get0_RSA(pkey), &n, &e, NULL);
++			
++			int pubkey_n_len = BN_bn2bin(n, (unsigned char*)buf);
++			if (pubkey_n_len > 0) {
++				pX509Cert->Assign(13, make_intrusive<StringVal>(pubkey_n_len, buf));
++			}
++			
++			int pubkey_e_len = BN_bn2bin(e, (unsigned char*)buf);
++			if (pubkey_e_len > 0)
+ 				{
+-				pX509Cert->Assign(11, make_intrusive<StringVal>(exponent));
+-				OPENSSL_free(exponent);
+-				exponent = NULL;
++				pX509Cert->Assign(11, make_intrusive<StringVal>(pubkey_e_len, buf));
+ 				}
++			buf[0] = 0;
+ 			}
+ #ifndef OPENSSL_NO_EC
+ 		else if ( EVP_PKEY_base_id(pkey) == EVP_PKEY_EC )
+ 			{
+ 			pX509Cert->Assign(9, make_intrusive<StringVal>("ecdsa"));
+ 			pX509Cert->Assign(12, KeyCurve(pkey));
++
++			const EC_GROUP* group = EC_KEY_get0_group(EVP_PKEY_get0_EC_KEY(pkey));
++			if (group != NULL) {
++				int nid = EC_GROUP_get_curve_name(group);
++				if (nid == NID_sm2) {
++					
++					// get public key part
++					unsigned char* tmp = (unsigned char* )buf;
++					size_t len = i2d_PUBKEY(pkey, &tmp);
++					
++					SM2_KEY* sm2_key = (SM2_KEY*)malloc(sizeof(SM2_KEY));
++					const uint8_t* tmp2 = (uint8_t*)buf;
++					int status = sm2_public_key_info_from_der(sm2_key, &tmp2, &len);
++
++					SM2_POINT sm2_pubkey = sm2_key->public_key;
++					uint8_t* x = sm2_pubkey.x;
++					uint8_t* y = sm2_pubkey.y;
++
++					pX509Cert->Assign(14, make_intrusive<StringVal>(32, (char *)x));
++					pX509Cert->Assign(15, make_intrusive<StringVal>(32, (char *)y));
++
++					free(sm2_key);
++					buf[0] = 0;
++				}
+ 			}
++			
++
++			
++		}
+ #endif
+ 
+ 		// set key algorithm back. We do not have to free the value that we created because (I think) it

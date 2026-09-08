@@ -1,0 +1,1064 @@
+[
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.205",
+            "dst": "192.168.140.200",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054417.979515,
+                "spi": 470645560,
+                "seq": 1,
+                "len": 84,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:c5:7d:db",
+                "l2_dst": "00:0c:29:4f:ee:a2",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.200",
+            "dst": "192.168.140.205",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054417.980437,
+                "spi": 142161243,
+                "seq": 1,
+                "len": 84,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:4f:ee:a2",
+                "l2_dst": "00:0c:29:c5:7d:db",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.205",
+            "dst": "192.168.140.200",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054418.971121,
+                "spi": 470645560,
+                "seq": 2,
+                "len": 84,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:c5:7d:db",
+                "l2_dst": "00:0c:29:4f:ee:a2",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.200",
+            "dst": "192.168.140.205",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054418.971432,
+                "spi": 142161243,
+                "seq": 2,
+                "len": 84,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:4f:ee:a2",
+                "l2_dst": "00:0c:29:c5:7d:db",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.205",
+            "dst": "192.168.140.200",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054419.971173,
+                "spi": 470645560,
+                "seq": 3,
+                "len": 84,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:c5:7d:db",
+                "l2_dst": "00:0c:29:4f:ee:a2",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.200",
+            "dst": "192.168.140.205",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054419.971507,
+                "spi": 142161243,
+                "seq": 3,
+                "len": 84,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:4f:ee:a2",
+                "l2_dst": "00:0c:29:c5:7d:db",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.205",
+            "dst": "192.168.140.200",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054420.915247,
+                "spi": 470645560,
+                "seq": 4,
+                "len": 76,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:c5:7d:db",
+                "l2_dst": "00:0c:29:4f:ee:a2",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.200",
+            "dst": "192.168.140.205",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054420.915854,
+                "spi": 142161243,
+                "seq": 4,
+                "len": 76,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:4f:ee:a2",
+                "l2_dst": "00:0c:29:c5:7d:db",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.205",
+            "dst": "192.168.140.200",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054420.915999,
+                "spi": 470645560,
+                "seq": 5,
+                "len": 68,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:c5:7d:db",
+                "l2_dst": "00:0c:29:4f:ee:a2",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.205",
+            "dst": "192.168.140.200",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054420.916226,
+                "spi": 470645560,
+                "seq": 6,
+                "len": 492,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:c5:7d:db",
+                "l2_dst": "00:0c:29:4f:ee:a2",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.200",
+            "dst": "192.168.140.205",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054420.919085,
+                "spi": 142161243,
+                "seq": 5,
+                "len": 300,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:4f:ee:a2",
+                "l2_dst": "00:0c:29:c5:7d:db",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.205",
+            "dst": "192.168.140.200",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054420.932141,
+                "spi": 470645560,
+                "seq": 7,
+                "len": 508,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:c5:7d:db",
+                "l2_dst": "00:0c:29:4f:ee:a2",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.200",
+            "dst": "192.168.140.205",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054420.933679,
+                "spi": 142161243,
+                "seq": 6,
+                "len": 300,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:4f:ee:a2",
+                "l2_dst": "00:0c:29:c5:7d:db",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.205",
+            "dst": "192.168.140.200",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054420.971206,
+                "spi": 470645560,
+                "seq": 8,
+                "len": 84,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:c5:7d:db",
+                "l2_dst": "00:0c:29:4f:ee:a2",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.200",
+            "dst": "192.168.140.205",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054420.971632,
+                "spi": 142161243,
+                "seq": 7,
+                "len": 84,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:4f:ee:a2",
+                "l2_dst": "00:0c:29:c5:7d:db",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "",
+        "hash": "",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.205",
+            "dst": "192.168.140.200",
+            "protocol": 0,
+            "version": 0,
+            "length": 0,
+            "payload": []
+        },
+        "ipsec": {
+            "esp": {
+                "timestamp": 1343054421.049192,
+                "spi": 470645560,
+                "seq": 9,
+                "len": 68,
+                "l2_encap": "LINK_ETHERNET",
+                "l2_src": "00:0c:29:c5:7d:db",
+                "l2_dst": "00:0c:29:4f:ee:a2",
+                "l2_eth_type": 2048,
+                "l2_proto": "L3_IPV4"
+            },
+            "payloads": []
+        }
+    },
+    {
+        "uid": "CH3ZXVoi58fGYx5ab",
+        "hash": "5a0fa537849d9923fb535a1b1f036375",
+        "source": "zeek-1",
+        "ip": {
+            "src": "192.168.140.205",
+            "dst": "192.168.140.200",
+            "protocol": 17,
+            "version": 4,
+            "length": 1900,
+            "payload": [
+                {
+                    "timestamp": 1343054404.119051,
+                    "length": 280,
+                    "is_orig": true,
+                    "optional": 17
+                },
+                {
+                    "timestamp": 1343054404.133607,
+                    "length": 200,
+                    "is_orig": false,
+                    "optional": 17
+                },
+                {
+                    "timestamp": 1343054404.161492,
+                    "length": 68,
+                    "is_orig": true,
+                    "optional": 17
+                },
+                {
+                    "timestamp": 1343054414.173228,
+                    "length": 200,
+                    "is_orig": false,
+                    "optional": 17
+                },
+                {
+                    "timestamp": 1343054414.192069,
+                    "length": 256,
+                    "is_orig": true,
+                    "optional": 17
+                },
+                {
+                    "timestamp": 1343054414.209753,
+                    "length": 256,
+                    "is_orig": false,
+                    "optional": 17
+                },
+                {
+                    "timestamp": 1343054414.223179,
+                    "length": 96,
+                    "is_orig": true,
+                    "optional": 17
+                },
+                {
+                    "timestamp": 1343054414.22438,
+                    "length": 96,
+                    "is_orig": false,
+                    "optional": 17
+                },
+                {
+                    "timestamp": 1343054414.227153,
+                    "length": 184,
+                    "is_orig": true,
+                    "optional": 17
+                },
+                {
+                    "timestamp": 1343054414.228697,
+                    "length": 184,
+                    "is_orig": false,
+                    "optional": 17
+                },
+                {
+                    "timestamp": 1343054414.427667,
+                    "length": 80,
+                    "is_orig": true,
+                    "optional": 17
+                }
+            ]
+        },
+        "udp": {
+            "src": 500,
+            "dst": 500,
+            "packet_up": 6,
+            "packet_dn": 5,
+            "byte_up": 796,
+            "byte_dn": 796,
+            "payload": [
+                {
+                    "timestamp": 1343054404.119051,
+                    "length": 252,
+                    "is_orig": true
+                },
+                {
+                    "timestamp": 1343054404.133607,
+                    "length": 172,
+                    "is_orig": false
+                },
+                {
+                    "timestamp": 1343054404.161492,
+                    "length": 40,
+                    "is_orig": true
+                },
+                {
+                    "timestamp": 1343054414.173228,
+                    "length": 172,
+                    "is_orig": false
+                },
+                {
+                    "timestamp": 1343054414.192069,
+                    "length": 228,
+                    "is_orig": true
+                },
+                {
+                    "timestamp": 1343054414.209753,
+                    "length": 228,
+                    "is_orig": false
+                },
+                {
+                    "timestamp": 1343054414.223179,
+                    "length": 68,
+                    "is_orig": true
+                },
+                {
+                    "timestamp": 1343054414.22438,
+                    "length": 68,
+                    "is_orig": false
+                },
+                {
+                    "timestamp": 1343054414.227153,
+                    "length": 156,
+                    "is_orig": true
+                },
+                {
+                    "timestamp": 1343054414.228697,
+                    "length": 156,
+                    "is_orig": false
+                },
+                {
+                    "timestamp": 1343054414.427667,
+                    "length": 52,
+                    "is_orig": true
+                }
+            ]
+        },
+        "ipsec": {
+            "isakmp": {
+                "572501820": {
+                    "id": 572501820,
+                    "has_major_info": true,
+                    "init_spi": "xtFFkoUVDH4=",
+                    "resp_spi": "bpYfAb8XmzU=",
+                    "maj_version": 1,
+                    "min_version": 0,
+                    "length": 156,
+                    "sa_doi": 0,
+                    "sa_situation": "",
+                    "src_key_exchange_dh": {
+                        "id": 32,
+                        "name": "Quick_Mode"
+                    },
+                    "src_vendors": [],
+                    "dst_vendors": [],
+                    "src_attributes": [],
+                    "dst_attributes": [],
+                    "src_sa": [],
+                    "dst_sa": [],
+                    "src_certs": [],
+                    "dst_certs": [],
+                    "notify_payload": [],
+                    "key_exchange_payload": [],
+                    "nonce_payload": [],
+                    "id_payload": [],
+                    "sig_payload": [],
+                    "private_payload": [],
+                    "nat_d_payload": [],
+                    "encrypted": [
+                        {
+                            "timestamp": 1343054414.227153,
+                            "length": 128,
+                            "is_orig": true,
+                            "payload": "zurVzYce3S3EguBDLcBxnioPQhh7+3mzSeVp8nbyvipolkd0wwZZVJRzobv4HZg+OaEO9DmBNBKDGVSit3PrjmOCIpKsiqxf1FPVLHDzkutUIqXW/IFz+chs3XITE+GMh8HCJA4gQiFXjRyJrTAj7qmpJ6o84pNEH740G/wt+GE="
+                        },
+                        {
+                            "timestamp": 1343054414.228697,
+                            "length": 128,
+                            "is_orig": false,
+                            "payload": "ECSmtkzjoh154B+c9hee4jEVV+VgXe17icr1sqN2rrSGnASADjNBfjEcn6wFJ5GMEx/rRjjTw00CEs/cdWIlQo1ObuQ4G9uC7Fd+j0F2MEU56xlz+P5XccGEmqZtKMZ/zSPsh9iT3+lOTSN6UwdbmpmyJtjj4HRu6GUY7AMJf0I="
+                        },
+                        {
+                            "timestamp": 1343054414.427667,
+                            "length": 24,
+                            "is_orig": true,
+                            "payload": "uNWNkYsGMSOy8bn63yi1CTYZUJmL21Na"
+                        }
+                    ],
+                    "unknown_payload": [],
+                    "flag_encryption": true,
+                    "flag_commit": false,
+                    "flag_authentication": false,
+                    "flag_i": false,
+                    "flag_v": false,
+                    "flag_r": false
+                },
+                "0": {
+                    "id": 0,
+                    "has_major_info": true,
+                    "init_spi": "xtFFkoUVDH4=",
+                    "resp_spi": "AAAAAAAAAAA=",
+                    "maj_version": 1,
+                    "min_version": 0,
+                    "length": 252,
+                    "sa_doi": 0,
+                    "sa_situation": "",
+                    "src_key_exchange_dh": {
+                        "id": 2,
+                        "name": "IKEv1_ID_PROTECT"
+                    },
+                    "src_vendors": [
+                        {
+                            "id": "iC/lbW/SDbwiUWE7Lr5b6w==",
+                            "name": "strongSwan 4.3.6"
+                        },
+                        {
+                            "id": "EvXyjEVxaKlwLZ/idMwBAA==",
+                            "name": "Cisco Unity"
+                        },
+                        {
+                            "id": "CQAmid/WtxI=",
+                            "name": "XAUTH"
+                        },
+                        {
+                            "id": "r8rXE2ih8clrhpb8d1cBAA==",
+                            "name": "Dead Peer Detection"
+                        },
+                        {
+                            "id": "ShMcgQcDWEVcVyjyDpVFLw==",
+                            "name": "RFC 3947 NAT-T"
+                        },
+                        {
+                            "id": "fZQZplMQym8sF52SFVKdVg==",
+                            "name": "draft-ietf-ipsec-nat-t-ike-03"
+                        },
+                        {
+                            "id": "zWBGQzXfIfh8/bL8aLakSA==",
+                            "name": "draft-ietf-ipsec-nat-t-ike-02"
+                        },
+                        {
+                            "id": "kMuAkT67aW4IY4G17EJ7Hw==",
+                            "name": "draft-ietf-ipsec-nat-t-ike-02"
+                        },
+                        {
+                            "id": "RIUVLRi2u80L6KhGlXndzA==",
+                            "name": "draft-ietf-ipsec-nat-t-ike-00"
+                        }
+                    ],
+                    "dst_vendors": [
+                        {
+                            "id": "iC/lbW/SDbwiUWE7Lr5b6w==",
+                            "name": "strongSwan 4.3.6"
+                        },
+                        {
+                            "id": "EvXyjEVxaKlwLZ/idMwBAA==",
+                            "name": "Cisco Unity"
+                        },
+                        {
+                            "id": "CQAmid/WtxI=",
+                            "name": "XAUTH"
+                        },
+                        {
+                            "id": "r8rXE2ih8clrhpb8d1cBAA==",
+                            "name": "Dead Peer Detection"
+                        },
+                        {
+                            "id": "ShMcgQcDWEVcVyjyDpVFLw==",
+                            "name": "RFC 3947 NAT-T"
+                        },
+                        {
+                            "id": "iC/lbW/SDbwiUWE7Lr5b6w==",
+                            "name": "strongSwan 4.3.6"
+                        },
+                        {
+                            "id": "EvXyjEVxaKlwLZ/idMwBAA==",
+                            "name": "Cisco Unity"
+                        },
+                        {
+                            "id": "CQAmid/WtxI=",
+                            "name": "XAUTH"
+                        },
+                        {
+                            "id": "r8rXE2ih8clrhpb8d1cBAA==",
+                            "name": "Dead Peer Detection"
+                        },
+                        {
+                            "id": "ShMcgQcDWEVcVyjyDpVFLw==",
+                            "name": "RFC 3947 NAT-T"
+                        }
+                    ],
+                    "src_attributes": [
+                        {
+                            "attr": {
+                                "id": 11,
+                                "name": "Life Type",
+                                "value": 1
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 12,
+                                "name": "Life Duration",
+                                "value": 7800
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 1,
+                                "name": "Encryption Algorithm",
+                                "value": 5
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 2,
+                                "name": "Hash Algorithm",
+                                "value": 2
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 3,
+                                "name": "Authentication Method",
+                                "value": 1
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 4,
+                                "name": "Group Description",
+                                "value": 2
+                            },
+                            "auto_format": true
+                        }
+                    ],
+                    "dst_attributes": [
+                        {
+                            "attr": {
+                                "id": 11,
+                                "name": "Life Type",
+                                "value": 1
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 12,
+                                "name": "Life Duration",
+                                "value": 7800
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 1,
+                                "name": "Encryption Algorithm",
+                                "value": 5
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 2,
+                                "name": "Hash Algorithm",
+                                "value": 2
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 3,
+                                "name": "Authentication Method",
+                                "value": 1
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 4,
+                                "name": "Group Description",
+                                "value": 2
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 11,
+                                "name": "Life Type",
+                                "value": 1
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 12,
+                                "name": "Life Duration",
+                                "value": 7800
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 1,
+                                "name": "Encryption Algorithm",
+                                "value": 5
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 2,
+                                "name": "Hash Algorithm",
+                                "value": 2
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 3,
+                                "name": "Authentication Method",
+                                "value": 1
+                            },
+                            "auto_format": true
+                        },
+                        {
+                            "attr": {
+                                "id": 4,
+                                "name": "Group Description",
+                                "value": 2
+                            },
+                            "auto_format": true
+                        }
+                    ],
+                    "src_sa": [
+                        {
+                            "doi": 1,
+                            "situation": "AAAAAQ=="
+                        }
+                    ],
+                    "dst_sa": [
+                        {
+                            "doi": 1,
+                            "situation": "AAAAAQ=="
+                        },
+                        {
+                            "doi": 1,
+                            "situation": "AAAAAQ=="
+                        }
+                    ],
+                    "src_certs": [],
+                    "dst_certs": [],
+                    "notify_payload": [
+                        {
+                            "timestamp": 1343054404.161492,
+                            "length": 4,
+                            "is_orig": true,
+                            "payload": "AQAADg==",
+                            "optional": ""
+                        }
+                    ],
+                    "key_exchange_payload": [
+                        {
+                            "timestamp": 1343054414.192069,
+                            "length": 128,
+                            "is_orig": true,
+                            "payload": "qBKl+/y66Cx98N6uwhIP6Km36C/BznrRbjjgaH0+sE9MmriP49O67X2jy/Pd7IbPlbDd6H7ghqsjbgbRfEWf744vyU2AS+mvRedEwgfvmHUS1o3S7fHKV+kcmNwmiPd6V5AK7RjzaMv7jUtGvqXkilPLiM1RWhfdHQMtHHlUD4Y="
+                        },
+                        {
+                            "timestamp": 1343054414.209753,
+                            "length": 128,
+                            "is_orig": false,
+                            "payload": "CmOTwMK3r5J35sNuQRHqiLh9rWtQCbkJoKpmEB17PXCRgpNLDwvKn3fJyq/zPwBtxI3dkYy8MeJ6ZEkvCuunMi1U4TWVCd4bRO4EhADHvQ9m0iKswaGk9dHLt5z6RDYKVmbpBgMSHbZvKDzhZ2KOsen1qWUbeY9qo4C+JBLiwNQ="
+                        }
+                    ],
+                    "nonce_payload": [
+                        {
+                            "timestamp": 1343054414.192069,
+                            "length": 16,
+                            "is_orig": true,
+                            "payload": "dIPpZNVZN4pVVXd0ZK162Q=="
+                        },
+                        {
+                            "timestamp": 1343054414.209753,
+                            "length": 16,
+                            "is_orig": false,
+                            "payload": "Y9rCIX0tHq1i3ZyJfGJqYg=="
+                        }
+                    ],
+                    "id_payload": [],
+                    "sig_payload": [],
+                    "private_payload": [],
+                    "nat_d_payload": [
+                        {
+                            "timestamp": 1343054414.192069,
+                            "length": 0,
+                            "is_orig": true,
+                            "type_id": 20,
+                            "type_name": "NAT-D",
+                            "payload": "cEixcKVPocFlgtzgCNBZ3pKV19M="
+                        },
+                        {
+                            "timestamp": 1343054414.192069,
+                            "length": 0,
+                            "is_orig": true,
+                            "type_id": 20,
+                            "type_name": "NAT-D",
+                            "payload": "yeRt3fzCnU73K6TaZtRyBofkaeU="
+                        },
+                        {
+                            "timestamp": 1343054414.209753,
+                            "length": 0,
+                            "is_orig": false,
+                            "type_id": 20,
+                            "type_name": "NAT-D",
+                            "payload": "yeRt3fzCnU73K6TaZtRyBofkaeU="
+                        },
+                        {
+                            "timestamp": 1343054414.209753,
+                            "length": 0,
+                            "is_orig": false,
+                            "type_id": 20,
+                            "type_name": "NAT-D",
+                            "payload": "cEixcKVPocFlgtzgCNBZ3pKV19M="
+                        }
+                    ],
+                    "encrypted": [
+                        {
+                            "timestamp": 1343054414.223179,
+                            "length": 40,
+                            "is_orig": true,
+                            "payload": "vgJwDx2z1izXZ2xwfmub6bwK0W4SSKX4O33uyC15y8zHLR4g1a+J3Q=="
+                        },
+                        {
+                            "timestamp": 1343054414.22438,
+                            "length": 40,
+                            "is_orig": false,
+                            "payload": "61OmGfkApgDQa947B4eCqs4AZ2R9ZhkFjhC7dB00De5S2aXoiLHM9g=="
+                        }
+                    ],
+                    "unknown_payload": [],
+                    "flag_encryption": false,
+                    "flag_commit": false,
+                    "flag_authentication": false,
+                    "flag_i": false,
+                    "flag_v": false,
+                    "flag_r": false
+                }
+            },
+            "payloads": [
+                {
+                    "timestamp": 1343054404.119051,
+                    "length": 252,
+                    "is_orig": true,
+                    "type_name": "IKEv1"
+                },
+                {
+                    "timestamp": 1343054404.133607,
+                    "length": 172,
+                    "is_orig": false,
+                    "type_name": "IKEv1"
+                },
+                {
+                    "timestamp": 1343054404.161492,
+                    "length": 40,
+                    "is_orig": true,
+                    "type_name": "IKEv1"
+                },
+                {
+                    "timestamp": 1343054414.173228,
+                    "length": 172,
+                    "is_orig": false,
+                    "type_name": "IKEv1"
+                },
+                {
+                    "timestamp": 1343054414.192069,
+                    "length": 228,
+                    "is_orig": true,
+                    "type_name": "IKEv1"
+                },
+                {
+                    "timestamp": 1343054414.209753,
+                    "length": 228,
+                    "is_orig": false,
+                    "type_name": "IKEv1"
+                },
+                {
+                    "timestamp": 1343054414.223179,
+                    "length": 68,
+                    "is_orig": true,
+                    "type_name": "IKEv1"
+                },
+                {
+                    "timestamp": 1343054414.22438,
+                    "length": 68,
+                    "is_orig": false,
+                    "type_name": "IKEv1"
+                },
+                {
+                    "timestamp": 1343054414.227153,
+                    "length": 156,
+                    "is_orig": true,
+                    "type_name": "IKEv1"
+                },
+                {
+                    "timestamp": 1343054414.228697,
+                    "length": 156,
+                    "is_orig": false,
+                    "type_name": "IKEv1"
+                },
+                {
+                    "timestamp": 1343054414.427667,
+                    "length": 52,
+                    "is_orig": true,
+                    "type_name": "IKEv1"
+                }
+            ]
+        }
+    }
+]

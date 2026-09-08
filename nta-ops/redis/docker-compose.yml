@@ -1,0 +1,14 @@
+services:
+  redis:
+    # 使用 Redis 5.0.14 版本
+    image: redis:5.0.14-alpine
+
+    # 把容器名称设成 redis，不然太长了用起来很麻烦
+    container_name: redis
+
+    # 若挂了则自动重启
+    restart: always
+      
+    # 对外开放 6379 端口
+    ports:
+      - "127.0.0.1:6379:6379"

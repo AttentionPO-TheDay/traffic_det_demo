@@ -1,0 +1,37 @@
+/* 设置页标签宽度不随文字长度变化 */
+.container :global(.ant-tabs-card >.ant-tabs-nav .ant-tabs-tab) {
+  padding: 16px 16px;
+  width: 120px;
+}
+
+/* 过长标签题目隐藏 */
+.container :global(.ant-tabs-card >.ant-tabs-nav .ant-tabs-tab > .ant-tabs-tab-btn) {
+  text-align: start;
+  width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*以下样式实现页标签不随正文内容滚动*/
+.container :global(.ant-pro-layout .ant-pro-layout-content) {
+  height: calc(100vh - 56px);  /*占满视口剩余高度，56px为header高度*/
+}
+
+.container :global(.ant-pro-page-container),
+.container :global(.ant-pro-page-container-warp-page-header),
+.container :global(.ant-page-header-footer),
+.container :global(.ant-pro-page-container-tabs) {
+  height: 100%;
+  overflow: hidden;
+}
+
+.container :global(.ant-page-header) {
+  padding-right: 0 !important;
+}
+
+.container :global(.ant-tabs-content-holder) {
+  height: 100%;
+  padding-right: 40px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

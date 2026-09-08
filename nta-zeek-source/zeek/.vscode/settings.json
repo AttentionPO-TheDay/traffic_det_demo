@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.pac": "zeek",
+        "*.zeek": "zeek",
+        "*.spicy": "zeek",
+        "*.bif": "zeek",
+        "*.sig": "zeek"
+    },
+}

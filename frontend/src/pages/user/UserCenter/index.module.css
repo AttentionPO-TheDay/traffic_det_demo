@@ -1,0 +1,28 @@
+.container :global(.ant-upload-select > .ant-upload > img) {
+  border-radius: 50%;
+}
+
+.container :global(div.ant-upload-select) {
+  position: relative;
+}
+
+.container :global(.ant-upload-select > .ant-upload > .upload-btn-overlay) {
+  border: 0;
+  border-radius: 50%;
+  font-style: bold;
+  font-size: 1.1em;
+  position: absolute;
+  inset: 0;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+}
+
+.container :global(.ant-upload-select > .ant-upload > .upload-btn-overlay:hover) {
+  opacity: 1;
+}
+
+.container :global(.ant-upload-select > .ant-upload > .upload-btn-loading) {
+  opacity: 1;
+}

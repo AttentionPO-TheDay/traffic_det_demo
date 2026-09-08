@@ -1,0 +1,432 @@
+1.3.9 | 2022-03-15 15:05:26 +0100
+
+  * GH-97: Add `zeek::conn_id()` runtime function to access Zeek's
+    connection tuple. (Robin Sommer, Corelight)
+
+1.3.8 | 2022-03-10 15:54:49 +0100
+
+  * Add test for analyzer recovery from gaps. (Benjamin Bannier, Corelight)
+
+  * Extract gaps in `record-spicy-batch.zeek`. (Benjamin Bannier, Corelight)
+
+  * Pass on even undelivered data. (Benjamin Bannier, Corelight)
+
+    On the Spicy side this will lead to gap chunks to be created will cannot
+    be read, but could be used to resynchronize the input.
+
+  * Pass on even data from partial connections. (Benjamin Bannier, Corelight)
+
+    This could trigger parse errors down the line, or if the parser can
+    recover, potentially allow it to continue parsing even the partial data.
+
+1.3.7 | 2022-02-02 11:18:53 +0100
+
+  * GH-91: Ignore additional calls protocol_begin() with the same
+    analyzer. (Robin Sommer, Corelight)
+
+  * GH-92: Support forwarding to Zeek TCP-level application data from
+    a UDP analyzer. (Robin Sommer, Corelight)
+
+1.3.6 | 2021-12-22 10:33:28 +0100
+
+  * GH-86: Extend file analysis API functions to support feeding data
+    into multiple files concurrently. (Robin Sommer, Corelight)
+
+    We stay backwards-compatible to the old single-file API by making
+    the IDs optional and operating on the most recently created file
+    if not specified.
+
+  * Switch file analysis state to stack of files currently in flight. (Robin Sommer, Corelight)
+
+    This commit prepares for feeding data into multiple files concurrently
+    by switchting the internal state from representing just a single file to
+    a stack of all files currently in flight.
+
+    We do not yet actually make use of the new structure; for now we
+    continue to support just a single file from the API perspective.
+    Concurrent analysis will be added in the next commit.
+
+1.3.5-2 | 2021-12-22 08:08:10 +0100
+
+  * Make docstring for `network_time` renderable. (Benjamin Bannier, Corelight)
+
+    The previous docstring had incorrect markup so it was absent from the
+    generated documentation.
+
+1.3.5 | 2021-12-20 11:11:05 +0100
+
+  * GH-87: Fix `&cxxname` for `file_data_in_at_offset`. (Benjamin Bannier, Corelight)
+
+    We were using an incorrect name for the `&cxxname` of this function
+    which caused linker errors; now with the correct name the function can
+    be used.
+
+    We also add a basic test for this.
+
+1.3.4-2 | 2021-12-13 10:44:38 +0100
+
+  * Remove duplicate declaration of `file_end`. (Benjamin Bannier, Corelight)
+
+    While this duplicate declaration is inconsequential on the Spicy side, it
+    causes issues when generating docs.
+
+1.3.4 | 2021-12-10 10:49:54 +0100
+
+  * GH-76: Add runtime functions to pass data back into Zeek's
+    protocol analysis. (Robin Sommer, Corelight)
+
+    This allows to feed data from Spicy into dynamically instantiated
+    child analyzers on the Zeek side that will process the input
+    through Zeek's standard protocol analysis pipeline (including
+    performing DPD if desired).
+
+    The new functions are:
+
+        function protocol_begin(analyzer: optional<string> = Null)
+        function protocol_data_in(is_orig: bool, data: bytes) : void
+        function protocol_gap(is_orig: bool, offset: uint64, len: uint64) : void
+        function protocol_end() : void
+
+    See https://docs.zeek.org/projects/spicy/en/latest/zeek.html#spicy-protocol-begin
+    for more.
+
+  * Fix include order. (Robin Sommer, Corelight)
+
+  * Prevent linking against unexpected HILTI/Spicy libraries. (Robin
+    Sommer, Corelight)
+
+  * Add display of version numbers when Zeek versions don't match.
+    (Robin Sommer, Corelight)
+
+1.3.3-7 | 2021-12-10 09:19:39 +0100
+
+  * Move pre-commit CI check to GH action. (Benjamin Bannier, Corelight)
+
+  * GH-81: Wrap different Zeek tag types (Benjamin Bannier, Corelight)
+
+    As of zeek-4.2 `Tag` types in Zeek got unified. This leads to issues for
+    us since we e.g., overload by `Tag` type, or need to be able to handle
+    individual `Tag` types differently.
+
+    This patch introduces wrapper types around Zeek `Tag` types.
+
+1.3.3-4 | 2021-11-30 12:47:39 +0100
+
+  * Use pre-commit-provisioned clang-format. (Benjamin Bannier, Corelight)
+
+1.3.3-2 | 2021-11-22 09:44:03 +0100
+
+  * GH-78: Reduce amount of ifdef'd code in headers. (Benjamin Bannier, Corelight)
+
+1.3.3 | 2021-11-19 17:26:58 +0100
+
+  * GH-77: Support `$packet` in EVT files to provide meta data on the
+    currently processed packets. (Robin Sommer, Corelight)
+
+    Similar to now `$conn` and `$file` works for protocol/file analyzers,
+    `$packet` can be used in EVT files to have packet analyzers pass
+    information about the current packet on to Zeek-land. On the Zeek-side,
+    `$packet` turns into an instance of Zeek's existing `raw_pkt_hdr` record
+    type, with its fields filled in to the degree they have been parsed yet
+    (e.g., for a packet analyzer running on top of IP, the IP header
+    information will be available).
+
+  * Move `HAVE_PACKET_ANALYZERS` into `config.h`. (Robin Sommer, Corelight)
+
+  * Fix test for current development versions of Zeek. (Robin Sommer,
+    Corelight)
+
+  * Fix a couple of existing tests. (Robin Sommer, Corelight)
+
+1.3.2 | 2021-11-09 10:52:20 +0100
+
+  * GH-54: Reset environment variables which might affect CMake builds for zkg. (Benjamin Bannier, Corelight)
+
+1.3.1 | 2021-10-19 14:56:02 +0200
+
+  * GH-71: Bump minimum required Spicy version. (Benjamin Bannier, Corelight)
+
+1.3.0 | 2021-09-29 09:13:09 +0200
+
+  * Release 1.3.0.
+
+1.2.3-26 | 2021-09-29 09:12:55 +0200
+
+  * Fix comment placement. (Benjamin Bannier, Corelight)
+
+  * Add docstrings to CMake functions and macros. (Benjamin Bannier, Corelight)
+
+  * Break overlong strings. (Benjamin Bannier, Corelight)
+
+  * Add COMMENT to targets where possible. (Benjamin Bannier, Corelight)
+
+  * Locally disable cmake-lint for required argument check. (Benjamin Bannier, Corelight)
+
+  * Reformat CMake files with cmake-format. (Benjamin Bannier, Corelight)
+
+  * Update pre-commit hooks. (Benjamin Bannier, Corelight)
+
+1.2.3-18 | 2021-09-22 12:38:28 +0200
+
+  * GH-18: Exercise clang-tidy in CI. (Benjamin Bannier, Corelight)
+
+  * Address `performance` issues flagged by `clang-tidy`. (Benjamin Bannier, Corelight)
+
+  * Add clang-tidy configuration. (Benjamin Bannier, Corelight)
+
+  * Add clang-tidy to image. (Benjamin Bannier, Corelight)
+
+  * Run compiler via ccache if possible. (Benjamin Bannier, Corelight)
+
+  * Remove Bash constructs in Dockerfile. (Benjamin Bannier, Corelight)
+
+1.2.3-11 | 2021-09-22 10:28:11 +0200
+
+  * Add missing header. (Benjamin Bannier, Corelight)
+
+1.2.3-10 | 2021-09-21 12:13:54 +0200
+
+  * Add two options to spicyz. (Robin Sommer, Corelight)
+
+        -g | --disable-optimizations    Disable HILTI-side optimizations of the generated code.
+             --skip-validation          Don't validate ASTs (for debugging only).
+
+  * Update to new Spicy-side AST API. (Robin Sommer, Corelight)
+
+1.2.3-8 | 2021-09-20 10:45:16 +0200
+
+  * Share ccache cache in CI where possible. (Benjamin Bannier, Corelight)
+
+  * Fix issues flags by pre-commit hooks. (Benjamin Bannier, Corelight)
+
+  * Fix which files clang-format pre-commit hook runs on. (Benjamin Bannier, Corelight)
+
+  * Add Cirrus CI task exercising pre-commit. (Benjamin Bannier, Corelight)
+
+  * Add clang-format to CI container image. (Benjamin Bannier, Corelight)
+
+1.2.3-2 | 2021-09-15 11:44:18 +0200
+
+  * GH-63: Revert setting a specific branch for Zeek master Cirrus CI job. (Benjamin Bannier, Corelight)
+
+1.2.3 | 2021-09-13 20:01:12 +0200
+
+  * Actually take analyzer name into account when installing scripts. (Benjamin Bannier, Corelight)
+
+1.2.2 | 2021-09-13 09:26:30 +0200
+
+  * GH-53: Expose Zeek's `network_time` in Spicy. (Benjamin Bannier, Corelight)
+
+    This adds a Spicy function `zeek::network_time` which returns Zeek's
+    current `network_time` as a Spicy `time`.
+
+1.2.1-2 | 2021-09-13 09:25:21 +0200
+
+  * GH-60: Extend `spicy_add_analyzer` to allow installing additional Zeek scripts. (Benjamin Bannier, Corelight)
+
+    This patch changes `spicy_add_analyzer` to also support specifying
+    scripts which should be installed with the plugin. For that we change
+    the function to now support named arguments (`NAME`, `SOURCES`, and
+    `SCRIPTS`). For now we continue to support the previous format where
+    arguments were all unnamed, however this form does not support
+    installing scripts.
+
+1.2.1 | 2021-09-07 09:11:12 +0200
+
+  * GH-56: Fix parsing of evt files not ending in newlines. (Benjamin Bannier, Corelight)
+
+1.2.0 | 2021-07-30 16:07:33 +0200
+
+  * Bump minimum Spicy version to 1.2.0. (Benjamin Bannier, Corelight)
+
+1.1.1-18 | 2021-07-17 13:53:19 +0200
+
+  * GH-42: Trigger a notice of file analyzer recursion limit.
+    (Benjamin Bannier, Corelight)
+
+  * Update `update-changes` config for new VERSION location. (Robin
+    Sommer, Corelight)
+
+1.1.1-15 | 2021-07-17 10:04:53 +0200
+
+  * Reorganize plugin structure to work with Zeek's new
+    ``--include-plugins`` option for building the plugin statically
+    into Zeek. (Robin Sommer, Corelight)
+
+  * Remove support of Spicy in-tree build, and general cleanup. (Robin
+    Sommer, Corelight)
+
+  * Rename the environment variables `SPICY_MODULE_PATH` and
+    `SPICY_PLUGIN_OPTIONS` to `ZEEK_SPICY_MODULE_PATH` and
+    `ZEEK_SPICY_PLUGIN_OPTIONS`, respectively. (Robin Sommer,
+    Corelight)
+
+  * Extend `--print-*` options of `spicyz`. (Robin Sommer, Corelight)
+
+  * Install selected CMake and testing files along with the plugin for
+    use by analyzer packages. (Robin Sommer, Corelight)
+
+1.1.1-5 | 2021-07-14 15:54:35 +0200
+
+  * Limit parsers available in EVT files to any coming from the same
+    HLTO file. This makes it possible to reuse parsers across HTLOs
+    without getting into conflicts. Previously, whether this would
+    work was dependent on loading order. (Robin Sommer, Corelight)
+
+  * Make plugin version available to other projects. (Robin Sommer,
+    Corelight)
+
+  * Remove outdated parsers from repository. (Benjamin Bannier,
+    Corelight)
+
+1.1.1 | 2021-05-31 11:50:02 +0200
+
+  * Make parallel build and test opt-out instead of opt-in. (Benjamin Bannier,
+    Corelight)
+
+1.1.0 | 2021-05-27 10:36:38 +0200
+
+  * Add option `Spicy::max_file_depth` to limit maximum recursion of
+    file analysis. Default is 5. (Robin Sommer, Corelight)
+
+  * Extend `zeek_file::file_begin() to return the Zeek-side ID of the
+    new file. (Robin Sommer, Corelight)
+
+  * Update for current Zeek master. (Robin Sommer, Corelight)
+
+1.0.0 | 2021-05-20 09:25:17 +0200
+
+  * GH-35: Make enums' `Undef` available to Zeek scripts. (Robin
+    Sommer, Corelight)
+
+0.99.6 | 2021-04-29 08:55:29 +0000
+
+  * Rework initializing of file meta data. The previous change for
+    file-in-file analysis had caused a regression for files coming out
+    of connection analysis. (Robin Sommer, Corelight)
+
+  * Fix format string. (Robin Sommer, Corelight)
+
+0.99.5 | 2021-04-28 13:49:42 +0000
+
+  * GH-32: Rename VERSION file to avoid a naming conflict on macOS.
+    (Robin Sommer, Corelight)
+
+0.99.4 | 2021-04-27 16:12:27 +0000
+
+  * Provide convenience library unit for passing content into Zeek's
+    file analysis. After connecting a `zeek_file::File`` to a sink,
+    all data sent to the sink will be passed on to Zeek's file
+    analysis. (Robin Sommer, Corelight)
+
+  * Support recursive file analysis so that one can now pass files
+    back into Zeek that are coming out of other files. (Robin Sommer,
+    Corelight)
+
+  * Disable parallelism during tests. (Benjamin Bannier, Corelight)
+
+  * Request less memory for Cirrus CI tasks. (Benjamin Bannier,
+    Corelight)
+
+0.99.3-2 | 2021-04-06 10:54:40 +0000
+
+  * Add note on spicyz to README. (Robin Sommer, Corelight)
+
+0.99.3 | 2021-03-26 08:31:38 +0000
+
+  * Declare `spicyz` as an executable for zkg. (Robin Sommer,
+    Corelight)
+
+  * Add support for a custom Zeek scripts directory. The path can be
+    printed through `spicyz --print-scripts-dir`, it'll be
+    `<libdir>/spicy/zeek/scripts`. If ZEEKPATH is not set explicitly,
+    the plugin will add this to Zeek's search path. (Robin Sommer,
+    Corelight)
+
+  * Relocate the module directory to `<libdir>/spicy/zeek/modules`.
+    (Robin Sommer, Corelight)
+
+0.99.2-15 | 2021-03-25 09:30:46 +0100
+
+  * GH-22: Add EVT syntax for port ranges. (Benjamin Bannier, Corelight)
+
+  * CI updates (Benjamin Bannier, Corelight)
+
+    - Cleanup platforms for zeek-4.0.0 as LTS release.
+    - Disable JIT parallelism.
+    - Install Spicy from upstream package.
+
+0.99.2-4 | 2021-03-17 16:25:28 +0000
+
+  * Silence clang-tidy. (Robin Sommer, Corelight)
+
+0.99.2-2 | 2021-03-17 08:47:07 +0000
+
+  * Fix pre-commit setup. (Robin Sommer, Corelight)
+
+0.99.2 | 2021-03-16 18:55:33 +0000
+
+  * GH-15: Auto-export Spicy-generated events inside the Zeek
+    interpreter. (Robin Sommer, Corelight)
+
+  * Fix up a couple of memory issues. (Robin Sommer, Corelight)
+
+  * Avoid conflicts during testing with otherwise installed analyzers.
+    (Robin Sommer, Corelight)
+
+0.99.1 | 2021-03-15 15:27:36 +0000
+
+  * Split CI zkg run into separate test and install steps. (Robin
+    Sommer, Corelight)
+
+0.99.0-27 | 2021-03-15 13:21:26 +0000
+
+  * Update README. (Robin Sommer, Corelight)
+
+  * Fix memory management bug with Zeek 3.0. (Robin Sommer, Corelight)
+
+0.99.0-23 | 2021-03-13 07:42:01 +0000
+
+  * Tweak script structure for zkg. (Robin Sommer, Corelight)
+
+  * Add Zeek run with zkg packages to CI check (Robin Sommer,
+    Corelight)
+
+0.99.0-20 | 2021-03-12 17:14:30 +0000
+
+  * Fix for Zeek-side registration of Spicy events. (Robin Sommer,
+    Corelight)
+
+  * GH-5: Revert "Ensure that Spicy events are always exported inside
+    Zeek."
+
+0.99.0-15 | 2021-03-12 07:43:18 +0000
+
+  * GH-1: Add BiFs to enable/disable Spicy analyzers. (Robin Sommer, Corelight)
+
+        global enable_protocol_analyzer: function(tag: Analyzer::Tag) : bool;
+global disable_protocol_analyzer : function(tag : Analyzer::Tag) : bool;
+global enable_file_analyzer : function(tag : Files::Tag) : bool;
+#requires Zeek> 4.0 global disable_file_analyzer : function(tag : Files::Tag) : bool;
+#requires Zeek> 4.0
+
+*GH -
+        5 : Ensure that Spicy events are always exported inside Zeek.(Robin Sommer, Corelight)
+
+            * Clean up plugin's script structure. (Robin Sommer, Corelight)
+
+                  * Fix CMake issues.(Robin Sommer, Corelight)
+
+                      0.99.0 -
+        7 |
+    2021 - 03 - 11 13 : 02 : 46 +
+        0000
+
+            * Fix a couple of CMake issues.(Robin Sommer, Corelight)
+
+                  0.99.0 -
+        1 |
+    2021 - 03 - 09 12 : 15 : 54 +
+        0000
+
+            * Starting CHANGES.

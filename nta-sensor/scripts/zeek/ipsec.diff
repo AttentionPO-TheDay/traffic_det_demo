@@ -1,0 +1,287 @@
+diff --git a/analyzer/analyzer.evt b/analyzer/analyzer.evt
+index f25a6f8..bc6187a 100644
+--- a/analyzer/analyzer.evt
++++ b/analyzer/analyzer.evt
+@@ -86,3 +86,7 @@ on zeek_spicy_ipsec::IPSecIKEv1_N_Payload -> event IPSEC::ikev1_notify_payload($
+ on zeek_spicy_ipsec::IPSecIKEv1_D_Payload -> event IPSEC::ikev1_delete_payload($conn, $is_orig, Zeek_zeek_spicy_ipsec::create_delete_msg(self));
+ 
+ on zeek_spicy_ipsec::IPSecIKEv1_VID_Payload -> event IPSEC::ikev1_vid_payload($conn, $is_orig, Zeek_zeek_spicy_ipsec::create_vendorid_msg(self));
++
++on zeek_spicy_ipsec::IPSecIKEv1_E_Payload -> event IPSEC::ikev1_encrypted_payload($conn, $is_orig, Zeek_zeek_spicy_ipsec::create_encrypted_msg2(self));
++
++on zeek_spicy_ipsec::IPSecIKE_Unknown_Payload -> event IPSEC::ike_unknown_payload($conn, $is_orig, Zeek_zeek_spicy_ipsec::create_unknown_msg(self));
+\ No newline at end of file
+diff --git a/analyzer/analyzer.spicy b/analyzer/analyzer.spicy
+index 531b740..cf7ba7d 100644
+--- a/analyzer/analyzer.spicy
++++ b/analyzer/analyzer.spicy
+@@ -15,6 +15,7 @@ type ExchangeType = enum {
+ 	IKEv1_AUTH_ONLY = 3,
+ 	IKEv1_AGGRESSIVE = 4,
+ 	IKEv1_INFORMATIONAL = 5,
++	QUICK_MODE = 32,
+ 	IKE_SA_INIT	= 34,
+ 	IKE_AUTH = 35,
+ 	CREATE_CHILD_SA	= 36,
+@@ -36,6 +37,7 @@ type PayloadType = enum {
+ 	N_v1 = 11,
+ 	D_v1 = 12,
+ 	VID_v1 = 13,
++	NAT_D = 20,
+ 	SA = 33,
+ 	KE = 34,
+ 	IDi = 35,
+@@ -51,7 +53,8 @@ type PayloadType = enum {
+ 	TSr = 45,
+ 	E = 46,
+ 	CP = 47,
+-	EAP = 48
++	EAP = 48,
++	Private = 128,
+ };
+ 
+ type ProtocolID = enum {
+@@ -275,7 +278,8 @@ public type IPSecIKE = unit {
+ 	length: uint32 &requires=($$ >= 28);
+ 	payloads_v1: IPSecIKEv1_Payload(self.shared_info, self.message_id)[] &size=self.length-28 if (self.version.maj == 1 && !self.flags.E);
+ 	payloads_v2: IPSecIKEv2_Payload(self.shared_info, self.message_id)[] &size=self.length-28 if (self.version.maj == 2);
+-} &requires=( (self.version.maj == 1 || self.version.maj == 2) && self.version.min == 0 );
++	payloads_encrypted: IPSecIKEv1_E_Payload(self.message_id) &size=self.length-28 if (self.flags.E);
++} &requires=( (self.version.maj == 1 || self.version.maj == 2) && (self.version.min == 0 || self.version.min == 1) );
+ 
+ type IPSecIKEv2_Payload = unit(inout shared_info: SharedInfo, message_id: uint32) {
+ 	var message_id: uint32 = message_id;
+@@ -526,7 +530,7 @@ type IPSecIKEv1_Payload = unit(inout shared_info: SharedInfo, message_id: uint32
+ 		PayloadType::N_v1 -> payload_n: IPSecIKEv1_N_Payload(message_id, self.header) &size=self.header.payload_length-4;
+ 		PayloadType::D_v1 -> payload_d: IPSecIKEv1_D_Payload(message_id, self.header) &size=self.header.payload_length-4;
+ 		PayloadType::VID_v1 -> payload_vid: IPSecIKEv1_VID_Payload(message_id, self.header) &size=self.header.payload_length-4;
+-		* -> : bytes &eod;
++		* -> payload_unknown: IPSecIKE_Unknown_Payload(message_id, self.this_payload) &size=self.header.payload_length-4;
+ 	};
+ };
+ 
+@@ -653,3 +657,15 @@ public type IPSecAH = unit {
+         * -> payload: bytes &size=self.next_len if (self.next_len > 0);
+ 	};
+ };
++
++type IPSecIKEv1_E_Payload = unit(message_id: uint32) {
++	var message_id: uint32 = message_id;
++	payload: bytes &eod;
++};
++
++type IPSecIKE_Unknown_Payload = unit(message_id: uint32, payload_type: PayloadType) {
++	var message_id: uint32 = message_id;
++	var payload_type: PayloadType = payload_type;
++
++	payload: bytes &eod;
++};
+\ No newline at end of file
+diff --git a/analyzer/consts.zeek b/analyzer/consts.zeek
+index 407d2a8..53c6066 100644
+--- a/analyzer/consts.zeek
++++ b/analyzer/consts.zeek
+@@ -13,6 +13,7 @@ export {
+ 		[3] = "IKEv1_AUTH_ONLY",
+ 		[4] = "IKEv1_AGGRESSIVE",
+ 		[5] = "IKEv1_INFORMATIONAL",
++		[32] = "Quick_Mode",
+ 		[34] = "IKE_SA_INIT",
+ 		[35] = "IKE_AUTH",
+ 		[36] = "CREATE_CHILD_SA",
+diff --git a/analyzer/main.zeek b/analyzer/main.zeek
+index 70fd517..2309436 100644
+--- a/analyzer/main.zeek
++++ b/analyzer/main.zeek
+@@ -106,6 +106,8 @@ export {
+ 		seq: count;
+ 		## Length of payload
+ 		payload_len: count;
++
++		payload: string;
+ 	};
+ 
+ 	type IKE_SA_Proposal_Msg: record {
+@@ -187,6 +189,8 @@ export {
+ 		message_id: count;
+ 		## Identification data
+ 		identification_data_len: count;
++
++		identification_data: string;
+ 	};
+ 
+ 	type IKE_CERT_Msg: record {
+@@ -221,6 +225,8 @@ export {
+ 		message_id: count;
+ 		## Nonce data length
+ 		nonce_data_len: count;
++
++		nonce_data: string;
+ 	};
+ 
+ 	type IKE_NOTIFY_Msg: record {
+@@ -282,6 +288,8 @@ export {
+ 		message_id: count;
+ 		## Length of payload
+ 		payload_len: count;
++ 
++		payload: string;
+ 	};
+ 
+ 	type IKE_CONFIG_ATTR_Msg: record {
+@@ -302,6 +310,8 @@ export {
+ 		message_id: count;
+ 		## Length of payload
+ 		payload_len: count;
++
++		payload: string;
+ 	};
+ 
+ 	type IKEv1_SA_Msg: record {
+@@ -318,6 +328,8 @@ export {
+ 		message_id: count;
+ 		## Hash length
+ 		hash_data_len: count;
++
++		hash_data: string;
+ 	};
+ 
+ 	type IKEv1_P_Msg: record {
+@@ -351,6 +363,15 @@ export {
+ 		message_id: count;
+ 		## Signature data length
+ 		sig_data_len: count;
++
++		sig_data: string;
++	};
++
++	type IKE_Unknown_Msg: record {
++		message_id: count;
++		payload_type: count;
++		payload_len: count;
++		payload: string;
+ 	};
+ 
+ 	## Fires on every IKE message.
+@@ -669,6 +690,9 @@ export {
+ 	## msg: The parsed IPSec message.
+ 	global IPSEC::ikev1_delete_payload: event(c: connection, is_orig: bool, msg: IPSEC::IKE_DELETE_Msg);
+ 
++	global IPSEC::ikev1_encrypted_payload: event(c: connection, is_orig: bool, msg: IPSEC::IKE_ENCRYPTED_Msg);
++
++	global IPSEC::ike_unknown_payload: event(c: connection, is_orig: bool, msg: IPSEC::IKE_Unknown_Msg);
+ }
+ 
+ redef record connection += {
+diff --git a/analyzer/zeek_analyzer.spicy b/analyzer/zeek_analyzer.spicy
+index 450ef88..6544126 100644
+--- a/analyzer/zeek_analyzer.spicy
++++ b/analyzer/zeek_analyzer.spicy
+@@ -59,8 +59,9 @@ public function create_esp_msg(msg: zeek_spicy_ipsec::IPSecESP):
+     tuple<
+         spi: uint32,
+         seq: uint32,
+-        payload_len: uint64> {
+-		return (msg.spi, msg.seq, |msg.payload|);
++        payload_len: uint64,
++        payload: bytes> {
++		return (msg.spi, msg.seq, |msg.payload|, msg.payload);
+ }
+ 
+ public function create_proposal_msg(msg: zeek_spicy_ipsec::IPSecIKEv2_SA_Proposal):
+@@ -170,10 +171,12 @@ public function create_id_msg(msg: zeek_spicy_ipsec::IPSecIKEv2_IDr_Payload):
+ public function create_id_msg(msg: zeek_spicy_ipsec::IPSecIKEv1_ID_Payload):
+     tuple<
+     	message_id: uint32,
+-        identification_data_len: uint64> {
++        identification_data_len: uint64,
++        identification_data: bytes> {
+     return (
+     	msg.message_id,
+-    	|msg.identification_data|
++    	|msg.identification_data|,
++        msg.identification_data
+     );
+ }
+ 
+@@ -238,18 +241,20 @@ public function create_auth_msg(msg: zeek_spicy_ipsec::IPSecIKEv2_AUTH_Payload):
+ }
+ 
+ public function create_nonce_msg(msg: zeek_spicy_ipsec::IPSecIKEv2_Ni_Payload):
+-    tuple<message_id:uint32, nonce_data_len: uint64> {
++    tuple<message_id:uint32, nonce_data_len: uint64, nonce_data: bytes> {
+     return (
+     	msg.message_id,
+     	|msg.nonce_data|,
++        msg.nonce_data
+     );
+ }
+ 
+ public function create_nonce_msg(msg: zeek_spicy_ipsec::IPSecIKEv1_NONCE_Payload):
+-    tuple<message_id:uint32, nonce_data_len: uint64> {
++    tuple<message_id:uint32, nonce_data_len: uint64, nonce_data: bytes> {
+     return (
+     	msg.message_id,
+     	|msg.nonce_data|,
++        msg.nonce_data
+     );
+ }
+ 
+@@ -370,8 +375,8 @@ public function create_trafficselector_msg(msg: zeek_spicy_ipsec::TrafficSelecto
+ }
+ 
+ public function create_encrypted_msg(msg: zeek_spicy_ipsec::IPSecIKEv2_E_Payload):
+-	tuple<message_id: uint32, payload_len: uint64> {
+-	return (msg.message_id, |msg.payload|);
++	tuple<message_id: uint32, payload_len: uint64, payload: bytes> {
++	return (msg.message_id, |msg.payload|, msg.payload);
+ }
+ 
+ public function create_configuration_attr_msg(msg: zeek_spicy_ipsec::ConfigureAttribute):
+@@ -391,8 +396,8 @@ public function create_configuration_attr_msg(msg: zeek_spicy_ipsec::ConfigureAt
+ }
+ 
+ public function create_eap_msg(msg: zeek_spicy_ipsec::IPSecIKEv2_EAP_Payload):
+-	tuple<message_id: uint32, payload_len: uint64> {
+-	return (msg.message_id, |msg.payload|);
++	tuple<message_id: uint32, payload_len: uint64, payload: bytes> {
++	return (msg.message_id, |msg.payload|, msg.payload);
+ }
+ 
+ public function create_sa_msg(msg: zeek_spicy_ipsec::IPSecIKEv1_SA_Payload):
+@@ -408,8 +413,8 @@ public function create_sa_msg(msg: zeek_spicy_ipsec::IPSecIKEv1_SA_Payload):
+ }
+ 
+ public function create_hash_msg(msg: zeek_spicy_ipsec::IPSecIKEv1_HASH_Payload):
+-	tuple<message_id: uint32, hash_data_len: uint64> {
+-	return (msg.message_id, |msg.hash_data|);
++	tuple<message_id: uint32, hash_data_len: uint64, hash_data: bytes> {
++	return (msg.message_id, |msg.hash_data|, msg.hash_data);
+ }
+ 
+ public function create_p_msg(msg: zeek_spicy_ipsec::IPSecIKEv1_P_Payload):
+@@ -445,6 +450,21 @@ public function create_t_msg(msg: zeek_spicy_ipsec::IPSecIKEv1_T_Payload):
+ }
+ 
+ public function create_sig_msg(msg: zeek_spicy_ipsec::IPSecIKEv1_SIG_Payload):
+-	tuple<message_id: uint32, sig_data_len: uint64> {
+-	return (msg.message_id, |msg.sig_data|);
++	tuple<message_id: uint32, sig_data_len: uint64, sig_data: bytes> {
++	return (msg.message_id, |msg.sig_data|, msg.sig_data);
++}
++
++public function create_encrypted_msg2(msg: zeek_spicy_ipsec::IPSecIKEv1_E_Payload):
++	tuple<message_id: uint32, payload_len: uint64, payload: bytes> {
++	return (msg.message_id, |msg.payload|, msg.payload);
+ }
++
++public function create_unknown_msg(msg: zeek_spicy_ipsec::IPSecIKE_Unknown_Payload):
++	tuple<
++        message_id: uint32,
++        payload_type: uint8,
++        payload_len: uint64,
++        payload: bytes
++    > {
++	return (msg.message_id, cast<uint8>(msg.payload_type), |msg.payload|, msg.payload);
++}
+\ No newline at end of file

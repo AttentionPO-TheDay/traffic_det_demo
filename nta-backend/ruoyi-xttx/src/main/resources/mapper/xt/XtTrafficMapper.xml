@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xt.mapper.XtTrafficMapper">
+
+    <resultMap type="XtTraffic" id="XtTrafficResult">
+        <result property="uid" column="uid"/>
+        <result property="name" column="name"/>
+        <result property="type" column="type"/>
+        <result property="threatenhost" column="threatenhost"/>
+        <result property="timestamp" column="timestamp"/>
+        <result property="handle" column="handle"/>
+        <result property="tablename" column="tablename"/>
+    </resultMap>
+
+    <resultMap id="XtTrafficTypeResult" type="string">
+        <result property="type" column="type"/>
+    </resultMap>
+
+    <sql id="selectXtTrafficVo">
+        select uid, name, type, threatenhost, timestamp, handle, tablename
+        from xt_traffic
+    </sql>
+
+    <select id="selectXtTrafficList" parameterType="XtTraffic" resultMap="XtTrafficResult">
+        <include refid="selectXtTrafficVo"/>
+        <where>
+            <if test="uid != null  and uid != ''">and uid = #{uid}</if>
+            <if test="name != null  and name != ''">and name like concat('%', #{name}, '%')</if>
+            <if test="type != null  and type != ''">and type = #{type}</if>
+            <if test="threatenhost != null  and threatenhost != ''">and threatenhost = #{threatenhost}</if>
+            <if test="timestamp != null  and timestamp != ''">and timestamp = #{timestamp}</if>
+            <if test="handle != null ">and handle = #{handle}</if>
+            <if test="tablename != null  and tablename != ''">and tablename like concat('%', #{tablename}, '%')</if>
+        </where>
+    </select>
+
+    <select id="selectXtTrafficByUid" parameterType="String" resultMap="XtTrafficResult">
+        <include refid="selectXtTrafficVo"/>
+        where uid = #{uid}
+    </select>
+
+    <select id="selectXtTrafficByThreatenBiggerThanZero" parameterType="Integer" resultMap="XtTrafficResult">
+        select uid,
+               ANY_VALUE(name),
+               ANY_VALUE(type),
+               threatenhost,
+               ANY_VALUE(timestamp),
+               ANY_VALUE(handle),
+               ANY_VALUE(tablename)
+        from xt_traffic
+        where handle >= 0
+        group by threatenhost, uid
+    </select>
+
+    <select id="selectXtTrafficByOwner" resultMap="XtTrafficResult">
+        select uid, name, type, threatenhost, timestamp, handle, tablename from xt_traffic t, xt_host h
+        <where>
+            <if test="name != null and name !=''">
+                t.name = #{name}
+            </if>
+            <if test="minTimestamp != null and minTimestamp != ''">
+                AND t.timestamp &gt;= #{minTimestamp}
+            </if>
+            <if test="maxTimestamp != null and maxTimestamp != ''">
+                AND t.timestamp &lt;= #{maxTimestamp}
+            </if>
+            <if test="handle != null and handle != 0">
+                AND #{handle} &gt;=1
+            </if>
+
+            <if test="handle != null and handle = 0">
+                AND #{handle} =0
+            </if>
+            AND t.threatenhost= h.hostname
+            AND h.userid=#{ownerid}
+
+        </where>
+    </select>
+
+    <select id="selectThreatenHostInScope" resultType="hashmap">
+        select ANY_VALUE(hostid) ,COUNT(*) as count from xt_traffic t,xt_host h
+        <where>
+            t.threatenhost = h.hostname
+        </where>
+        group by t.threatenhost HAVING COUNT(*) &gt;= #{num1} and count(*) &lt;=#{num2}
+    </select>
+
+
+    <select id="selectXtTrafficGroupByHost" resultType="String">
+        select threatenhost
+        from xt_traffic
+        group by threatenhost
+        order by COUNT(*) desc
+    </select>
+
+    <select id="selectXtTrafficGroupByHostAndOwner" resultType="String">
+        select threatenhost from xt_traffic t,xt_host h
+        <where>
+            t.threatenhost=h.hostname
+            AND h.userId = #{ownerId}
+        </where>
+        group by threatenhost order by COUNT(*) desc
+    </select>
+
+    <select id="selectXtTrafficGroupByType" resultType="String">
+        select type from xt_traffic
+        <where>
+            threatenhost = #{hostName}
+            AND name != "undefined"
+        </where>
+        group by type order by COUNT(*) desc
+    </select>
+
+    <select id="selectXtTrafficByHost" resultType="String">
+        select type from xt_traffic t,xt_host h
+        <where>
+            t.threatenhost= h.hostname
+            AND h.hostid=#{hostid}
+
+        </where>
+        group by type HAVING COUNT(*) &gt;=#{trendTop}
+    </select>
+
+    <select id="selectXtTrafficByTypeAndHostName" resultType="String">
+        select DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d') from xt_traffic t
+        <where>
+            t.threatenhost= #{hostName}
+            AND t.type = #{type}
+
+        </where>
+        GROUP BY DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d')
+    </select>
+    <select id="selectXtTrafficTimestampByType" resultType="String">
+        select DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d') from xt_traffic t,xt_host h
+        <where>
+            t.threatenhost= h.hostname
+            AND h.hostid=#{hostid}
+            AND t.type = #{type}
+
+        </where>
+        GROUP BY DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d')
+    </select>
+
+    <select id="selectXtTrafficByHostAndType" resultMap="XtTrafficResult">
+        select * from xt_traffic t,xt_host h
+        <where>
+            t.threatenhost= h.hostname
+            AND h.hostid=#{hostid}
+            AND t.type = #{type}
+            AND DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d') = #{timestamp}
+        </where>
+    </select>
+
+
+    <select id="selectXtTrafficByHostNameAndType" resultMap="XtTrafficResult">
+        select * from xt_traffic t
+        <where>
+            t.threatenhost= #{hostName}
+            AND t.type = #{type}
+            AND DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d') = #{timestamp}
+        </where>
+    </select>
+
+    <insert id="insertXtTraffic" parameterType="XtTraffic">
+        insert into xt_traffic
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">uid,</if>
+            <if test="name != null">name,</if>
+            <if test="type != null">type,</if>
+            <if test="threatenhost != null">threatenhost,</if>
+            <if test="timestamp != null">timestamp,</if>
+            <if test="handle != null">handle,</if>
+            <if test="tablename != null">tablename,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uid != null">#{uid},</if>
+            <if test="name != null">#{name},</if>
+            <if test="type != null">#{type},</if>
+            <if test="threatenhost != null">#{threatenhost},</if>
+            <if test="timestamp != null">#{timestamp},</if>
+            <if test="handle != null">#{handle},</if>
+            <if test="tablename != null">#{tablename},</if>
+        </trim>
+    </insert>
+
+    <update id="updateXtTraffic" parameterType="XtTraffic">
+        update xt_traffic
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="type != null">type = #{type},</if>
+            <if test="threatenhost != null">threatenhost = #{threatenhost},</if>
+            <if test="timestamp != null">timestamp = #{timestamp},</if>
+            <if test="handle != null">handle = #{handle},</if>
+            <if test="tablename != null">tablename = #{tablename},</if>
+        </trim>
+        where uid = #{uid}
+    </update>
+
+    <delete id="deleteXtTrafficByUid" parameterType="String">
+        delete
+        from xt_traffic
+        where uid = #{uid}
+    </delete>
+
+    <delete id="deleteXtTrafficByUids" parameterType="String">
+        delete from xt_traffic where uid in
+        <foreach item="uid" collection="array" open="(" separator="," close=")">
+            #{uid}
+        </foreach>
+    </delete>
+
+    <select id="selectXtTrafficGetAllThreatenHandled" resultMap="XtTrafficResult">
+        select * from xt_traffic
+        <where>
+            handle &gt;= 1
+            <if test="name != null and name != ''">
+                AND #{name}=name
+            </if>
+            <if test="type != null and type != ''">
+                AND #{type}=type
+            </if>
+            <if test="minTimestamp != null and minTimestamp != ''">
+                AND timestamp &gt;= #{minTimestamp}
+            </if>
+            <if test="maxTimestamp != null and maxTimestamp != ''">
+                AND timestamp &lt;= #{maxTimestamp}
+            </if>
+
+        </where>
+    </select>
+
+
+    <select id="selectXtTrafficGetAllThreatenNotHandled" parameterType="String" resultMap="XtTrafficResult">
+        select * from xt_traffic
+        <where>
+            handle &lt;= -1
+            <if test="name != null and name != ''">
+                AND #{name}=name
+            </if>
+            <if test="type != null and type != ''">
+                AND #{type}=type
+            </if>
+            <if test="minTimestamp != null and minTimestamp != ''">
+                AND timestamp &gt;= #{minTimestamp}
+            </if>
+            <if test="maxTimestamp != null and maxTimestamp != ''">
+                AND timestamp &lt;= #{maxTimestamp}
+            </if>
+
+        </where>
+    </select>
+
+    <select id="selectXtTrafficGetAllThreaten" parameterType="String" resultMap="XtTrafficResult">
+        select * from xt_traffic
+        <where>
+            <if test="name != null and name != ''">
+                #{name}=name
+            </if>
+            <if test="type != null and type != ''">
+                AND #{type}=type
+            </if>
+            <if test="minTimestamp != null and minTimestamp != ''">
+                AND timestamp &gt;= #{minTimestamp}
+            </if>
+            <if test="maxTimestamp != null and maxTimestamp != ''">
+                AND timestamp &lt;= #{maxTimestamp}
+            </if>
+
+        </where>
+    </select>
+</mapper>

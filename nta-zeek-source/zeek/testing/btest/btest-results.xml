@@ -1,0 +1,1199 @@
+<?xml version="1.0" ?>
+<testsuite errors="0" failures="10" hostname="ipid-hk-64c" tests="594" time="14.770045518875122" timestamp="2022-12-08T22:13:58.160822">
+    <testcase classname="bifs" name="current_analyzer" time="0.5139904022216797"/>
+    <testcase classname="bifs" name="current_time" time="0.5154340267181396"/>
+    <testcase classname="bifs" name="addr_count_conversion" time="0.7073562145233154"/>
+    <testcase classname="bifs" name="addr_to_ptr_name" time="0.7157449722290039"/>
+    <testcase classname="bifs" name="addr_version" time="0.7126293182373047"/>
+    <testcase classname="bifs" name="all_set" time="0.7162063121795654"/>
+    <testcase classname="bifs" name="analyzer_name" time="0.7260091304779053"/>
+    <testcase classname="bifs" name="backtrace" time="0.711798906326294"/>
+    <testcase classname="bifs" name="any_set" time="0.7303507328033447"/>
+    <testcase classname="bifs" name="bytestring_to_count" time="0.7404427528381348"/>
+    <testcase classname="bifs" name="bytestring_to_double" time="0.734464168548584"/>
+    <testcase classname="bifs" name="bytestring_to_hexstr" time="0.7421340942382812"/>
+    <testcase classname="bifs" name="getpid" time="0.5514636039733887"/>
+    <testcase classname="bifs" name="gethostname" time="0.5561196804046631"/>
+    <testcase classname="bifs" name="get_matcher_stats" time="0.5638930797576904"/>
+    <testcase classname="bifs" name="cat" time="0.7732422351837158"/>
+    <testcase classname="bifs" name="compress_path" time="0.7776162624359131"/>
+    <testcase classname="bifs" name="check_subnet" time="0.8314940929412842"/>
+    <testcase classname="bifs" name="clear_table_expire_func" time="0.8285295963287354"/>
+    <testcase classname="bifs" name="clear_table" time="0.8378570079803467"/>
+    <testcase classname="bifs" name="convert_for_pattern" time="0.8203980922698975"/>
+    <testcase classname="bifs" name="count_to_addr" time="0.854154109954834"/>
+    <testcase classname="bifs" name="decode_base64" time="0.8692202568054199"/>
+    <testcase classname="bifs" name="edit" time="0.845078706741333"/>
+    <testcase classname="bifs" name="directory_operations" time="0.8956866264343262"/>
+    <testcase classname="bifs" name="exit" time="0.8586897850036621"/>
+    <testcase classname="bifs" name="encode_base64" time="0.8833591938018799"/>
+    <testcase classname="bifs" name="entropy_test" time="0.8935165405273438"/>
+    <testcase classname="bifs" name="disable_analyzer-early" time="0.9461400508880615"/>
+    <testcase classname="bifs" name="filter_subnet_table" time="0.8908064365386963"/>
+    <testcase classname="bifs" name="enum_to_int" time="0.9093832969665527"/>
+    <testcase classname="bifs" name="escape_string" time="0.9099547863006592"/>
+    <testcase classname="bifs" name="enum_names" time="0.9264199733734131"/>
+    <testcase classname="bifs" name="find_all" time="0.8999419212341309"/>
+    <testcase classname="bifs" name="file_mode" time="0.9133443832397461"/>
+    <testcase classname="bifs" name="find_all_ordered" time="0.9037599563598633"/>
+    <testcase classname="bifs" name="disable_analyzer" time="0.9807775020599365"/>
+    <testcase classname="bifs" name="get_current_packet_header" time="0.9036698341369629"/>
+    <testcase classname="bifs" name="fmt" time="0.9191646575927734"/>
+    <testcase classname="bifs" name="fmt_ftp_port" time="0.920661211013794"/>
+    <testcase classname="bifs" name="global_sizes" time="0.8939056396484375"/>
+    <testcase classname="bifs" name="find_entropy" time="0.9602458477020264"/>
+    <testcase classname="bifs" name="find_last" time="0.9591107368469238"/>
+    <testcase classname="bifs" name="disable_analyzer-tcp-packet-children" time="1.0376908779144287"/>
+    <testcase classname="bifs" name="getsetenv" time="0.911689043045044"/>
+    <testcase classname="bifs" name="identify_data" time="0.876089334487915"/>
+    <testcase classname="bifs" name="get_port_transport_proto" time="0.9578661918640137"/>
+    <testcase classname="bifs" name="is_ascii" time="0.8793199062347412"/>
+    <testcase classname="bifs" name="install_src_addr_filter" time="0.8952748775482178"/>
+    <testcase classname="bifs" name="global_ids" time="0.9411182403564453"/>
+    <testcase classname="bifs" name="is_port" time="0.8746216297149658"/>
+    <testcase classname="bifs" name="is_local_interface" time="0.8912947177886963"/>
+    <testcase classname="bifs" name="haversine_distance" time="0.9541051387786865"/>
+    <testcase classname="bifs" name="hexdump" time="0.9592769145965576"/>
+    <testcase classname="bifs" name="bloomfilter-seed" time="1.2753231525421143"/>
+    <testcase classname="bifs" name="decode_base64_conn" time="1.2336397171020508"/>
+    <testcase classname="bifs" name="enable_raw_output" time="1.2026591300964355"/>
+    <testcase classname="bifs" name="bloomfilter" time="1.4595692157745361"/>
+    <testcase classname="bifs" name="hexstr_to_bytestring" time="1.2312748432159424"/>
+    <testcase classname="bifs" name="join_string" time="0.8280715942382812"/>
+    <testcase classname="bifs" name="levenshtein_distance" time="0.8289258480072021"/>
+    <testcase classname="bifs" name="hll_cardinality" time="1.2597696781158447"/>
+    <testcase classname="bifs" name="lookup_ID" time="0.8475878238677979"/>
+    <testcase classname="bifs" name="lowerupper" time="0.8437216281890869"/>
+    <testcase classname="bifs" name="mask_addr" time="0.8450436592102051"/>
+    <testcase classname="bifs" name="matching_subnets" time="0.8403482437133789"/>
+    <testcase classname="bifs" name="lstrip" time="0.8675329685211182"/>
+    <testcase classname="bifs" name="math" time="0.8486511707305908"/>
+    <testcase classname="bifs" name="md5" time="0.8490240573883057"/>
+    <testcase classname="bifs" name="parse_ftp" time="0.7913253307342529"/>
+    <testcase classname="bifs" name="packet_sources" time="0.8085343837738037"/>
+    <testcase classname="bifs" name="order" time="0.8176841735839844"/>
+    <testcase classname="bifs" name="net_stats_trace" time="0.844369649887085"/>
+    <testcase classname="bifs" name="ptr_name_to_addr" time="0.7901268005371094"/>
+    <testcase classname="bifs" name="print_raw" time="0.8236021995544434"/>
+    <testcase classname="bifs" name="netbios-functions" time="0.8525195121765137"/>
+    <testcase classname="bifs" name="record_type_to_vector" time="0.7902960777282715"/>
+    <testcase classname="bifs" name="raw_bytes_to_v4_addr" time="0.8428339958190918"/>
+    <testcase classname="bifs" name="remask_addr" time="0.7965214252471924"/>
+    <testcase classname="bifs" name="records_fields" time="0.8229038715362549"/>
+    <testcase classname="bifs" name="resize" time="0.8214085102081299"/>
+    <testcase classname="bifs" name="create_file" time="1.8128631114959717"/>
+    <testcase classname="bifs" name="rotate_file" time="0.8430273532867432"/>
+    <testcase classname="bifs" name="reverse" time="0.8551356792449951"/>
+    <testcase classname="bifs" name="rotate_file_by_name" time="0.8310937881469727"/>
+    <testcase classname="bifs" name="routing0_data_to_addrs" time="0.840425968170166"/>
+    <testcase classname="bifs" name="same_object" time="0.8225114345550537"/>
+    <testcase classname="bifs" name="sha1" time="0.8188900947570801"/>
+    <testcase classname="bifs" name="split_string" time="0.8020327091217041"/>
+    <testcase classname="bifs" name="safe_shell_quote" time="0.8432655334472656"/>
+    <testcase classname="bifs" name="sha256" time="0.8232612609863281"/>
+    <testcase classname="bifs" name="rstrip" time="0.8619661331176758"/>
+    <testcase classname="bifs" name="sort" time="0.847135066986084"/>
+    <testcase classname="bifs" name="strcmp" time="0.8232815265655518"/>
+    <testcase classname="bifs" name="strftime" time="0.8278400897979736"/>
+    <testcase classname="bifs" name="string_fill" time="0.8443799018859863"/>
+    <testcase classname="bifs" name="string_to_pattern" time="0.8313698768615723"/>
+    <testcase classname="bifs" name="string_utils" time="0.854177713394165"/>
+    <testcase classname="bifs" name="strip" time="0.8592138290405273"/>
+    <testcase classname="bifs" name="sub" time="0.87038254737854"/>
+    <testcase classname="bifs" name="strstr" time="0.8759551048278809"/>
+    <testcase classname="bifs" name="strptime" time="0.8875904083251953"/>
+    <testcase classname="bifs" name="subnet_version" time="0.8847355842590332"/>
+    <testcase classname="bifs" name="system_env" time="0.8715715408325195"/>
+    <testcase classname="bifs" name="system" time="0.87754225730896"/>
+    <testcase classname="bifs" name="to_int" time="0.8422999382019043"/>
+    <testcase classname="bifs" name="to_double" time="0.8606560230255127"/>
+    <testcase classname="bifs" name="subst_string" time="0.9092481136322021"/>
+    <testcase classname="bifs" name="hll_large_estimate" time="1.8946967124938965"/>
+    <testcase classname="bifs" name="to_count" time="0.8727710247039795"/>
+    <testcase classname="bifs" name="to_interval" time="0.8608925342559814"/>
+    <testcase classname="bifs" name="dump_current_packet" time="2.080843210220337"/>
+    <testcase classname="bifs" name="to_port" time="0.8562107086181641"/>
+    <testcase classname="bifs" name="val_size" time="0.5480432510375977"/>
+    <testcase classname="bifs" name="zeek_version" time="0.5341219902038574"/>
+    <testcase classname="bifs" name="to_time" time="0.781531810760498"/>
+    <testcase classname="broker" name="opaque" time="0.5667212009429932">
+        <failure type="failure">  % 'zeek -b /home/ipid/nta-zeek-sources/zeek/testing/btest/.tmp/broker.opaque/opaque.zeek &gt;out' failed unexpectedly (exit code 139)
+  % cat .stderr
+  error: incompatible Bloom filter types
+  Segmentation fault (core dumped)
+</failure>
+    </testcase>
+    <testcase classname="bifs" name="piped_exec" time="1.5084505081176758"/>
+    <testcase classname="bifs" name="type_name" time="0.74527907371521"/>
+    <testcase classname="bifs" name="subnet_to_addr" time="1.1227476596832275"/>
+    <testcase classname="bifs" name="type_aliases" time="0.772437334060669"/>
+    <testcase classname="bifs" name="to_addr" time="1.115889549255371"/>
+    <testcase classname="bifs" name="to_double_from_string" time="1.0836772918701172"/>
+    <testcase classname="bifs" name="unique_id" time="0.7678391933441162"/>
+    <testcase classname="bifs" name="zeek_args" time="0.73148512840271"/>
+    <testcase classname="bifs" name="uuid_to_string" time="0.7563621997833252"/>
+    <testcase classname="bifs" name="to_subnet" time="1.0107142925262451"/>
+    <testcase classname="bifs" name="reading_traces" time="1.4841244220733643"/>
+    <testcase classname="bifs" name="topk" time="0.8936357498168945"/>
+    <testcase classname="broker.store" name="brokerstore-backend-invalid" time="0.4763779640197754"/>
+    <testcase classname="bifs" name="unique_id-pools" time="0.9107372760772705"/>
+    <testcase classname="broker.store" name="invalid-handle" time="0.4287605285644531"/>
+    <testcase classname="bifs" name="unique_id-rnd" time="0.9933147430419922"/>
+    <testcase classname="bifs" name="x509_verify" time="0.976391077041626"/>
+    <testcase classname="core" name="check-unused-event-handlers" time="0.3861401081085205"/>
+    <testcase classname="core" name="connection_flip_roles" time="0.3494536876678467"/>
+    <testcase classname="core" name="enum-redef-exists" time="0.2884645462036133"/>
+    <testcase classname="core" name="connection_status_update" time="0.35379552841186523"/>
+    <testcase classname="core" name="conn-size-threshold" time="0.43964695930480957"/>
+    <testcase classname="core" name="div-by-zero" time="0.3908519744873047"/>
+    <testcase classname="core" name="embedded-null" time="0.39663124084472656"/>
+    <testcase classname="core" name="dns-init" time="0.41272783279418945"/>
+    <testcase classname="broker.store" name="brokerstore-backend-sqlite-incompatible" time="0.7397012710571289"/>
+    <testcase classname="core" name="erspan" time="0.3934969902038574"/>
+    <testcase classname="core" name="event-arg-reuse" time="0.3525543212890625"/>
+    <testcase classname="broker.store" name="brokerstore-attr-persistence" time="1.000398874282837"/>
+    <testcase classname="core" name="expired-conn-weird" time="0.4024055004119873"/>
+    <testcase classname="core" name="erspanI" time="0.5623133182525635"/>
+    <testcase classname="core" name="cisco-fabric-path" time="0.7577254772186279"/>
+    <testcase classname="core" name="erspanII" time="0.5733664035797119"/>
+    <testcase classname="core" name="erspanIII" time="0.5812735557556152"/>
+    <testcase classname="bifs" name="rand" time="2.2153708934783936"/>
+    <testcase classname="core" name="fake_dns" time="0.4356248378753662"/>
+    <testcase classname="core" name="global_opaque_val" time="0.4318673610687256"/>
+    <testcase classname="core" name="ether-addrs" time="0.6952733993530273"/>
+    <testcase classname="core" name="disable-mobile-ipv6" time="0.8439393043518066"/>
+    <testcase classname="core" name="checksums_ignore_nets" time="0.983513593673706"/>
+    <testcase classname="core" name="history-flip" time="0.5254096984863281"/>
+    <testcase classname="core" name="init-error" time="0.46982598304748535"/>
+    <testcase classname="core.icmp" name="icmp_sent" time="0.5172243118286133"/>
+    <testcase classname="core" name="expr-exception" time="0.7965524196624756"/>
+    <testcase classname="core" name="conn-uid" time="1.1638941764831543"/>
+    <testcase classname="core" name="ip-broken-header" time="0.5960941314697266"/>
+    <testcase classname="core" name="ipv6-atomic-frag" time="0.5892279148101807"/>
+    <testcase classname="core" name="mobile-ipv6-dst-opts" time="0.18457627296447754">
+        <skipped type="skipped">  % 'grep -q &quot;#define ENABLE_MOBILE_IPV6&quot; $BUILD/zeek-config.h' failed unexpectedly (exit code 1)
+  % cat .stderr
+</skipped>
+    </testcase>
+    <testcase classname="core" name="ipv6-flow-labels" time="0.5672237873077393"/>
+    <testcase classname="core" name="mobile-ipv6-home-addr" time="0.1788947582244873">
+        <skipped type="skipped">  % 'grep -q &quot;#define ENABLE_MOBILE_IPV6&quot; $BUILD/zeek-config.h' failed unexpectedly (exit code 1)
+  % cat .stderr
+</skipped>
+    </testcase>
+    <testcase classname="broker.store" name="type-conversion" time="1.4522325992584229">
+        <failure type="failure">  % 'btest-bg-wait 60' failed unexpectedly (exit code 1)
+  % cat .stderr
+  &lt;&lt;&lt; [81398] zeek -b /home/ipid/nta-zeek-sources/zeek/testing/btest/.tmp/broker.store.type-conversion/type-conversion.zeek &gt;out
+  /home/ipid/nta-zeek-sources/zeek/auxil/btest/btest-bg-run-helper: line 26: 81470 Segmentation fault      (core dumped) zeek -b /home/ipid/nta-zeek-sources/zeek/testing/btest/.tmp/broker.store.type-conversion/type-conversion.zeek &gt; out
+  &gt;&gt;&gt;
+  &gt;&gt;&gt; process 81398 failed with exitcode 139: zeek -b /home/ipid/nta-zeek-sources/zeek/testing/btest/.tmp/broker.store.type-conversion/type-conversion.zeek &gt;out
+</failure>
+    </testcase>
+    <testcase classname="core" name="mobile-ipv6-routing" time="0.17570877075195312">
+        <skipped type="skipped">  % 'grep -q &quot;#define ENABLE_MOBILE_IPV6&quot; $BUILD/zeek-config.h' failed unexpectedly (exit code 1)
+  % cat .stderr
+</skipped>
+    </testcase>
+    <testcase classname="core" name="ipv6_esp" time="0.5694682598114014">
+        <failure type="failure">  % 'btest-diff output' failed unexpectedly (exit code 1)
+  % cat .diag
+  == File ===============================
+  == Diff ===============================
+  --- /tmp/test-diff.86277.output.baseline.tmp	2022-12-08 14:14:02.612398230 +0000
+  +++ /tmp/test-diff.86277.output.tmp	2022-12-08 14:14:02.596397597 +0000
+  @@ -1,120 +0,0 @@
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::2, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::2, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::2, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::2, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::2, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::2, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::2, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::2, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::2, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::2, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::3, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::3, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::3, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::3, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::3, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::3, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::3, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::3, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::3, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::3, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::4, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::4, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::4, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::4, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::4, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::4, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::4, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::4, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::4, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::4, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::5, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::5, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::5, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::5, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::5, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::5, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::5, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::5, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::5, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::5, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::12, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::12, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::12, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::12, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::12, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::12, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::12, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::12, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::12, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=116, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::12, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=10, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::13, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::13, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::13, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::13, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::13, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::13, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::13, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::13, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::13, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::13, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=11, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::14, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::14, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::14, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::14, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::14, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::14, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::14, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::14, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::14, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=100, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::14, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=12, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::15, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::15, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::15, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::15, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::15, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::15, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::15, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::15, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::15, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::15, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=13, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=104, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::22, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=20, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=104, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::22, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=20, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=104, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::22, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=20, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=104, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::22, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=20, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=104, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::22, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=20, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=104, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::22, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=20, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=104, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::22, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=20, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=104, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::22, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=20, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=104, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::22, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=20, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=104, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::22, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=20, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::23, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=21, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::23, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=21, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::23, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=21, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::23, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=21, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::23, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=21, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::23, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=21, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::23, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=21, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::23, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=21, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::23, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=21, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::23, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=21, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::24, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=22, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::24, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=22, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::24, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=22, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::24, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=22, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::24, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=22, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::24, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=22, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::24, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=22, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::24, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=22, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::24, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=22, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=88, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::24, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=22, seq=10], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=76, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::25, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=23, seq=1], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=76, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::25, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=23, seq=2], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=76, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::25, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=23, seq=3], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=76, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::25, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=23, seq=4], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=76, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::25, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=23, seq=5], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=76, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::25, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=23, seq=6], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=76, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::25, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=23, seq=7], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=76, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::25, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=23, seq=8], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=76, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::25, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=23, seq=9], mobility=&lt;uninitialized&gt;]]]
+  -[class=0, flow=0, len=76, nxt=50, hlim=64, src=3ffe::1, dst=3ffe::25, exts=[[id=50, hopopts=&lt;uninitialized&gt;, dstopts=&lt;uninitialized&gt;, routing=&lt;uninitialized&gt;, fragment=&lt;uninitialized&gt;, ah=&lt;uninitialized&gt;, esp=[spi=23, seq=10], mobility=&lt;uninitialized&gt;]]]
+  =======================================
+  % cat .stderr
+</failure>
+    </testcase>
+    <testcase classname="core" name="ipv6_zero_len_ah" time="0.5619776248931885"/>
+    <testcase classname="core" name="ipv6_ext_headers" time="0.5730071067810059"/>
+    <testcase classname="core" name="mobility-checksums" time="0.16749072074890137">
+        <skipped type="skipped">  % 'grep -q &quot;#define ENABLE_MOBILE_IPV6&quot; $BUILD/zeek-config.h' failed unexpectedly (exit code 1)
+  % cat .stderr
+</skipped>
+    </testcase>
+    <testcase classname="core" name="mobility_msg" time="0.17116403579711914">
+        <skipped type="skipped">  % 'grep -q &quot;#define ENABLE_MOBILE_IPV6&quot; $BUILD/zeek-config.h' failed unexpectedly (exit code 1)
+  % cat .stderr
+</skipped>
+    </testcase>
+    <testcase classname="core.icmp" name="icmp6-nd-options" time="0.87420654296875"/>
+    <testcase classname="core" name="load-explicit-bro-suffix-fallback" time="0.5543437004089355"/>
+    <testcase classname="broker.store" name="handle-copy" time="1.6333873271942139"/>
+    <testcase classname="core" name="ipv6-frag" time="0.747452974319458"/>
+    <testcase classname="core" name="discarder" time="1.4052460193634033"/>
+    <testcase classname="broker.store" name="record" time="1.6406042575836182"/>
+    <testcase classname="broker.store" name="table" time="1.6414966583251953"/>
+    <testcase classname="broker.store" name="set" time="1.657560110092163"/>
+    <testcase classname="broker.store" name="vector" time="1.6323907375335693"/>
+    <testcase classname="core" name="load-relative" time="0.539057731628418"/>
+    <testcase classname="core" name="load-prefixes" time="0.5875632762908936"/>
+    <testcase classname="core.icmp" name="icmp-context" time="1.1335179805755615"/>
+    <testcase classname="core.icmp" name="icmp-events" time="1.1206214427947998"/>
+    <testcase classname="core" name="negative-time" time="0.4485805034637451"/>
+    <testcase classname="core" name="command-line-option-redefs" time="1.7765517234802246"/>
+    <testcase classname="core" name="network-time" time="0.4662973880767822"/>
+    <testcase classname="core" name="network-time-init" time="0.4638373851776123"/>
+    <testcase classname="core" name="option-errors" time="0.40468311309814453"/>
+    <testcase classname="core" name="option-errors-2" time="0.4062199592590332"/>
+    <testcase classname="core" name="nop" time="0.4632577896118164"/>
+    <testcase classname="core" name="option-errors-3" time="0.4351041316986084"/>
+    <testcase classname="core" name="nflog" time="0.571662425994873"/>
+    <testcase classname="core" name="option-redef" time="0.5168805122375488"/>
+    <testcase classname="core" name="option-priorities" time="0.526991605758667"/>
+    <testcase classname="core.icmp" name="icmp6-context" time="1.468580722808838"/>
+    <testcase classname="core" name="option-runtime-errors" time="0.5326602458953857"/>
+    <testcase classname="core" name="option-runtime-errors-2" time="0.5527474880218506"/>
+    <testcase classname="core" name="option-runtime-errors-3" time="0.5288050174713135"/>
+    <testcase classname="core" name="option-runtime-errors-4" time="0.5468528270721436"/>
+    <testcase classname="core" name="option-runtime-errors-5" time="0.5779588222503662"/>
+    <testcase classname="core" name="mpls-in-vlan" time="0.8694987297058105"/>
+    <testcase classname="core" name="option-runtime-errors-6" time="0.5921416282653809"/>
+    <testcase classname="core" name="option-runtime-errors-7" time="0.6158206462860107"/>
+    <testcase classname="core" name="option-runtime-errors-8" time="0.6124868392944336"/>
+    <testcase classname="core" name="option-runtime-errors-9" time="0.6240453720092773"/>
+    <testcase classname="core" name="option-runtime-errors-10" time="0.6323196887969971"/>
+    <testcase classname="core" name="option-runtime-errors-11" time="0.6330075263977051"/>
+    <testcase classname="core" name="option-runtime-errors-12" time="0.62441086769104"/>
+    <testcase classname="broker" name="remote_event_index_types" time="2.932309150695801"/>
+    <testcase classname="core" name="option-runtime-errors-13" time="0.6549336910247803"/>
+    <testcase classname="broker" name="remote_event_vector_any" time="2.9437403678894043"/>
+    <testcase classname="broker" name="remote_id" time="2.9378881454467773"/>
+    <testcase classname="core" name="load-unload" time="1.4645869731903076"/>
+    <testcase classname="broker" name="remote_event" time="3.1837217807769775"/>
+    <testcase classname="broker" name="remote_event_auto" time="3.1771180629730225"/>
+    <testcase classname="broker.store" name="local" time="2.7489097118377686"/>
+    <testcase classname="broker" name="remote_event_any" time="3.2033050060272217"/>
+    <testcase classname="core" name="pcap_file_done" time="0.645531415939331"/>
+    <testcase classname="broker" name="remote_event_ssl_auth" time="3.191082715988159"/>
+    <testcase classname="core" name="protocol-registration-error" time="0.6362724304199219"/>
+    <testcase classname="broker.store" name="brokerstore-attr-simple" time="3.026059865951538"/>
+    <testcase classname="core" name="print-interval" time="0.6831803321838379"/>
+    <testcase classname="core" name="load-pkg" time="1.8413832187652588"/>
+    <testcase classname="core.pcap" name="dynamic-filter" time="0.9673700332641602"/>
+    <testcase classname="broker.store" name="sqlite" time="2.932217836380005"/>
+    <testcase classname="core" name="q-in-q" time="0.7251615524291992"/>
+    <testcase classname="core" name="radiotap" time="0.715203046798706"/>
+    <testcase classname="core" name="recursive-event" time="0.6768653392791748"/>
+    <testcase classname="core" name="pppoe" time="0.9471149444580078"/>
+    <testcase classname="core" name="pppoe-over-qinq" time="0.9135768413543701"/>
+    <testcase classname="core" name="reporter-fmt-strings" time="0.6146042346954346"/>
+    <testcase classname="core" name="reporter-parse-error" time="0.610065221786499"/>
+    <testcase classname="core" name="reporter-runtime-error" time="0.6073751449584961"/>
+    <testcase classname="core" name="reporter-error-in-handler" time="0.6577620506286621"/>
+    <testcase classname="core" name="reporter-type-mismatch" time="0.5976195335388184"/>
+    <testcase classname="core.pcap" name="input-error" time="1.1797997951507568"/>
+    <testcase classname="core" name="reporter-shutdown-order-errors" time="0.64288330078125"/>
+    <testcase classname="core" name="reporter-weird-sampling" time="0.6253914833068848"/>
+    <testcase classname="core.pcap" name="read-trace-with-filter" time="1.172226905822754"/>
+    <testcase classname="core" name="reporter-weird-sampling-disable" time="0.6071972846984863"/>
+    <testcase classname="core" name="bits_per_uid" time="3.2407312393188477"/>
+    <testcase classname="core" name="reporter-weird-sampling-global" time="0.6263720989227295"/>
+    <testcase classname="core" name="raw_packet" time="1.0294432640075684"/>
+    <testcase classname="core" name="reporter" time="0.885037899017334"/>
+    <testcase classname="core.tcp" name="fin-retransmit" time="0.6237082481384277"/>
+    <testcase classname="bifs" name="hll_cluster" time="5.325708389282227"/>
+    <testcase classname="broker" name="remote_log_batch" time="3.6954917907714844"/>
+    <testcase classname="core.pcap" name="dumper" time="1.5075280666351318"/>
+    <testcase classname="core.tcp" name="missing-syn" time="0.6680891513824463"/>
+    <testcase classname="core" name="proc-status-file" time="1.2912538051605225"/>
+    <testcase classname="core.tcp" name="quantum-insert" time="0.6093904972076416"/>
+    <testcase classname="core.tcp" name="rst-after-syn" time="0.6004865169525146"/>
+    <testcase classname="core.tcp" name="tcp-dups" time="0.5907423496246338"/>
+    <testcase classname="core.tcp" name="truncated-header" time="0.597602128982544"/>
+    <testcase classname="core" name="skip_analyzer" time="0.88846755027771"/>
+    <testcase classname="core.tcp" name="miss-end-data" time="0.9014570713043213"/>
+    <testcase classname="core.tunnels" name="gre-erspan3-dot1q" time="0.6040830612182617"/>
+    <testcase classname="core.tunnels.gtp" name="ext_header" time="0.6772377490997314"/>
+    <testcase classname="core" name="load-duplicates-links" time="2.943264961242676"/>
+    <testcase classname="core" name="load-duplicates" time="2.9892711639404297"/>
+    <testcase classname="core.pcap" name="suspend-processing" time="1.9306890964508057"/>
+    <testcase classname="core.tunnels.gtp" name="pdp_ctx_messages" time="0.6604876518249512"/>
+    <testcase classname="core" name="vector-assignment" time="0.44416165351867676"/>
+    <testcase classname="broker.store" name="brokerstore-attr-persistence-clone" time="4.2897419929504395"/>
+    <testcase classname="core.tcp" name="options" time="1.3549396991729736"/>
+    <testcase classname="core.tunnels" name="ip-tunnel-uid" time="0.7278203964233398"/>
+    <testcase classname="core.tunnels" name="gre-in-gre" time="1.0329737663269043"/>
+    <testcase classname="core.pcap" name="filter-error" time="2.247012138366699"/>
+    <testcase classname="broker" name="remote_log_types" time="4.488190650939941"/>
+    <testcase classname="core.tunnels" name="teredo-known-services" time="0.7795801162719727"/>
+    <testcase classname="core.tunnels.gtp" name="non_recursive" time="1.0139453411102295"/>
+    <testcase classname="core" name="udp-content-ports" time="0.7452075481414795"/>
+    <testcase classname="core.tcp" name="large-file-reassembly" time="1.5165152549743652"/>
+    <testcase classname="core.tunnels.gtp" name="inner_ipv6" time="1.0648133754730225"/>
+    <testcase classname="core.tunnels" name="false-teredo" time="1.2166597843170166"/>
+    <testcase classname="broker" name="error" time="4.844299554824829"/>
+    <testcase classname="core" name="udp-contents-delivery-ports-use-resp" time="0.7840771675109863"/>
+    <testcase classname="core" name="unknown-protocol-event" time="0.7866744995117188"/>
+    <testcase classname="broker" name="disconnect" time="4.904850959777832"/>
+    <testcase classname="core" name="vlan-mpls" time="0.7672338485717773"/>
+    <testcase classname="core.tunnels" name="ayiya" time="1.3373727798461914"/>
+    <testcase classname="broker.store" name="brokerstore-attr-clone" time="4.663735389709473"/>
+    <testcase classname="core" name="wlanmon" time="0.7856299877166748"/>
+    <testcase classname="core.tunnels.gtp" name="inner_teredo" time="1.2726960182189941"/>
+    <testcase classname="broker" name="remote_log" time="4.821408987045288"/>
+    <testcase classname="core.tunnels" name="gre-pptp" time="1.3431379795074463"/>
+    <testcase classname="coverage" name="zeekygen" time="0.2880856990814209"/>
+    <testcase classname="core.tunnels.gtp" name="different_dl_and_ul" time="1.352036476135254"/>
+    <testcase classname="core.tunnels.gtp" name="not_user_plane_data" time="1.2964401245117188"/>
+    <testcase classname="core" name="reassembly" time="2.3090269565582275"/>
+    <testcase classname="core.tunnels.gtp" name="opt_header" time="1.3449316024780273"/>
+    <testcase classname="core.icmp" name="icmp6-events" time="3.9748246669769287"/>
+    <testcase classname="core.tunnels" name="gre" time="1.582366704940796"/>
+    <testcase classname="doc" name="record-add" time="0.4254601001739502"/>
+    <testcase classname="doc" name="record-attr-check" time="0.4334433078765869"/>
+    <testcase classname="core" name="script-args" time="2.021160125732422"/>
+    <testcase classname="core.tunnels.gtp" name="unknown_or_too_short" time="1.3618505001068115"/>
+    <testcase classname="broker.store" name="ops" time="4.779518127441406"/>
+    <testcase classname="core.tunnels.gtp" name="false_gtp" time="1.5530071258544922"/>
+    <testcase classname="core.tcp" name="rxmit-history" time="1.9095401763916016"/>
+    <testcase classname="core.tunnels.gtp" name="outer_ip_frag" time="1.5566189289093018"/>
+    <testcase classname="core.tunnels" name="vxlan" time="1.3681445121765137"/>
+    <testcase classname="coverage" name="find-bro-logs" time="0.8656237125396729"/>
+    <testcase classname="coverage" name="coverage-blacklist" time="0.9837877750396729"/>
+    <testcase classname="broker.store" name="brokerstore-backend-simple-reverse" time="5.120695352554321"/>
+    <testcase classname="broker.store" name="brokerstore-backend-simple" time="5.184467792510986"/>
+    <testcase classname="core.tunnels" name="ip-in-ip-version" time="1.6413638591766357"/>
+    <testcase classname="core" name="x509-generalizedtime" time="1.2403206825256348"/>
+    <testcase classname="doc.zeekygen" name="comment_retrieval_bifs" time="0.7819867134094238"/>
+    <testcase classname="doc.zeekygen" name="enums" time="0.7638547420501709"/>
+    <testcase classname="doc.zeekygen" name="func-params" time="0.733107328414917"/>
+    <testcase classname="doc.zeekygen" name="records" time="0.7191436290740967"/>
+    <testcase classname="core.tunnels" name="teredo" time="1.6945302486419678"/>
+    <testcase classname="doc.zeekygen" name="example" time="0.8123466968536377"/>
+    <testcase classname="language" name="alternate-event-hook-prototypes-invalid-arg" time="0.6378436088562012"/>
+    <testcase classname="doc.zeekygen" name="type-aliases" time="0.7377722263336182"/>
+    <testcase classname="language" name="addr" time="0.6752142906188965"/>
+    <testcase classname="doc.zeekygen" name="vectors" time="0.7487225532531738"/>
+    <testcase classname="language" name="alternate-event-hook-prototypes" time="0.7141032218933105"/>
+    <testcase classname="language" name="alternate-prototypes-arg-matching" time="0.7319529056549072"/>
+    <testcase classname="broker.store" name="brokerstore-backend-sqlite" time="5.391981363296509"/>
+    <testcase classname="language" name="any" time="0.7265117168426514"/>
+    <testcase classname="language" name="any-when" time="0.727405309677124"/>
+    <testcase classname="doc.zeekygen" name="command_line" time="1.0754048824310303"/>
+    <testcase classname="language" name="at-deprecated" time="0.7287530899047852"/>
+    <testcase classname="language" name="at-filename" time="0.6928706169128418"/>
+    <testcase classname="language" name="at-if" time="0.7350795269012451"/>
+    <testcase classname="language" name="at-if-invalid" time="0.6802675724029541"/>
+    <testcase classname="coverage" name="test-all-policy" time="1.3029685020446777"/>
+    <testcase classname="core.tunnels" name="teredo_bubble_with_payload" time="1.9875566959381104"/>
+    <testcase classname="core" name="when-interpreter-exceptions" time="1.8333313465118408"/>
+    <testcase classname="language" name="at-if-event" time="0.7198953628540039"/>
+    <testcase classname="language" name="at-ifdef" time="0.7164642810821533"/>
+    <testcase classname="language" name="at-load" time="0.7241635322570801"/>
+    <testcase classname="language" name="at-ifndef" time="0.735382080078125"/>
+    <testcase classname="language" name="attr-default-coercion" time="0.7398600578308105"/>
+    <testcase classname="language" name="attr-default-global-set-error" time="0.6845049858093262"/>
+    <testcase classname="doc.zeekygen" name="identifier" time="1.24896240234375"/>
+    <testcase classname="doc.zeekygen" name="package" time="1.2345507144927979"/>
+    <testcase classname="doc.zeekygen" name="script_summary" time="1.1981592178344727"/>
+    <testcase classname="language" name="bro_script_loaded" time="0.6949927806854248"/>
+    <testcase classname="doc.zeekygen" name="script_index" time="1.2419986724853516"/>
+    <testcase classname="language" name="bool" time="0.7520930767059326"/>
+    <testcase classname="language" name="bro_init" time="0.7131049633026123"/>
+    <testcase classname="doc.zeekygen" name="package_index" time="1.2651314735412598"/>
+    <testcase classname="coverage" name="bare-load-baseline" time="1.8555328845977783">
+        <failure type="failure">  % 'btest-diff canonified_loaded_scripts.log' failed unexpectedly (exit code 1)
+  % cat .diag
+  == File ===============================
+  #separator \x09
+  #set_separator	,
+  #empty_field	(empty)
+  #unset_field	-
+  #path	loaded_scripts
+  #open	2022-12-08-14-14-05
+  #fields	name
+  #types	string
+  scripts/base/init-bare.zeek
+  build/scripts/base/bif/const.bif.zeek
+  build/scripts/base/bif/types.bif.zeek
+  build/scripts/base/bif/zeek.bif.zeek
+  build/scripts/base/bif/stats.bif.zeek
+  build/scripts/base/bif/reporter.bif.zeek
+  build/scripts/base/bif/strings.bif.zeek
+  build/scripts/base/bif/option.bif.zeek
+  scripts/base/frameworks/supervisor/api.zeek
+  build/scripts/base/bif/supervisor.bif.zeek
+  build/scripts/base/bif/packet_analysis.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_SNMP.types.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_KRB.types.bif.zeek
+  build/scripts/base/bif/event.bif.zeek
+  scripts/base/packet-protocols/__load__.zeek
+  scripts/base/packet-protocols/root/__load__.zeek
+  scripts/base/packet-protocols/root/main.zeek
+  scripts/base/packet-protocols/ip/__load__.zeek
+  scripts/base/packet-protocols/ip/main.zeek
+  scripts/base/packet-protocols/skip/__load__.zeek
+  scripts/base/packet-protocols/skip/main.zeek
+  scripts/base/packet-protocols/ethernet/__load__.zeek
+  scripts/base/packet-protocols/ethernet/main.zeek
+  scripts/base/packet-protocols/fddi/__load__.zeek
+  scripts/base/packet-protocols/fddi/main.zeek
+  scripts/base/packet-protocols/ieee802_11/__load__.zeek
+  scripts/base/packet-protocols/ieee802_11/main.zeek
+  scripts/base/packet-protocols/ieee802_11_radio/__load__.zeek
+  scripts/base/packet-protocols/ieee802_11_radio/main.zeek
+  scripts/base/packet-protocols/linux_sll/__load__.zeek
+  scripts/base/packet-protocols/linux_sll/main.zeek
+  scripts/base/packet-protocols/nflog/__load__.zeek
+  scripts/base/packet-protocols/nflog/main.zeek
+  scripts/base/packet-protocols/null/__load__.zeek
+  scripts/base/packet-protocols/null/main.zeek
+  scripts/base/packet-protocols/ppp_serial/__load__.zeek
+  scripts/base/packet-protocols/ppp_serial/main.zeek
+  scripts/base/packet-protocols/pppoe/__load__.zeek
+  scripts/base/packet-protocols/pppoe/main.zeek
+  scripts/base/packet-protocols/vlan/__load__.zeek
+  scripts/base/packet-protocols/vlan/main.zeek
+  scripts/base/packet-protocols/mpls/__load__.zeek
+  scripts/base/packet-protocols/mpls/main.zeek
+  scripts/base/packet-protocols/gre/__load__.zeek
+  scripts/base/packet-protocols/gre/main.zeek
+  scripts/base/packet-protocols/iptunnel/__load__.zeek
+  scripts/base/packet-protocols/iptunnel/main.zeek
+  scripts/base/init-frameworks-and-bifs.zeek
+  scripts/base/frameworks/logging/__load__.zeek
+  scripts/base/frameworks/logging/main.zeek
+  build/scripts/base/bif/logging.bif.zeek
+  scripts/base/frameworks/logging/postprocessors/__load__.zeek
+  scripts/base/frameworks/logging/postprocessors/scp.zeek
+  scripts/base/frameworks/logging/postprocessors/sftp.zeek
+  scripts/base/frameworks/logging/writers/ascii.zeek
+  scripts/base/frameworks/logging/writers/sqlite.zeek
+  scripts/base/frameworks/logging/writers/none.zeek
+  scripts/base/frameworks/broker/__load__.zeek
+  scripts/base/frameworks/broker/main.zeek
+  build/scripts/base/bif/comm.bif.zeek
+  build/scripts/base/bif/messaging.bif.zeek
+  scripts/base/frameworks/broker/store.zeek
+  build/scripts/base/bif/data.bif.zeek
+  build/scripts/base/bif/store.bif.zeek
+  scripts/base/frameworks/broker/log.zeek
+  scripts/base/frameworks/supervisor/__load__.zeek
+  scripts/base/frameworks/supervisor/control.zeek
+  scripts/base/frameworks/supervisor/main.zeek
+  scripts/base/frameworks/input/__load__.zeek
+  scripts/base/frameworks/input/main.zeek
+  build/scripts/base/bif/input.bif.zeek
+  scripts/base/frameworks/input/readers/ascii.zeek
+  scripts/base/frameworks/input/readers/raw.zeek
+  scripts/base/frameworks/input/readers/benchmark.zeek
+  scripts/base/frameworks/input/readers/binary.zeek
+  scripts/base/frameworks/input/readers/config.zeek
+  scripts/base/frameworks/input/readers/sqlite.zeek
+  scripts/base/frameworks/analyzer/__load__.zeek
+  scripts/base/frameworks/analyzer/main.zeek
+  scripts/base/frameworks/packet-filter/utils.zeek
+  build/scripts/base/bif/analyzer.bif.zeek
+  scripts/base/frameworks/files/__load__.zeek
+  scripts/base/frameworks/files/main.zeek
+  build/scripts/base/bif/file_analysis.bif.zeek
+  scripts/base/utils/site.zeek
+  scripts/base/utils/patterns.zeek
+  scripts/base/frameworks/files/magic/__load__.zeek
+  build/scripts/base/bif/__load__.zeek
+  build/scripts/base/bif/zeekygen.bif.zeek
+  build/scripts/base/bif/pcap.bif.zeek
+  build/scripts/base/bif/bloom-filter.bif.zeek
+  build/scripts/base/bif/cardinality-counter.bif.zeek
+  [... File too long, truncated ...]
+  == Diff ===============================
+  --- /tmp/test-diff.103731.canonified_loaded_scripts.log.baseline.tmp	2022-12-08 14:14:06.864566468 +0000
+  +++ /tmp/test-diff.103731.canonified_loaded_scripts.log.tmp	2022-12-08 14:14:06.856566152 +0000
+  @@ -198,6 +198,7 @@
+  build/scripts/base/bif/plugins/Zeek_UDP.events.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_VXLAN.events.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_XMPP.events.bif.zeek
+  +    build/scripts/base/bif/plugins/Zeek_IPSecNaive.events.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_ARP.events.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_FileEntropy.events.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_FileExtract.events.bif.zeek
+  =======================================
+  % cat .stderr
+</failure>
+    </testcase>
+    <testcase classname="language" name="conditional-expression" time="0.740215539932251"/>
+    <testcase classname="language" name="copy" time="0.726294755935669"/>
+    <testcase classname="broker" name="ssl_auth_failure" time="6.122910737991333"/>
+    <testcase classname="language" name="container-ctor-scope" time="0.7612202167510986"/>
+    <testcase classname="language" name="copy-all-types" time="0.7326765060424805"/>
+    <testcase classname="language" name="count" time="0.7034814357757568"/>
+    <testcase classname="language" name="copy-all-opaques" time="0.7979443073272705">
+        <failure type="failure">  % 'btest-diff out' failed unexpectedly (exit code 1)
+  % cat .diag
+  == File ===============================
+  ============ Topk
+  [b, a, c]
+  [b, a, c]
+  ============ HLL
+  3.000069
+  3.000069
+  3.000069
+  ============ Bloom
+  0
+  1
+  0
+  1
+  ============ Hashes
+  5b9164ad6f496d9dee12ec7634ce253f
+  5b9164ad6f496d9dee12ec7634ce253f
+  30ae97492ce1da88d0e7117ace0a60a6f9e1e0bc
+  30ae97492ce1da88d0e7117ace0a60a6f9e1e0bc
+  25b6746d5172ed6352966a013d93ac846e1110d5a25e8f183b5931f4688842a1
+  25b6746d5172ed6352966a013d93ac846e1110d5a25e8f183b5931f4688842a1
+  ============ X509
+  [version=3, serial=040000000001154B5AC394, subject=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, issuer=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, cn=GlobalSign Root CA, not_valid_before=904651200.0, not_valid_after=1832673600.0, key_alg=rsaEncryption, sig_alg=sha1WithRSAEncryption, key_type=rsa, key_length=2048, exponent=\x01\x00\x01, curve=&lt;uninitialized&gt;, modulus=\xda\x0e\xe6\x99\x8d\xce\xa3\xe3O\x8a~\xfb\xf1\x8b\x83%k\xeaH\x1f\xf1*\xb0\xb9\x95\x11\x04\xbd\xf0c\xd1\xe2gf\xcf\x1c\xdd\xcf\x1bH+\xee\x8d\x89\x8e\x9a\xaf)\x80e\xab\xe9\xc7-\x12\xcb\xab\x1cLp\x07\xa1=\x0a0\xcd\x15\x8dO\xf8\xdd\xd4\x8cP\x15\x1c\xefP\xee\xc4.\xf7\xfc\xe9R\xf2\x91}\xe0m\xd550\x8e^Cs\xf2A\xe9\xd5j\xe3\xb2\x89:V98o\x06&lt;\x88i[*M\xc5\xa7T\xb8l\x89\xcc\x9b\xf9&lt;\xca\xe5\xfd\x89\xf5\x12&lt;\x92x\x96\xd6\xdctn\x93Da\xd1\x8d\xc7F\xb2u\x0e\x86\xe8\x19\x8a\xd5ml\xd5x\x16\x95\xa2\xe9\xc8\x0a8\xeb\xf2$\x13OsT\x93\x13\x85:\x1b\xbc\x1e4\xb5\x8b\x05\x8c\xb9w\x8b\xb1\xdb\x1f \x91\xab\x09Sn\x90\xce{7t\xb9pG\x91&quot;Qc\x16y\xae\xb1\xaeA&amp;\x08\xc8\x19+\xd1F\xaaH\xd6d*\xd7\x834\xff,*\xc1l\x19CJ\x07\x85\xe7\xd3|\xf6!h\xef\xea\xf2R\x9f\x7f\x93\x90\xcf, x=&lt;uninitialized&gt;, y=&lt;uninitialized&gt;, raw_pkey=0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xda\x0e\xe6\x99\x8d\xce\xa3\xe3O\x8a~\xfb\xf1\x8b\x83%k\xeaH\x1f\xf1*\xb0\xb9\x95\x11\x04\xbd\xf0c\xd1\xe2gf\xcf\x1c\xdd\xcf\x1bH+\xee\x8d\x89\x8e\x9a\xaf)\x80e\xab\xe9\xc7-\x12\xcb\xab\x1cLp\x07\xa1=\x0a0\xcd\x15\x8dO\xf8\xdd\xd4\x8cP\x15\x1c\xefP\xee\xc4.\xf7\xfc\xe9R\xf2\x91}\xe0m\xd550\x8e^Cs\xf2A\xe9\xd5j\xe3\xb2\x89:V98o\x06&lt;\x88i[*M\xc5\xa7T\xb8l\x89\xcc\x9b\xf9&lt;\xca\xe5\xfd\x89\xf5\x12&lt;\x92x\x96\xd6\xdctn\x93Da\xd1\x8d\xc7F\xb2u\x0e\x86\xe8\x19\x8a\xd5ml\xd5x\x16\x95\xa2\xe9\xc8\x0a8\xeb\xf2$\x13OsT\x93\x13\x85:\x1b\xbc\x1e4\xb5\x8b\x05\x8c\xb9w\x8b\xb1\xdb\x1f \x91\xab\x09Sn\x90\xce{7t\xb9pG\x91&quot;Qc\x16y\xae\xb1\xaeA&amp;\x08\xc8\x19+\xd1F\xaaH\xd6d*\xd7\x834\xff,*\xc1l\x19CJ\x07\x85\xe7\xd3|\xf6!h\xef\xea\xf2R\x9f\x7f\x93\x90\xcf\x02\x03\x01\x00\x01]
+  [version=3, serial=040000000001154B5AC394, subject=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, issuer=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, cn=GlobalSign Root CA, not_valid_before=904651200.0, not_valid_after=1832673600.0, key_alg=rsaEncryption, sig_alg=sha1WithRSAEncryption, key_type=rsa, key_length=2048, exponent=\x01\x00\x01, curve=&lt;uninitialized&gt;, modulus=\xda\x0e\xe6\x99\x8d\xce\xa3\xe3O\x8a~\xfb\xf1\x8b\x83%k\xeaH\x1f\xf1*\xb0\xb9\x95\x11\x04\xbd\xf0c\xd1\xe2gf\xcf\x1c\xdd\xcf\x1bH+\xee\x8d\x89\x8e\x9a\xaf)\x80e\xab\xe9\xc7-\x12\xcb\xab\x1cLp\x07\xa1=\x0a0\xcd\x15\x8dO\xf8\xdd\xd4\x8cP\x15\x1c\xefP\xee\xc4.\xf7\xfc\xe9R\xf2\x91}\xe0m\xd550\x8e^Cs\xf2A\xe9\xd5j\xe3\xb2\x89:V98o\x06&lt;\x88i[*M\xc5\xa7T\xb8l\x89\xcc\x9b\xf9&lt;\xca\xe5\xfd\x89\xf5\x12&lt;\x92x\x96\xd6\xdctn\x93Da\xd1\x8d\xc7F\xb2u\x0e\x86\xe8\x19\x8a\xd5ml\xd5x\x16\x95\xa2\xe9\xc8\x0a8\xeb\xf2$\x13OsT\x93\x13\x85:\x1b\xbc\x1e4\xb5\x8b\x05\x8c\xb9w\x8b\xb1\xdb\x1f \x91\xab\x09Sn\x90\xce{7t\xb9pG\x91&quot;Qc\x16y\xae\xb1\xaeA&amp;\x08\xc8\x19+\xd1F\xaaH\xd6d*\xd7\x834\xff,*\xc1l\x19CJ\x07\x85\xe7\xd3|\xf6!h\xef\xea\xf2R\x9f\x7f\x93\x90\xcf, x=&lt;uninitialized&gt;, y=&lt;uninitialized&gt;, raw_pkey=0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xda\x0e\xe6\x99\x8d\xce\xa3\xe3O\x8a~\xfb\xf1\x8b\x83%k\xeaH\x1f\xf1*\xb0\xb9\x95\x11\x04\xbd\xf0c\xd1\xe2gf\xcf\x1c\xdd\xcf\x1bH+\xee\x8d\x89\x8e\x9a\xaf)\x80e\xab\xe9\xc7-\x12\xcb\xab\x1cLp\x07\xa1=\x0a0\xcd\x15\x8dO\xf8\xdd\xd4\x8cP\x15\x1c\xefP\xee\xc4.\xf7\xfc\xe9R\xf2\x91}\xe0m\xd550\x8e^Cs\xf2A\xe9\xd5j\xe3\xb2\x89:V98o\x06&lt;\x88i[*M\xc5\xa7T\xb8l\x89\xcc\x9b\xf9&lt;\xca\xe5\xfd\x89\xf5\x12&lt;\x92x\x96\xd6\xdctn\x93Da\xd1\x8d\xc7F\xb2u\x0e\x86\xe8\x19\x8a\xd5ml\xd5x\x16\x95\xa2\xe9\xc8\x0a8\xeb\xf2$\x13OsT\x93\x13\x85:\x1b\xbc\x1e4\xb5\x8b\x05\x8c\xb9w\x8b\xb1\xdb\x1f \x91\xab\x09Sn\x90\xce{7t\xb9pG\x91&quot;Qc\x16y\xae\xb1\xaeA&amp;\x08\xc8\x19+\xd1F\xaaH\xd6d*\xd7\x834\xff,*\xc1l\x19CJ\x07\x85\xe7\xd3|\xf6!h\xef\xea\xf2R\x9f\x7f\x93\x90\xcf\x02\x03\x01\x00\x01]
+  ============ Entropy
+  [entropy=4.715374, chi_square=591.981818, mean=75.472727, monte_carlo_pi=4.0, serial_correlation=-0.11027]
+  [entropy=4.715374, chi_square=591.981818, mean=75.472727, monte_carlo_pi=4.0, serial_correlation=-0.11027]
+  ============ Paraglob
+  T
+  T
+  == Diff ===============================
+  --- /tmp/test-diff.104375.out.baseline.tmp	2022-12-08 14:14:07.020572642 +0000
+  +++ /tmp/test-diff.104375.out.tmp	2022-12-08 14:14:07.012572325 +0000
+  @@ -18,8 +18,8 @@
+  25b6746d5172ed6352966a013d93ac846e1110d5a25e8f183b5931f4688842a1
+  25b6746d5172ed6352966a013d93ac846e1110d5a25e8f183b5931f4688842a1
+  ============ X509
+  -[version=3, serial=040000000001154B5AC394, subject=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, issuer=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, cn=GlobalSign Root CA, not_valid_before=XXXXXXXXXX.XXXXXX, not_valid_after=XXXXXXXXXX.XXXXXX, key_alg=rsaEncryption, sig_alg=sha1WithRSAEncryption, key_type=rsa, key_length=2048, exponent=65537, curve=&lt;uninitialized&gt;]
+  -[version=3, serial=040000000001154B5AC394, subject=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, issuer=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, cn=GlobalSign Root CA, not_valid_before=XXXXXXXXXX.XXXXXX, not_valid_after=XXXXXXXXXX.XXXXXX, key_alg=rsaEncryption, sig_alg=sha1WithRSAEncryption, key_type=rsa, key_length=2048, exponent=65537, curve=&lt;uninitialized&gt;]
+  +[version=3, serial=040000000001154B5AC394, subject=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, issuer=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, cn=GlobalSign Root CA, not_valid_before=XXXXXXXXXX.XXXXXX, not_valid_after=XXXXXXXXXX.XXXXXX, key_alg=rsaEncryption, sig_alg=sha1WithRSAEncryption, key_type=rsa, key_length=2048, exponent=\x01\x00\x01, curve=&lt;uninitialized&gt;, modulus=\xda\x0e\xe6\x99\x8d\xce\xa3\xe3O\x8a~\xfb\xf1\x8b\x83%k\xeaH\x1f\xf1*\xb0\xb9\x95\x11\x04\xbd\xf0c\xd1\xe2gf\xcf\x1c\xdd\xcf\x1bH+\xee\x8d\x89\x8e\x9a\xaf)\x80e\xab\xe9\xc7-\x12\xcb\xab\x1cLp\x07\xa1=\x0a0\xcd\x15\x8dO\xf8\xdd\xd4\x8cP\x15\x1c\xefP\xee\xc4.\xf7\xfc\xe9R\xf2\x91}\xe0m\xd550\x8e^Cs\xf2A\xe9\xd5j\xe3\xb2\x89:V98o\x06&lt;\x88i[*M\xc5\xa7T\xb8l\x89\xcc\x9b\xf9&lt;\xca\xe5\xfd\x89\xf5\x12&lt;\x92x\x96\xd6\xdctn\x93Da\xd1\x8d\xc7F\xb2u\x0e\x86\xe8\x19\x8a\xd5ml\xd5x\x16\x95\xa2\xe9\xc8\x0a8\xeb\xf2$\x13OsT\x93\x13\x85:\x1b\xbc\x1e4\xb5\x8b\x05\x8c\xb9w\x8b\xb1\xdb\x1f \x91\xab\x09Sn\x90\xce{7t\xb9pG\x91&quot;Qc\x16y\xae\xb1\xaeA&amp;\x08\xc8\x19+\xd1F\xaaH\xd6d*\xd7\x834\xff,*\xc1l\x19CJ\x07\x85\xe7\xd3|\xf6!h\xef\xea\xf2R\x9f\x7f\x93\x90\xcf, x=&lt;uninitialized&gt;, y=&lt;uninitialized&gt;, raw_pkey=0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xda\x0e\xe6\x99\x8d\xce\xa3\xe3O\x8a~\xfb\xf1\x8b\x83%k\xeaH\x1f\xf1*\xb0\xb9\x95\x11\x04\xbd\xf0c\xd1\xe2gf\xcf\x1c\xdd\xcf\x1bH+\xee\x8d\x89\x8e\x9a\xaf)\x80e\xab\xe9\xc7-\x12\xcb\xab\x1cLp\x07\xa1=\x0a0\xcd\x15\x8dO\xf8\xdd\xd4\x8cP\x15\x1c\xefP\xee\xc4.\xf7\xfc\xe9R\xf2\x91}\xe0m\xd550\x8e^Cs\xf2A\xe9\xd5j\xe3\xb2\x89:V98o\x06&lt;\x88i[*M\xc5\xa7T\xb8l\x89\xcc\x9b\xf9&lt;\xca\xe5\xfd\x89\xf5\x12&lt;\x92x\x96\xd6\xdctn\x93Da\xd1\x8d\xc7F\xb2u\x0e\x86\xe8\x19\x8a\xd5ml\xd5x\x16\x95\xa2\xe9\xc8\x0a8\xeb\xf2$\x13OsT\x93\x13\x85:\x1b\xbc\x1e4\xb5\x8b\x05\x8c\xb9w\x8b\xb1\xdb\x1f \x91\xab\x09Sn\x90\xce{7t\xb9pG\x91&quot;Qc\x16y\xae\xb1\xaeA&amp;\x08\xc8\x19+\xd1F\xaaH\xd6d*\xd7\x834\xff,*\xc1l\x19CJ\x07\x85\xe7\xd3|\xf6!h\xef\xea\xf2R\x9f\x7f\x93\x90\xcf\x02\x03\x01\x00\x01]
+  +[version=3, serial=040000000001154B5AC394, subject=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, issuer=CN=GlobalSign Root CA,OU=Root CA,O=GlobalSign nv-sa,C=BE, cn=GlobalSign Root CA, not_valid_before=XXXXXXXXXX.XXXXXX, not_valid_after=XXXXXXXXXX.XXXXXX, key_alg=rsaEncryption, sig_alg=sha1WithRSAEncryption, key_type=rsa, key_length=2048, exponent=\x01\x00\x01, curve=&lt;uninitialized&gt;, modulus=\xda\x0e\xe6\x99\x8d\xce\xa3\xe3O\x8a~\xfb\xf1\x8b\x83%k\xeaH\x1f\xf1*\xb0\xb9\x95\x11\x04\xbd\xf0c\xd1\xe2gf\xcf\x1c\xdd\xcf\x1bH+\xee\x8d\x89\x8e\x9a\xaf)\x80e\xab\xe9\xc7-\x12\xcb\xab\x1cLp\x07\xa1=\x0a0\xcd\x15\x8dO\xf8\xdd\xd4\x8cP\x15\x1c\xefP\xee\xc4.\xf7\xfc\xe9R\xf2\x91}\xe0m\xd550\x8e^Cs\xf2A\xe9\xd5j\xe3\xb2\x89:V98o\x06&lt;\x88i[*M\xc5\xa7T\xb8l\x89\xcc\x9b\xf9&lt;\xca\xe5\xfd\x89\xf5\x12&lt;\x92x\x96\xd6\xdctn\x93Da\xd1\x8d\xc7F\xb2u\x0e\x86\xe8\x19\x8a\xd5ml\xd5x\x16\x95\xa2\xe9\xc8\x0a8\xeb\xf2$\x13OsT\x93\x13\x85:\x1b\xbc\x1e4\xb5\x8b\x05\x8c\xb9w\x8b\xb1\xdb\x1f \x91\xab\x09Sn\x90\xce{7t\xb9pG\x91&quot;Qc\x16y\xae\xb1\xaeA&amp;\x08\xc8\x19+\xd1F\xaaH\xd6d*\xd7\x834\xff,*\xc1l\x19CJ\x07\x85\xe7\xd3|\xf6!h\xef\xea\xf2R\x9f\x7f\x93\x90\xcf, x=&lt;uninitialized&gt;, y=&lt;uninitialized&gt;, raw_pkey=0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xda\x0e\xe6\x99\x8d\xce\xa3\xe3O\x8a~\xfb\xf1\x8b\x83%k\xeaH\x1f\xf1*\xb0\xb9\x95\x11\x04\xbd\xf0c\xd1\xe2gf\xcf\x1c\xdd\xcf\x1bH+\xee\x8d\x89\x8e\x9a\xaf)\x80e\xab\xe9\xc7-\x12\xcb\xab\x1cLp\x07\xa1=\x0a0\xcd\x15\x8dO\xf8\xdd\xd4\x8cP\x15\x1c\xefP\xee\xc4.\xf7\xfc\xe9R\xf2\x91}\xe0m\xd550\x8e^Cs\xf2A\xe9\xd5j\xe3\xb2\x89:V98o\x06&lt;\x88i[*M\xc5\xa7T\xb8l\x89\xcc\x9b\xf9&lt;\xca\xe5\xfd\x89\xf5\x12&lt;\x92x\x96\xd6\xdctn\x93Da\xd1\x8d\xc7F\xb2u\x0e\x86\xe8\x19\x8a\xd5ml\xd5x\x16\x95\xa2\xe9\xc8\x0a8\xeb\xf2$\x13OsT\x93\x13\x85:\x1b\xbc\x1e4\xb5\x8b\x05\x8c\xb9w\x8b\xb1\xdb\x1f \x91\xab\x09Sn\x90\xce{7t\xb9pG\x91&quot;Qc\x16y\xae\xb1\xaeA&amp;\x08\xc8\x19+\xd1F\xaaH\xd6d*\xd7\x834\xff,*\xc1l\x19CJ\x07\x85\xe7\xd3|\xf6!h\xef\xea\xf2R\x9f\x7f\x93\x90\xcf\x02\x03\x01\x00\x01]
+  ============ Entropy
+  [entropy=4.715374, chi_square=591.981818, mean=75.472727, monte_carlo_pi=4.0, serial_correlation=-0.11027]
+  [entropy=4.715374, chi_square=591.981818, mean=75.472727, monte_carlo_pi=4.0, serial_correlation=-0.11027]
+  =======================================
+  % cat .stderr
+  error: incompatible Bloom filter types
+</failure>
+    </testcase>
+    <testcase classname="language" name="cross-product-init" time="0.712069034576416"/>
+    <testcase classname="language" name="crlf-parsing" time="0.7325630187988281"/>
+    <testcase classname="language" name="default-params" time="0.7288651466369629"/>
+    <testcase classname="language" name="alternate-prototypes-default-args" time="1.4140777587890625"/>
+    <testcase classname="language" name="delete-field" time="0.7067282199859619"/>
+    <testcase classname="language" name="copy-cycle" time="0.7844398021697998"/>
+    <testcase classname="language" name="alternate-prototypes-deprecated-args" time="1.408710241317749"/>
+    <testcase classname="language" name="delete-field-set" time="0.7208023071289062"/>
+    <testcase classname="language" name="duplicate-attributes" time="0.6820576190948486"/>
+    <testcase classname="language" name="enum-name-conflict" time="0.655325174331665"/>
+    <testcase classname="language" name="double" time="0.7276060581207275"/>
+    <testcase classname="language" name="at-dir" time="1.4384281635284424"/>
+    <testcase classname="language" name="enum" time="0.7267441749572754"/>
+    <testcase classname="language" name="enum-nonexisting" time="0.6756734848022461"/>
+    <testcase classname="language" name="enum-multiple-decls" time="0.7406890392303467"/>
+    <testcase classname="core.tunnels" name="ip-in-ip" time="2.788844347000122"/>
+    <testcase classname="language" name="enum-desc" time="0.7492694854736328"/>
+    <testcase classname="coverage" name="default-load-baseline" time="2.1771562099456787">
+        <failure type="failure">  % 'btest-diff canonified_loaded_scripts.log' failed unexpectedly (exit code 1)
+  % cat .diag
+  == File ===============================
+  #separator \x09
+  #set_separator	,
+  #empty_field	(empty)
+  #unset_field	-
+  #path	loaded_scripts
+  #open	2022-12-08-14-14-05
+  #fields	name
+  #types	string
+  scripts/base/init-bare.zeek
+  build/scripts/base/bif/const.bif.zeek
+  build/scripts/base/bif/types.bif.zeek
+  build/scripts/base/bif/zeek.bif.zeek
+  build/scripts/base/bif/stats.bif.zeek
+  build/scripts/base/bif/reporter.bif.zeek
+  build/scripts/base/bif/strings.bif.zeek
+  build/scripts/base/bif/option.bif.zeek
+  scripts/base/frameworks/supervisor/api.zeek
+  build/scripts/base/bif/supervisor.bif.zeek
+  build/scripts/base/bif/packet_analysis.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_SNMP.types.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_KRB.types.bif.zeek
+  build/scripts/base/bif/event.bif.zeek
+  scripts/base/packet-protocols/__load__.zeek
+  scripts/base/packet-protocols/root/__load__.zeek
+  scripts/base/packet-protocols/root/main.zeek
+  scripts/base/packet-protocols/ip/__load__.zeek
+  scripts/base/packet-protocols/ip/main.zeek
+  scripts/base/packet-protocols/skip/__load__.zeek
+  scripts/base/packet-protocols/skip/main.zeek
+  scripts/base/packet-protocols/ethernet/__load__.zeek
+  scripts/base/packet-protocols/ethernet/main.zeek
+  scripts/base/packet-protocols/fddi/__load__.zeek
+  scripts/base/packet-protocols/fddi/main.zeek
+  scripts/base/packet-protocols/ieee802_11/__load__.zeek
+  scripts/base/packet-protocols/ieee802_11/main.zeek
+  scripts/base/packet-protocols/ieee802_11_radio/__load__.zeek
+  scripts/base/packet-protocols/ieee802_11_radio/main.zeek
+  scripts/base/packet-protocols/linux_sll/__load__.zeek
+  scripts/base/packet-protocols/linux_sll/main.zeek
+  scripts/base/packet-protocols/nflog/__load__.zeek
+  scripts/base/packet-protocols/nflog/main.zeek
+  scripts/base/packet-protocols/null/__load__.zeek
+  scripts/base/packet-protocols/null/main.zeek
+  scripts/base/packet-protocols/ppp_serial/__load__.zeek
+  scripts/base/packet-protocols/ppp_serial/main.zeek
+  scripts/base/packet-protocols/pppoe/__load__.zeek
+  scripts/base/packet-protocols/pppoe/main.zeek
+  scripts/base/packet-protocols/vlan/__load__.zeek
+  scripts/base/packet-protocols/vlan/main.zeek
+  scripts/base/packet-protocols/mpls/__load__.zeek
+  scripts/base/packet-protocols/mpls/main.zeek
+  scripts/base/packet-protocols/gre/__load__.zeek
+  scripts/base/packet-protocols/gre/main.zeek
+  scripts/base/packet-protocols/iptunnel/__load__.zeek
+  scripts/base/packet-protocols/iptunnel/main.zeek
+  scripts/base/init-frameworks-and-bifs.zeek
+  scripts/base/frameworks/logging/__load__.zeek
+  scripts/base/frameworks/logging/main.zeek
+  build/scripts/base/bif/logging.bif.zeek
+  scripts/base/frameworks/logging/postprocessors/__load__.zeek
+  scripts/base/frameworks/logging/postprocessors/scp.zeek
+  scripts/base/frameworks/logging/postprocessors/sftp.zeek
+  scripts/base/frameworks/logging/writers/ascii.zeek
+  scripts/base/frameworks/logging/writers/sqlite.zeek
+  scripts/base/frameworks/logging/writers/none.zeek
+  scripts/base/frameworks/broker/__load__.zeek
+  scripts/base/frameworks/broker/main.zeek
+  build/scripts/base/bif/comm.bif.zeek
+  build/scripts/base/bif/messaging.bif.zeek
+  scripts/base/frameworks/broker/store.zeek
+  build/scripts/base/bif/data.bif.zeek
+  build/scripts/base/bif/store.bif.zeek
+  scripts/base/frameworks/broker/log.zeek
+  scripts/base/frameworks/supervisor/__load__.zeek
+  scripts/base/frameworks/supervisor/control.zeek
+  scripts/base/frameworks/supervisor/main.zeek
+  scripts/base/frameworks/input/__load__.zeek
+  scripts/base/frameworks/input/main.zeek
+  build/scripts/base/bif/input.bif.zeek
+  scripts/base/frameworks/input/readers/ascii.zeek
+  scripts/base/frameworks/input/readers/raw.zeek
+  scripts/base/frameworks/input/readers/benchmark.zeek
+  scripts/base/frameworks/input/readers/binary.zeek
+  scripts/base/frameworks/input/readers/config.zeek
+  scripts/base/frameworks/input/readers/sqlite.zeek
+  scripts/base/frameworks/analyzer/__load__.zeek
+  scripts/base/frameworks/analyzer/main.zeek
+  scripts/base/frameworks/packet-filter/utils.zeek
+  build/scripts/base/bif/analyzer.bif.zeek
+  scripts/base/frameworks/files/__load__.zeek
+  scripts/base/frameworks/files/main.zeek
+  build/scripts/base/bif/file_analysis.bif.zeek
+  scripts/base/utils/site.zeek
+  scripts/base/utils/patterns.zeek
+  scripts/base/frameworks/files/magic/__load__.zeek
+  build/scripts/base/bif/__load__.zeek
+  build/scripts/base/bif/zeekygen.bif.zeek
+  build/scripts/base/bif/pcap.bif.zeek
+  build/scripts/base/bif/bloom-filter.bif.zeek
+  build/scripts/base/bif/cardinality-counter.bif.zeek
+  [... File too long, truncated ...]
+  == Diff ===============================
+  --- /tmp/test-diff.105719.canonified_loaded_scripts.log.baseline.tmp	2022-12-08 14:14:07.316584353 +0000
+  +++ /tmp/test-diff.105719.canonified_loaded_scripts.log.tmp	2022-12-08 14:14:07.308584036 +0000
+  @@ -198,6 +198,7 @@
+  build/scripts/base/bif/plugins/Zeek_UDP.events.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_VXLAN.events.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_XMPP.events.bif.zeek
+  +    build/scripts/base/bif/plugins/Zeek_IPSecNaive.events.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_ARP.events.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_FileEntropy.events.bif.zeek
+  build/scripts/base/bif/plugins/Zeek_FileExtract.events.bif.zeek
+  =======================================
+  % cat .stderr
+</failure>
+    </testcase>
+    <testcase classname="language" name="enum-scope" time="0.7313404083251953"/>
+    <testcase classname="language" name="event" time="0.7377486228942871"/>
+    <testcase classname="language" name="event-local-var" time="0.6976723670959473"/>
+    <testcase classname="language" name="expire-func-type-check" time="0.6773264408111572"/>
+    <testcase classname="language" name="expire-type-error" time="0.6889626979827881"/>
+    <testcase classname="language" name="expire_multiple-3" time="0.6458115577697754"/>
+    <testcase classname="language" name="expire-func-undef" time="0.7336664199829102"/>
+    <testcase classname="language" name="expire_multiple" time="0.6746163368225098"/>
+    <testcase classname="language" name="expire_multiple-2" time="0.6833095550537109"/>
+    <testcase classname="language" name="expire_func" time="0.7358107566833496"/>
+    <testcase classname="language" name="for" time="0.6854641437530518"/>
+    <testcase classname="broker.store" name="brokerstore-backend-simple-incompatible" time="6.598822355270386"/>
+    <testcase classname="language" name="func-assignment" time="0.6996257305145264"/>
+    <testcase classname="language" name="func-equality" time="0.7018060684204102"/>
+    <testcase classname="language" name="function-already-defined" time="0.6474478244781494"/>
+    <testcase classname="language" name="function" time="0.6745908260345459"/>
+    <testcase classname="language" name="function-closures" time="0.6981127262115479"/>
+    <testcase classname="broker" name="remote_log_late_join" time="6.943120956420898"/>
+    <testcase classname="language" name="global-unset-addto" time="0.6419737339019775"/>
+    <testcase classname="language" name="global-init-calls-bif" time="0.7160184383392334"/>
+    <testcase classname="broker" name="connect-on-retry" time="7.23176646232605"/>
+    <testcase classname="language" name="global-init-calls-bif-using-builtin-type" time="0.7239058017730713"/>
+    <testcase classname="language" name="hook" time="0.6876811981201172"/>
+    <testcase classname="language" name="file" time="0.9897418022155762"/>
+    <testcase classname="language" name="deprecated" time="1.3827528953552246"/>
+    <testcase classname="language" name="incr-vec-expr" time="0.6809136867523193"/>
+    <testcase classname="language" name="if" time="0.6966264247894287"/>
+    <testcase classname="language" name="ineffective-default-args" time="0.6985201835632324"/>
+    <testcase classname="core" name="print-bpf-filters" time="4.61670184135437"/>
+    <testcase classname="language" name="invalid-hostnames" time="0.6298966407775879"/>
+    <testcase classname="language" name="eof-parse-errors" time="1.3355333805084229"/>
+    <testcase classname="language" name="int-negation-range" time="0.6889822483062744"/>
+    <testcase classname="language" name="nested-sets" time="0.4249386787414551"/>
+    <testcase classname="language" name="interval" time="0.699958086013794"/>
+    <testcase classname="language" name="int" time="0.7530820369720459"/>
+    <testcase classname="language" name="invalid-hostnames-2" time="0.7003457546234131"/>
+    <testcase classname="language" name="init-in-anon-function" time="0.7873654365539551"/>
+    <testcase classname="language" name="invalid_index" time="0.7228202819824219"/>
+    <testcase classname="language" name="ipv6-literals" time="0.7245051860809326"/>
+    <testcase classname="language" name="lambda-nested-copy" time="0.7023193836212158"/>
+    <testcase classname="language" name="key-value-for" time="0.7419378757476807"/>
+    <testcase classname="language" name="lambda-escaping" time="0.734025239944458"/>
+    <testcase classname="language" name="lambda-record-field" time="0.7142953872680664"/>
+    <testcase classname="language" name="lambda-zeek-init" time="0.7217941284179688"/>
+    <testcase classname="language" name="expire_subnet" time="1.2916760444641113"/>
+    <testcase classname="language" name="more-closure-tests" time="0.6994466781616211"/>
+    <testcase classname="language" name="module" time="0.7305536270141602"/>
+    <testcase classname="language" name="named-record-ctors" time="0.7331798076629639"/>
+    <testcase classname="language" name="const" time="1.9732415676116943"/>
+    <testcase classname="language" name="named-set-ctors" time="0.7200949192047119"/>
+    <testcase classname="language" name="named-table-ctors" time="0.6950976848602295"/>
+    <testcase classname="language" name="named-vector-ctors" time="0.7005717754364014"/>
+    <testcase classname="language" name="no-module" time="0.6880879402160645"/>
+    <testcase classname="language" name="next-test" time="0.7266800403594971"/>
+    <testcase classname="language" name="null-statement" time="0.7105000019073486"/>
+    <testcase classname="language" name="on_change" time="0.7149410247802734"/>
+    <testcase classname="language" name="common-mistakes" time="2.11622953414917"/>
+    <testcase classname="language" name="on_change-recurse" time="0.6961274147033691"/>
+    <testcase classname="language" name="on_change_expire" time="0.6984152793884277"/>
+    <testcase classname="language" name="outer_param_binding" time="0.6398890018463135"/>
+    <testcase classname="coverage" name="init-default" time="3.1815013885498047"/>
+    <testcase classname="language" name="index-assignment-invalid" time="1.2250192165374756"/>
+    <testcase classname="coverage" name="zeek-profiler-file" time="3.1697998046875"/>
+    <testcase classname="language" name="patterns-stored-in-containers" time="0.6476089954376221"/>
+    <testcase classname="language" name="pattern" time="0.6862475872039795"/>
+    <testcase classname="language" name="hook_calls" time="1.3659343719482422"/>
+    <testcase classname="language" name="port" time="0.6819653511047363"/>
+    <testcase classname="language" name="record-bad-ctor" time="0.6464307308197021"/>
+    <testcase classname="language" name="precedence" time="0.717799186706543"/>
+    <testcase classname="language" name="record-ceorce-orphan" time="0.6461248397827148"/>
+    <testcase classname="language" name="rec-comp-init" time="0.7147984504699707"/>
+    <testcase classname="language" name="record-bad-ctor2" time="0.6758990287780762"/>
+    <testcase classname="language" name="rec-nested-opt" time="0.7382090091705322"/>
+    <testcase classname="language" name="record-coerce-clash" time="0.6707401275634766"/>
+    <testcase classname="language" name="rec-table-default" time="0.7363770008087158"/>
+    <testcase classname="language" name="expire_func_mod" time="1.8916521072387695"/>
+    <testcase classname="language" name="rec-of-tbl" time="0.7528295516967773"/>
+    <testcase classname="language" name="record-global-init-exception" time="0.64821457862854"/>
+    <testcase classname="language" name="record-default-set-mismatch" time="0.67934250831604"/>
+    <testcase classname="language" name="record-default-coercion" time="0.7238876819610596"/>
+    <testcase classname="language" name="record-extension" time="0.7046260833740234"/>
+    <testcase classname="language" name="record-recursive-coercion" time="0.6769330501556396"/>
+    <testcase classname="language" name="record-function-recursion" time="0.7005007266998291"/>
+    <testcase classname="language" name="record-index-complex-fields" time="0.6921179294586182"/>
+    <testcase classname="language" name="record-type-checking" time="0.6605744361877441"/>
+    <testcase classname="language" name="record-ref-assign" time="0.6840567588806152"/>
+    <testcase classname="language" name="raw_output_attr" time="0.9531748294830322"/>
+    <testcase classname="language" name="record-redef-after-init" time="0.7102489471435547"/>
+    <testcase classname="language" name="set-type-checking" time="0.6700387001037598"/>
+    <testcase classname="language" name="redef-same-prefixtable-idx" time="0.7413883209228516"/>
+    <testcase classname="language" name="redef-vector" time="0.7314655780792236"/>
+    <testcase classname="language" name="set-opt-record-index" time="0.7126030921936035"/>
+    <testcase classname="language" name="set" time="0.7348899841308594"/>
+    <testcase classname="language" name="set-vector-index" time="0.7300114631652832"/>
+    <testcase classname="language" name="sizeof" time="0.7262792587280273"/>
+    <testcase classname="language" name="short-circuit" time="0.7351975440979004"/>
+    <testcase classname="language" name="smith-waterman-test" time="0.719031810760498"/>
+    <testcase classname="language" name="string-indexing" time="0.7012262344360352"/>
+    <testcase classname="language" name="string" time="0.7290832996368408"/>
+    <testcase classname="language" name="strings" time="0.6902728080749512"/>
+    <testcase classname="language" name="switch-error-mixed" time="0.6323630809783936"/>
+    <testcase classname="language" name="subnet-errors" time="0.6719970703125"/>
+    <testcase classname="language" name="switch-incomplete" time="0.6352362632751465"/>
+    <testcase classname="language" name="switch-type-cast-fallthrough-error" time="0.6316595077514648"/>
+    <testcase classname="language" name="subnet" time="0.7079207897186279"/>
+    <testcase classname="language" name="switch-types" time="0.6811971664428711"/>
+    <testcase classname="language" name="switch-statement" time="0.7034225463867188"/>
+    <testcase classname="language" name="switch-types-error-duplicate" time="0.6417129039764404"/>
+    <testcase classname="language" name="switch-types-error-unsupported" time="0.6262154579162598"/>
+    <testcase classname="language" name="table-aggr-init-type-check" time="0.6327550411224365"/>
+    <testcase classname="language" name="table" time="0.6703729629516602"/>
+    <testcase classname="language" name="switch-types-vars" time="0.6909065246582031"/>
+    <testcase classname="language" name="table-default-record" time="0.6668252944946289"/>
+    <testcase classname="language" name="table-index-unsupported-types" time="0.6216142177581787"/>
+    <testcase classname="language" name="table-init" time="0.6733129024505615"/>
+    <testcase classname="language" name="table-init-attrs" time="0.689337968826294"/>
+    <testcase classname="language" name="table-init-container-ctors" time="0.6779799461364746"/>
+    <testcase classname="language" name="table-list-assign-type-check" time="0.6420910358428955"/>
+    <testcase classname="language" name="table-init-record-idx-3" time="0.6826128959655762"/>
+    <testcase classname="language" name="table-init-record-idx-2" time="0.7026963233947754"/>
+    <testcase classname="language" name="table-init-record-idx" time="0.7248685359954834"/>
+    <testcase classname="language" name="table-init-record-idx-4" time="0.7047340869903564"/>
+    <testcase classname="language" name="table-set-iterator-invalidation" time="0.6811933517456055"/>
+    <testcase classname="language" name="table-record-idx-redef" time="0.7089846134185791"/>
+    <testcase classname="language" name="table-type-checking" time="0.6622679233551025"/>
+    <testcase classname="language" name="table-pattern-index" time="0.7197904586791992"/>
+    <testcase classname="language" name="table-redef-default" time="0.7053139209747314"/>
+    <testcase classname="language" name="table-redef" time="0.7213194370269775"/>
+    <testcase classname="language" name="ternary-type-check" time="0.6494565010070801"/>
+    <testcase classname="language" name="closure-sending" time="3.3542275428771973"/>
+    <testcase classname="language" name="time" time="0.6646828651428223"/>
+    <testcase classname="language" name="type-cast-error-static" time="0.6190183162689209"/>
+    <testcase classname="language" name="type-cast-any" time="0.6795527935028076"/>
+    <testcase classname="language" name="type-cast-error-dynamic" time="0.6769368648529053"/>
+    <testcase classname="language" name="sizeof-any" time="1.3593618869781494"/>
+    <testcase classname="language" name="paraglob" time="1.8966469764709473"/>
+    <testcase classname="language" name="type-check-operator-in" time="0.6316649913787842"/>
+    <testcase classname="language" name="type-cast-same" time="0.6915078163146973"/>
+    <testcase classname="language" name="type-check-func-call" time="0.6610026359558105"/>
+    <testcase classname="language" name="type-check-any" time="0.6890974044799805"/>
+    <testcase classname="language" name="type-type-error" time="0.6727149486541748"/>
+    <testcase classname="language" name="undefined-delete-field" time="0.6712589263916016"/>
+    <testcase classname="language" name="undeclared-alternate-event-hook-prototype" time="0.6923153400421143"/>
+    <testcase classname="language" name="type-check-vector" time="0.7509016990661621"/>
+    <testcase classname="language" name="unterminated-pattern" time="0.6928844451904297"/>
+    <testcase classname="language" name="uninitialized-local" time="0.7439627647399902"/>
+    <testcase classname="language" name="uninitialized-local2" time="0.764596700668335"/>
+    <testcase classname="language" name="vector" time="0.7478301525115967"/>
+    <testcase classname="language" name="vector-any-append" time="0.7573826313018799"/>
+    <testcase classname="language" name="vector-in-operator" time="0.7501363754272461"/>
+    <testcase classname="language" name="vector-coerce-expr" time="0.761091947555542"/>
+    <testcase classname="language" name="vector-of-enum-mismatch" time="0.7200789451599121"/>
+    <testcase classname="language" name="vector-list-init-records" time="0.7610738277435303"/>
+    <testcase classname="language" name="vector-of-enum" time="0.7743446826934814"/>
+    <testcase classname="language" name="vector-type-checking" time="0.7064099311828613"/>
+    <testcase classname="language" name="vector-of-interval-arithmetic" time="0.7450501918792725"/>
+    <testcase classname="language" name="vector-unspecified" time="0.7421441078186035"/>
+    <testcase classname="language" name="when-on-globals" time="0.7321820259094238"/>
+    <testcase classname="broker.store" name="brokerstore-attr-expire" time="9.124828815460205"/>
+    <testcase classname="language" name="wrong-delete-field" time="0.7053048610687256"/>
+    <testcase classname="language" name="when-unitialized-rhs" time="0.7307777404785156"/>
+    <testcase classname="language" name="while" time="0.7434608936309814"/>
+    <testcase classname="language" name="zeek_script_loaded" time="0.6958050727844238"/>
+    <testcase classname="language" name="zeek_init" time="0.7258753776550293"/>
+    <testcase classname="core.pcap" name="pseudo-realtime" time="7.04061484336853"/>
+    <testcase classname="language" name="wrong-record-extension" time="0.8834857940673828"/>
+    <testcase classname="language" name="function-sending" time="3.2772018909454346"/>
+    <testcase classname="scripts.base.files.entropy" name="basic" time="0.7083139419555664"/>
+    <testcase classname="scripts.base.files.unified2" name="alert" time="0.6841914653778076"/>
+    <testcase classname="language" name="timeout" time="1.6588234901428223"/>
+    <testcase classname="scripts.base.files.x509" name="1999" time="0.7304012775421143">
+        <failure type="failure">  % 'btest-diff x509.log' failed unexpectedly (exit code 1)
+  % cat .diag
+  == File ===============================
+  #separator \x09
+  #set_separator	,
+  #empty_field	(empty)
+  #unset_field	-
+  #path	x509
+  #open	2022-12-08-14-14-10
+  #fields	ts	id	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	certificate.modulus	certificate.x	certificate.y	certificate.raw_pkey	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len
+  #types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	string	string	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count
+  1461697070.246986	FiKzRk1X0E3PC2gSja	3	339D9ED8E73927C9	CN=imap.gmx.net,emailAddress=server-certs@1und1.de,L=Montabaur,ST=Rhineland-Palatinate,O=1&amp;1 Mail &amp; Media GmbH,C=DE	CN=TeleSec ServerPass DE-1,street=Untere Industriestr. 20,L=Netphen,postalCode=57250,ST=NRW,OU=T-Systems Trust Center,O=T-Systems International GmbH,C=DE	1384251451.000000	1479427199.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xc7?t\x0d\xd7;W\xe6o\x0bh/f\xb7i\xebp\xb0D\x7f\x16\xfa\xd4T\x02\x89\xe5\xd6\xe0\xe5\x7f\x0f\x91\xc4\xcb\xbb\xe0@\x80\x1eK\xea`\xdb\xffB\x95\xac)\xad\x01[-F\xb8\xea\x8c\x14p\x9b\xaa\xa3d\x9ay\xfb\x18\xaa4a \xff\xed=\xec\x86D\x94&amp;~|\x82E\x1a\x07!\x89\xe8\xe7\xbf\xdb\xcfj\xa6\x1e&lt;\xef\x92\xa1\x142\xf3FUW\xa3\xec\x12o\x1a\xe9\x0d(\xf5\xd8\x89\xca\x1d\x91\x1a\x1d\x17q&quot;q3\xe7\x1a+Fys\xac\x03\x1c\x8f\xb8#\xc8\xb0\x13\xc02\xeb\xae\x072\x9e\x9d.\xe7\x8f\xec\xacy!\x9e\x90\xce\xff\x92;M\x81\xb8\xc3\xc8\x15\xe2\xd8\x1b\xe8Q/\xd4\xf8i\xbd\xa7Yj\xd3)\x93\xf5\xf8F\x8f\xf9=\xfd\x0c\xf7\xd7a\x87c\x17\xd9\x07V\xe1/Jdi\xd1v\xe4\xff\x1fL\x8c\xb9\xb4\xa3\x16\xa8\x97\xe0\x08_\x9eh\xec \x91\x87\x9c\xc5\xe0\x9c\xae\xdd\x84\xdc?\x13\x84\xbb\xe6\x90\x14k^\xc4\xd3\xe7Vs\x0f\xbb)\xee\x13\xe9	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xc7?t\x0d\xd7;W\xe6o\x0bh/f\xb7i\xebp\xb0D\x7f\x16\xfa\xd4T\x02\x89\xe5\xd6\xe0\xe5\x7f\x0f\x91\xc4\xcb\xbb\xe0@\x80\x1eK\xea`\xdb\xffB\x95\xac)\xad\x01[-F\xb8\xea\x8c\x14p\x9b\xaa\xa3d\x9ay\xfb\x18\xaa4a \xff\xed=\xec\x86D\x94&amp;~|\x82E\x1a\x07!\x89\xe8\xe7\xbf\xdb\xcfj\xa6\x1e&lt;\xef\x92\xa1\x142\xf3FUW\xa3\xec\x12o\x1a\xe9\x0d(\xf5\xd8\x89\xca\x1d\x91\x1a\x1d\x17q&quot;q3\xe7\x1a+Fys\xac\x03\x1c\x8f\xb8#\xc8\xb0\x13\xc02\xeb\xae\x072\x9e\x9d.\xe7\x8f\xec\xacy!\x9e\x90\xce\xff\x92;M\x81\xb8\xc3\xc8\x15\xe2\xd8\x1b\xe8Q/\xd4\xf8i\xbd\xa7Yj\xd3)\x93\xf5\xf8F\x8f\xf9=\xfd\x0c\xf7\xd7a\x87c\x17\xd9\x07V\xe1/Jdi\xd1v\xe4\xff\x1fL\x8c\xb9\xb4\xa3\x16\xa8\x97\xe0\x08_\x9eh\xec \x91\x87\x9c\xc5\xe0\x9c\xae\xdd\x84\xdc?\x13\x84\xbb\xe6\x90\x14k^\xc4\xd3\xe7Vs\x0f\xbb)\xee\x13\xe9\x02\x03\x01\x00\x01	imap.gmx.net,imap.gmx.de	-	-	-	F	-
+  1461697070.246986	FnvDHa2zrKUnoJhaX	3	21B6777E8CBD0EA8	CN=TeleSec ServerPass DE-1,street=Untere Industriestr. 20,L=Netphen,postalCode=57250,ST=NRW,OU=T-Systems Trust Center,O=T-Systems International GmbH,C=DE	CN=Deutsche Telekom Root CA 2,OU=T-TeleSec Trust Center,O=Deutsche Telekom AG,C=DE	1362146309.000000	1562716740.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xb0\x83\xefP\x8a\xe6\x00\xc5\x7f\x7f\xe0_WE\x9a\xd2\xd6\x8d*\xf9\xa6\xbd/\xfe\x7f+{\xdc\xf9\x1a\x8f\xa6X\xa2gn/NB\\\xd4\x90\xe9^\xb6\xd6]-\xb9\xb9=\xf2\xcc{\xa4B\xb8H\xab@\x1bq\x1a\x8d\x10\x07\x85\x8b\x91!R!\x0c\xfe\xfb[\xe0\x16\x06\x1d\xda\x9f]\x0d\xde\xb6\x06\x18p+I\xe3s@\x1d\xa4\xa0\xb3$=\x93!\x95\xdaY\x8c\xc2G\x80_z\x99\xd8!\x84\xf7\xf7\x11\xeb\x0f\x9b:\x88\x07\x02\xb0]\x93bZ\x1cm=\x9b#Y\x0f+k\xea\x85\x1bX\xb8\xcbw\xfa\xa1\x0b\xd63\xc9\x94\x97m\x98\x04\xfeHy/\x96:?\xdaZ\xc3jCv~\xfe6.)_9f\xa2=d\xe3{\xa2\xcf\xe8v\x89\xb7\xb7\x0c\xef](\xc6@hB\x9e\xc8mN\x83G\xf4\xaf\x9d\xcc\xf0\xef\xbc\x06m\xac^\xd5\x9e\x96\xb0 \xad\xf1e!(\x16\xcc\xeda\x90\xdb5\xda\xb5\xa9\xaf\x879b\x07^\xfd\xb7\xa1\xc7\xd3\x90\x98\xfc)\x99/\x9e\xddk\xd3	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xb0\x83\xefP\x8a\xe6\x00\xc5\x7f\x7f\xe0_WE\x9a\xd2\xd6\x8d*\xf9\xa6\xbd/\xfe\x7f+{\xdc\xf9\x1a\x8f\xa6X\xa2gn/NB\\\xd4\x90\xe9^\xb6\xd6]-\xb9\xb9=\xf2\xcc{\xa4B\xb8H\xab@\x1bq\x1a\x8d\x10\x07\x85\x8b\x91!R!\x0c\xfe\xfb[\xe0\x16\x06\x1d\xda\x9f]\x0d\xde\xb6\x06\x18p+I\xe3s@\x1d\xa4\xa0\xb3$=\x93!\x95\xdaY\x8c\xc2G\x80_z\x99\xd8!\x84\xf7\xf7\x11\xeb\x0f\x9b:\x88\x07\x02\xb0]\x93bZ\x1cm=\x9b#Y\x0f+k\xea\x85\x1bX\xb8\xcbw\xfa\xa1\x0b\xd63\xc9\x94\x97m\x98\x04\xfeHy/\x96:?\xdaZ\xc3jCv~\xfe6.)_9f\xa2=d\xe3{\xa2\xcf\xe8v\x89\xb7\xb7\x0c\xef](\xc6@hB\x9e\xc8mN\x83G\xf4\xaf\x9d\xcc\xf0\xef\xbc\x06m\xac^\xd5\x9e\x96\xb0 \xad\xf1e!(\x16\xcc\xeda\x90\xdb5\xda\xb5\xa9\xaf\x879b\x07^\xfd\xb7\xa1\xc7\xd3\x90\x98\xfc)\x99/\x9e\xddk\xd3\x02\x03\x01\x00\x01	-	-	-	-	T	0
+  1461697070.246986	FxzRnm1Q98xEWDXsB1	3	26	CN=Deutsche Telekom Root CA 2,OU=T-TeleSec Trust Center,O=Deutsche Telekom AG,C=DE	CN=Deutsche Telekom Root CA 2,OU=T-TeleSec Trust Center,O=Deutsche Telekom AG,C=DE	931522260.000000	1562716740.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xab\x0b\xa35\xe0\x8b)\x14\xb1\x14\x85\xaf&lt;\x10\xe49o5]J\xae\xdd\xeaa\x8d\x95I\xf4od\xa3\x1a`f\xa4\xa9@&quot;\x84\xd9\xd4\xa5\xe5x\x93\x0eh\x01\xad\xb9M\\:\xce\xd3\xb8\xa8B@\xdf\xcf\xa3\xba\x82Yj\x92\x1b\xac\x1c\x9a\xda\x08+%'\xf9i#G\xf1\xe0\xeb,z\x9b\xf5\x13\x02\xd0~4|\xc2\x9e&lt;\x00Y\xab\xf5\xda\x0c\xf52&lt;+\xacP\xda\xd6\xc3\xde\x83\x94\xca\xa8\x0c\x992\x0e\x08HV[j\xfb\xda\xe1XX\x01I_rA&lt;\x15\x06\x01\x8e]\xad\xaa\xb8\x93\xb4\xcd\x9e\xeb\xa7\xe8j-R4\xdb:\xef\\uQ\xda\xdb\xf31\xf9\xeeq\x982\xc4T\x15D\x0c\xf9\x9bU\xed\xad\xdf\x18\x08\xa0\xa3\x86\x8aI\xeeS\x05\x8f\x19L\xd5\xdeXy\x9b\xd2j\x1cB\xab\xc5\xd5\xa7\xcfh\x0f\x96\xe4\xe1a\x98va\xc8\x91|\xd6&gt;\x00\xe2\x91P\x87\xe1\x9d\x0a\xe6\xad\x97\xd2\x1d\xc6:}\xcb\xbc\xda\x034\xd5\x8e[\x01\xf5j\x07\xb7\x16\xb6nJ\x7f	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xab\x0b\xa35\xe0\x8b)\x14\xb1\x14\x85\xaf&lt;\x10\xe49o5]J\xae\xdd\xeaa\x8d\x95I\xf4od\xa3\x1a`f\xa4\xa9@&quot;\x84\xd9\xd4\xa5\xe5x\x93\x0eh\x01\xad\xb9M\\:\xce\xd3\xb8\xa8B@\xdf\xcf\xa3\xba\x82Yj\x92\x1b\xac\x1c\x9a\xda\x08+%'\xf9i#G\xf1\xe0\xeb,z\x9b\xf5\x13\x02\xd0~4|\xc2\x9e&lt;\x00Y\xab\xf5\xda\x0c\xf52&lt;+\xacP\xda\xd6\xc3\xde\x83\x94\xca\xa8\x0c\x992\x0e\x08HV[j\xfb\xda\xe1XX\x01I_rA&lt;\x15\x06\x01\x8e]\xad\xaa\xb8\x93\xb4\xcd\x9e\xeb\xa7\xe8j-R4\xdb:\xef\\uQ\xda\xdb\xf31\xf9\xeeq\x982\xc4T\x15D\x0c\xf9\x9bU\xed\xad\xdf\x18\x08\xa0\xa3\x86\x8aI\xeeS\x05\x8f\x19L\xd5\xdeXy\x9b\xd2j\x1cB\xab\xc5\xd5\xa7\xcfh\x0f\x96\xe4\xe1a\x98va\xc8\x91|\xd6&gt;\x00\xe2\x91P\x87\xe1\x9d\x0a\xe6\xad\x97\xd2\x1d\xc6:}\xcb\xbc\xda\x034\xd5\x8e[\x01\xf5j\x07\xb7\x16\xb6nJ\x7f\x02\x03\x01\x00\x01	-	-	-	-	T	5
+  #close	2022-12-08-14-14-10
+  == Diff ===============================
+  --- /tmp/test-diff.127470.x509.log.baseline.tmp	2022-12-08 14:14:10.528711441 +0000
+  +++ /tmp/test-diff.127470.x509.log.tmp	2022-12-08 14:14:10.520711124 +0000
+  @@ -4,9 +4,9 @@
+  #unset_field	-
+  #path	x509
+  #open XXXX-XX-XX-XX-XX-XX
+  -#fields	ts	id	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len
+  -#types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count
+  -XXXXXXXXXX.XXXXXX	FiKzRk1X0E3PC2gSja	3	339D9ED8E73927C9	CN=imap.gmx.net,emailAddress=server-certs@1und1.de,L=Montabaur,ST=Rhineland-Palatinate,O=1&amp;1 Mail &amp; Media GmbH,C=DE	CN=TeleSec ServerPass DE-1,street=Untere Industriestr. 20,L=Netphen,postalCode=57250,ST=NRW,OU=T-Systems Trust Center,O=T-Systems International GmbH,C=DE	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	imap.gmx.net,imap.gmx.de	-	-	-	F	-
+  -XXXXXXXXXX.XXXXXX	FnvDHa2zrKUnoJhaX	3	21B6777E8CBD0EA8	CN=TeleSec ServerPass DE-1,street=Untere Industriestr. 20,L=Netphen,postalCode=57250,ST=NRW,OU=T-Systems Trust Center,O=T-Systems International GmbH,C=DE	CN=Deutsche Telekom Root CA 2,OU=T-TeleSec Trust Center,O=Deutsche Telekom AG,C=DE	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	0
+  -XXXXXXXXXX.XXXXXX	FxzRnm1Q98xEWDXsB1	3	26	CN=Deutsche Telekom Root CA 2,OU=T-TeleSec Trust Center,O=Deutsche Telekom AG,C=DE	CN=Deutsche Telekom Root CA 2,OU=T-TeleSec Trust Center,O=Deutsche Telekom AG,C=DE	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	5
+  +#fields	ts	id	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	certificate.modulus	certificate.x	certificate.y	certificate.raw_pkey	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len
+  +#types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	string	string	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count
+  +XXXXXXXXXX.XXXXXX	FiKzRk1X0E3PC2gSja	3	339D9ED8E73927C9	CN=imap.gmx.net,emailAddress=server-certs@1und1.de,L=Montabaur,ST=Rhineland-Palatinate,O=1&amp;1 Mail &amp; Media GmbH,C=DE	CN=TeleSec ServerPass DE-1,street=Untere Industriestr. 20,L=Netphen,postalCode=57250,ST=NRW,OU=T-Systems Trust Center,O=T-Systems International GmbH,C=DE	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xc7?t\x0d\xd7;W\xe6o\x0bh/f\xb7i\xebp\xb0D\x7f\x16\xfa\xd4T\x02\x89\xe5\xd6\xe0\xe5\x7f\x0f\x91\xc4\xcb\xbb\xe0@\x80\x1eK\xea`\xdb\xffB\x95\xac)\xad\x01[-F\xb8\xea\x8c\x14p\x9b\xaa\xa3d\x9ay\xfb\x18\xaa4a \xff\xed=\xec\x86D\x94&amp;~|\x82E\x1a\x07!\x89\xe8\xe7\xbf\xdb\xcfj\xa6\x1e&lt;\xef\x92\xa1\x142\xf3FUW\xa3\xec\x12o\x1a\xe9\x0d(\xf5\xd8\x89\xca\x1d\x91\x1a\x1d\x17q&quot;q3\xe7\x1a+Fys\xac\x03\x1c\x8f\xb8#\xc8\xb0\x13\xc02\xeb\xae\x072\x9e\x9d.\xe7\x8f\xec\xacy!\x9e\x90\xce\xff\x92;M\x81\xb8\xc3\xc8\x15\xe2\xd8\x1b\xe8Q/\xd4\xf8i\xbd\xa7Yj\xd3)\x93\xf5\xf8F\x8f\xf9=\xfd\x0c\xf7\xd7a\x87c\x17\xd9\x07V\xe1/Jdi\xd1v\xe4\xff\x1fL\x8c\xb9\xb4\xa3\x16\xa8\x97\xe0\x08_\x9eh\xec \x91\x87\x9c\xc5\xe0\x9c\xae\xdd\x84\xdc?\x13\x84\xbb\xe6\x90\x14k^\xc4\xd3\xe7Vs\x0f\xbb)\xee\x13\xe9	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xc7?t\x0d\xd7;W\xe6o\x0bh/f\xb7i\xebp\xb0D\x7f\x16\xfa\xd4T\x02\x89\xe5\xd6\xe0\xe5\x7f\x0f\x91\xc4\xcb\xbb\xe0@\x80\x1eK\xea`\xdb\xffB\x95\xac)\xad\x01[-F\xb8\xea\x8c\x14p\x9b\xaa\xa3d\x9ay\xfb\x18\xaa4a \xff\xed=\xec\x86D\x94&amp;~|\x82E\x1a\x07!\x89\xe8\xe7\xbf\xdb\xcfj\xa6\x1e&lt;\xef\x92\xa1\x142\xf3FUW\xa3\xec\x12o\x1a\xe9\x0d(\xf5\xd8\x89\xca\x1d\x91\x1a\x1d\x17q&quot;q3\xe7\x1a+Fys\xac\x03\x1c\x8f\xb8#\xc8\xb0\x13\xc02\xeb\xae\x072\x9e\x9d.\xe7\x8f\xec\xacy!\x9e\x90\xce\xff\x92;M\x81\xb8\xc3\xc8\x15\xe2\xd8\x1b\xe8Q/\xd4\xf8i\xbd\xa7Yj\xd3)\x93\xf5\xf8F\x8f\xf9=\xfd\x0c\xf7\xd7a\x87c\x17\xd9\x07V\xe1/Jdi\xd1v\xe4\xff\x1fL\x8c\xb9\xb4\xa3\x16\xa8\x97\xe0\x08_\x9eh\xec \x91\x87\x9c\xc5\xe0\x9c\xae\xdd\x84\xdc?\x13\x84\xbb\xe6\x90\x14k^\xc4\xd3\xe7Vs\x0f\xbb)\xee\x13\xe9\x02\x03\x01\x00\x01	imap.gmx.net,imap.gmx.de	-	-	-	F	-
+  +XXXXXXXXXX.XXXXXX	FnvDHa2zrKUnoJhaX	3	21B6777E8CBD0EA8	CN=TeleSec ServerPass DE-1,street=Untere Industriestr. 20,L=Netphen,postalCode=57250,ST=NRW,OU=T-Systems Trust Center,O=T-Systems International GmbH,C=DE	CN=Deutsche Telekom Root CA 2,OU=T-TeleSec Trust Center,O=Deutsche Telekom AG,C=DE	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xb0\x83\xefP\x8a\xe6\x00\xc5\x7f\x7f\xe0_WE\x9a\xd2\xd6\x8d*\xf9\xa6\xbd/\xfe\x7f+{\xdc\xf9\x1a\x8f\xa6X\xa2gn/NB\\\xd4\x90\xe9^\xb6\xd6]-\xb9\xb9=\xf2\xcc{\xa4B\xb8H\xab@\x1bq\x1a\x8d\x10\x07\x85\x8b\x91!R!\x0c\xfe\xfb[\xe0\x16\x06\x1d\xda\x9f]\x0d\xde\xb6\x06\x18p+I\xe3s@\x1d\xa4\xa0\xb3$=\x93!\x95\xdaY\x8c\xc2G\x80_z\x99\xd8!\x84\xf7\xf7\x11\xeb\x0f\x9b:\x88\x07\x02\xb0]\x93bZ\x1cm=\x9b#Y\x0f+k\xea\x85\x1bX\xb8\xcbw\xfa\xa1\x0b\xd63\xc9\x94\x97m\x98\x04\xfeHy/\x96:?\xdaZ\xc3jCv~\xfe6.)_9f\xa2=d\xe3{\xa2\xcf\xe8v\x89\xb7\xb7\x0c\xef](\xc6@hB\x9e\xc8mN\x83G\xf4\xaf\x9d\xcc\xf0\xef\xbc\x06m\xac^\xd5\x9e\x96\xb0 \xad\xf1e!(\x16\xcc\xeda\x90\xdb5\xda\xb5\xa9\xaf\x879b\x07^\xfd\xb7\xa1\xc7\xd3\x90\x98\xfc)\x99/\x9e\xddk\xd3	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xb0\x83\xefP\x8a\xe6\x00\xc5\x7f\x7f\xe0_WE\x9a\xd2\xd6\x8d*\xf9\xa6\xbd/\xfe\x7f+{\xdc\xf9\x1a\x8f\xa6X\xa2gn/NB\\\xd4\x90\xe9^\xb6\xd6]-\xb9\xb9=\xf2\xcc{\xa4B\xb8H\xab@\x1bq\x1a\x8d\x10\x07\x85\x8b\x91!R!\x0c\xfe\xfb[\xe0\x16\x06\x1d\xda\x9f]\x0d\xde\xb6\x06\x18p+I\xe3s@\x1d\xa4\xa0\xb3$=\x93!\x95\xdaY\x8c\xc2G\x80_z\x99\xd8!\x84\xf7\xf7\x11\xeb\x0f\x9b:\x88\x07\x02\xb0]\x93bZ\x1cm=\x9b#Y\x0f+k\xea\x85\x1bX\xb8\xcbw\xfa\xa1\x0b\xd63\xc9\x94\x97m\x98\x04\xfeHy/\x96:?\xdaZ\xc3jCv~\xfe6.)_9f\xa2=d\xe3{\xa2\xcf\xe8v\x89\xb7\xb7\x0c\xef](\xc6@hB\x9e\xc8mN\x83G\xf4\xaf\x9d\xcc\xf0\xef\xbc\x06m\xac^\xd5\x9e\x96\xb0 \xad\xf1e!(\x16\xcc\xeda\x90\xdb5\xda\xb5\xa9\xaf\x879b\x07^\xfd\xb7\xa1\xc7\xd3\x90\x98\xfc)\x99/\x9e\xddk\xd3\x02\x03\x01\x00\x01	-	-	-	-	T	0
+  +XXXXXXXXXX.XXXXXX	FxzRnm1Q98xEWDXsB1	3	26	CN=Deutsche Telekom Root CA 2,OU=T-TeleSec Trust Center,O=Deutsche Telekom AG,C=DE	CN=Deutsche Telekom Root CA 2,OU=T-TeleSec Trust Center,O=Deutsche Telekom AG,C=DE	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xab\x0b\xa35\xe0\x8b)\x14\xb1\x14\x85\xaf&lt;\x10\xe49o5]J\xae\xdd\xeaa\x8d\x95I\xf4od\xa3\x1a`f\xa4\xa9@&quot;\x84\xd9\xd4\xa5\xe5x\x93\x0eh\x01\xad\xb9M\\:\xce\xd3\xb8\xa8B@\xdf\xcf\xa3\xba\x82Yj\x92\x1b\xac\x1c\x9a\xda\x08+%'\xf9i#G\xf1\xe0\xeb,z\x9b\xf5\x13\x02\xd0~4|\xc2\x9e&lt;\x00Y\xab\xf5\xda\x0c\xf52&lt;+\xacP\xda\xd6\xc3\xde\x83\x94\xca\xa8\x0c\x992\x0e\x08HV[j\xfb\xda\xe1XX\x01I_rA&lt;\x15\x06\x01\x8e]\xad\xaa\xb8\x93\xb4\xcd\x9e\xeb\xa7\xe8j-R4\xdb:\xef\\uQ\xda\xdb\xf31\xf9\xeeq\x982\xc4T\x15D\x0c\xf9\x9bU\xed\xad\xdf\x18\x08\xa0\xa3\x86\x8aI\xeeS\x05\x8f\x19L\xd5\xdeXy\x9b\xd2j\x1cB\xab\xc5\xd5\xa7\xcfh\x0f\x96\xe4\xe1a\x98va\xc8\x91|\xd6&gt;\x00\xe2\x91P\x87\xe1\x9d\x0a\xe6\xad\x97\xd2\x1d\xc6:}\xcb\xbc\xda\x034\xd5\x8e[\x01\xf5j\x07\xb7\x16\xb6nJ\x7f	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xab\x0b\xa35\xe0\x8b)\x14\xb1\x14\x85\xaf&lt;\x10\xe49o5]J\xae\xdd\xeaa\x8d\x95I\xf4od\xa3\x1a`f\xa4\xa9@&quot;\x84\xd9\xd4\xa5\xe5x\x93\x0eh\x01\xad\xb9M\\:\xce\xd3\xb8\xa8B@\xdf\xcf\xa3\xba\x82Yj\x92\x1b\xac\x1c\x9a\xda\x08+%'\xf9i#G\xf1\xe0\xeb,z\x9b\xf5\x13\x02\xd0~4|\xc2\x9e&lt;\x00Y\xab\xf5\xda\x0c\xf52&lt;+\xacP\xda\xd6\xc3\xde\x83\x94\xca\xa8\x0c\x992\x0e\x08HV[j\xfb\xda\xe1XX\x01I_rA&lt;\x15\x06\x01\x8e]\xad\xaa\xb8\x93\xb4\xcd\x9e\xeb\xa7\xe8j-R4\xdb:\xef\\uQ\xda\xdb\xf31\xf9\xeeq\x982\xc4T\x15D\x0c\xf9\x9bU\xed\xad\xdf\x18\x08\xa0\xa3\x86\x8aI\xeeS\x05\x8f\x19L\xd5\xdeXy\x9b\xd2j\x1cB\xab\xc5\xd5\xa7\xcfh\x0f\x96\xe4\xe1a\x98va\xc8\x91|\xd6&gt;\x00\xe2\x91P\x87\xe1\x9d\x0a\xe6\xad\x97\xd2\x1d\xc6:}\xcb\xbc\xda\x034\xd5\x8e[\x01\xf5j\x07\xb7\x16\xb6nJ\x7f\x02\x03\x01\x00\x01	-	-	-	-	T	5
+  #close XXXX-XX-XX-XX-XX-XX
+  =======================================
+  % cat .stderr
+</failure>
+    </testcase>
+    <testcase classname="scripts.base.files.x509" name="caching" time="0.7413191795349121">
+        <failure type="failure">  % 'btest-diff x509.log' failed unexpectedly (exit code 1)
+  % cat .diag
+  == File ===============================
+  #separator \x09
+  #set_separator	,
+  #empty_field	(empty)
+  #unset_field	-
+  #path	x509
+  #open	2022-12-08-14-14-10
+  #fields	ts	id	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	certificate.modulus	certificate.x	certificate.y	certificate.raw_pkey	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len
+  #types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	string	string	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count
+  1394747126.862409	FgN3AE3of2TRIqaeQe	3	4A2C8628C1010633	CN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US	CN=Google Internet Authority G2,O=Google Inc,C=US	1393341558.000000	1401062400.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91\x02\x03\x01\x00\x01	*.google.com,*.android.com,*.appengine.google.com,*.cloud.google.com,*.google-analytics.com,*.google.ca,*.google.cl,*.google.co.in,*.google.co.jp,*.google.co.uk,*.google.com.ar,*.google.com.au,*.google.com.br,*.google.com.co,*.google.com.mx,*.google.com.tr,*.google.com.vn,*.google.de,*.google.es,*.google.fr,*.google.hu,*.google.it,*.google.nl,*.google.pl,*.google.pt,*.googleapis.cn,*.googlecommerce.com,*.googlevideo.com,*.gstatic.com,*.gvt1.com,*.urchin.com,*.url.google.com,*.youtube-nocookie.com,*.youtube.com,*.youtubeeducation.com,*.ytimg.com,android.com,g.co,goo.gl,google-analytics.com,google.com,googlecommerce.com,urchin.com,youtu.be,youtube.com,youtubeeducation.com	-	-	-	F	-
+  1394747126.862409	Fv2Agc4z5boBOacQi6	3	023A69	CN=Google Internet Authority G2,O=Google Inc,C=US	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	1365174955.000000	1428160555.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri\x02\x03\x01\x00\x01	-	-	-	-	T	0
+  1394747126.862409	Ftmyeg2qgI2V38Dt3g	3	12BBE6	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	OU=Equifax Secure Certificate Authority,O=Equifax,C=US	1021953600.000000	1534824000.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9\x02\x03\x01\x00\x01	-	-	-	-	T	-
+  1394747129.512954	FUFNf84cduA0IJCp07	3	4A2C8628C1010633	CN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US	CN=Google Internet Authority G2,O=Google Inc,C=US	1393341558.000000	1401062400.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91\x02\x03\x01\x00\x01	*.google.com,*.android.com,*.appengine.google.com,*.cloud.google.com,*.google-analytics.com,*.google.ca,*.google.cl,*.google.co.in,*.google.co.jp,*.google.co.uk,*.google.com.ar,*.google.com.au,*.google.com.br,*.google.com.co,*.google.com.mx,*.google.com.tr,*.google.com.vn,*.google.de,*.google.es,*.google.fr,*.google.hu,*.google.it,*.google.nl,*.google.pl,*.google.pt,*.googleapis.cn,*.googlecommerce.com,*.googlevideo.com,*.gstatic.com,*.gvt1.com,*.urchin.com,*.url.google.com,*.youtube-nocookie.com,*.youtube.com,*.youtubeeducation.com,*.ytimg.com,android.com,g.co,goo.gl,google-analytics.com,google.com,googlecommerce.com,urchin.com,youtu.be,youtube.com,youtubeeducation.com	-	-	-	F	-
+  1394747129.512954	F1H4bd2OKGbLPEdHm4	3	023A69	CN=Google Internet Authority G2,O=Google Inc,C=US	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	1365174955.000000	1428160555.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri\x02\x03\x01\x00\x01	-	-	-	-	T	0
+  1394747129.512954	Fgsbci2jxFXYMOHOhi	3	12BBE6	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	OU=Equifax Secure Certificate Authority,O=Equifax,C=US	1021953600.000000	1534824000.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9\x02\x03\x01\x00\x01	-	-	-	-	T	-
+  #close	2022-12-08-14-14-10
+  == Diff ===============================
+  --- /tmp/test-diff.128606.x509.log.baseline.tmp	2022-12-08 14:14:10.592713973 +0000
+  +++ /tmp/test-diff.128606.x509.log.tmp	2022-12-08 14:14:10.580713499 +0000
+  @@ -4,12 +4,12 @@
+  #unset_field	-
+  #path	x509
+  #open XXXX-XX-XX-XX-XX-XX
+  -#fields	ts	id	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len
+  -#types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count
+  -XXXXXXXXXX.XXXXXX	FgN3AE3of2TRIqaeQe	3	4A2C8628C1010633	CN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US	CN=Google Internet Authority G2,O=Google Inc,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	*.google.com,*.android.com,*.appengine.google.com,*.cloud.google.com,*.google-analytics.com,*.google.ca,*.google.cl,*.google.co.in,*.google.co.jp,*.google.co.uk,*.google.com.ar,*.google.com.au,*.google.com.br,*.google.com.co,*.google.com.mx,*.google.com.tr,*.google.com.vn,*.google.de,*.google.es,*.google.fr,*.google.hu,*.google.it,*.google.nl,*.google.pl,*.google.pt,*.googleapis.cn,*.googlecommerce.com,*.googlevideo.com,*.gstatic.com,*.gvt1.com,*.urchin.com,*.url.google.com,*.youtube-nocookie.com,*.youtube.com,*.youtubeeducation.com,*.ytimg.com,android.com,g.co,goo.gl,google-analytics.com,google.com,googlecommerce.com,urchin.com,youtu.be,youtube.com,youtubeeducation.com	-	-	-	F	-
+  -XXXXXXXXXX.XXXXXX	Fv2Agc4z5boBOacQi6	3	023A69	CN=Google Internet Authority G2,O=Google Inc,C=US	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	0
+  -XXXXXXXXXX.XXXXXX	Ftmyeg2qgI2V38Dt3g	3	12BBE6	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	OU=Equifax Secure Certificate Authority,O=Equifax,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	-
+  -XXXXXXXXXX.XXXXXX	FUFNf84cduA0IJCp07	3	4A2C8628C1010633	CN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US	CN=Google Internet Authority G2,O=Google Inc,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	*.google.com,*.android.com,*.appengine.google.com,*.cloud.google.com,*.google-analytics.com,*.google.ca,*.google.cl,*.google.co.in,*.google.co.jp,*.google.co.uk,*.google.com.ar,*.google.com.au,*.google.com.br,*.google.com.co,*.google.com.mx,*.google.com.tr,*.google.com.vn,*.google.de,*.google.es,*.google.fr,*.google.hu,*.google.it,*.google.nl,*.google.pl,*.google.pt,*.googleapis.cn,*.googlecommerce.com,*.googlevideo.com,*.gstatic.com,*.gvt1.com,*.urchin.com,*.url.google.com,*.youtube-nocookie.com,*.youtube.com,*.youtubeeducation.com,*.ytimg.com,android.com,g.co,goo.gl,google-analytics.com,google.com,googlecommerce.com,urchin.com,youtu.be,youtube.com,youtubeeducation.com	-	-	-	F	-
+  -XXXXXXXXXX.XXXXXX	F1H4bd2OKGbLPEdHm4	3	023A69	CN=Google Internet Authority G2,O=Google Inc,C=US	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	0
+  -XXXXXXXXXX.XXXXXX	Fgsbci2jxFXYMOHOhi	3	12BBE6	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	OU=Equifax Secure Certificate Authority,O=Equifax,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	-
+  +#fields	ts	id	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	certificate.modulus	certificate.x	certificate.y	certificate.raw_pkey	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len
+  +#types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	string	string	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count
+  +XXXXXXXXXX.XXXXXX	FgN3AE3of2TRIqaeQe	3	4A2C8628C1010633	CN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US	CN=Google Internet Authority G2,O=Google Inc,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91\x02\x03\x01\x00\x01	*.google.com,*.android.com,*.appengine.google.com,*.cloud.google.com,*.google-analytics.com,*.google.ca,*.google.cl,*.google.co.in,*.google.co.jp,*.google.co.uk,*.google.com.ar,*.google.com.au,*.google.com.br,*.google.com.co,*.google.com.mx,*.google.com.tr,*.google.com.vn,*.google.de,*.google.es,*.google.fr,*.google.hu,*.google.it,*.google.nl,*.google.pl,*.google.pt,*.googleapis.cn,*.googlecommerce.com,*.googlevideo.com,*.gstatic.com,*.gvt1.com,*.urchin.com,*.url.google.com,*.youtube-nocookie.com,*.youtube.com,*.youtubeeducation.com,*.ytimg.com,android.com,g.co,goo.gl,google-analytics.com,google.com,googlecommerce.com,urchin.com,youtu.be,youtube.com,youtubeeducation.com	-	-	-	F	-
+  +XXXXXXXXXX.XXXXXX	Fv2Agc4z5boBOacQi6	3	023A69	CN=Google Internet Authority G2,O=Google Inc,C=US	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri\x02\x03\x01\x00\x01	-	-	-	-	T	0
+  +XXXXXXXXXX.XXXXXX	Ftmyeg2qgI2V38Dt3g	3	12BBE6	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	OU=Equifax Secure Certificate Authority,O=Equifax,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9\x02\x03\x01\x00\x01	-	-	-	-	T	-
+  +XXXXXXXXXX.XXXXXX	FUFNf84cduA0IJCp07	3	4A2C8628C1010633	CN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US	CN=Google Internet Authority G2,O=Google Inc,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91\x02\x03\x01\x00\x01	*.google.com,*.android.com,*.appengine.google.com,*.cloud.google.com,*.google-analytics.com,*.google.ca,*.google.cl,*.google.co.in,*.google.co.jp,*.google.co.uk,*.google.com.ar,*.google.com.au,*.google.com.br,*.google.com.co,*.google.com.mx,*.google.com.tr,*.google.com.vn,*.google.de,*.google.es,*.google.fr,*.google.hu,*.google.it,*.google.nl,*.google.pl,*.google.pt,*.googleapis.cn,*.googlecommerce.com,*.googlevideo.com,*.gstatic.com,*.gvt1.com,*.urchin.com,*.url.google.com,*.youtube-nocookie.com,*.youtube.com,*.youtubeeducation.com,*.ytimg.com,android.com,g.co,goo.gl,google-analytics.com,google.com,googlecommerce.com,urchin.com,youtu.be,youtube.com,youtubeeducation.com	-	-	-	F	-
+  +XXXXXXXXXX.XXXXXX	F1H4bd2OKGbLPEdHm4	3	023A69	CN=Google Internet Authority G2,O=Google Inc,C=US	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri\x02\x03\x01\x00\x01	-	-	-	-	T	0
+  +XXXXXXXXXX.XXXXXX	Fgsbci2jxFXYMOHOhi	3	12BBE6	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	OU=Equifax Secure Certificate Authority,O=Equifax,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9\x02\x03\x01\x00\x01	-	-	-	-	T	-
+  #close XXXX-XX-XX-XX-XX-XX
+  =======================================
+  % cat .stderr
+</failure>
+    </testcase>
+    <testcase classname="scripts.base.files.pe" name="basic" time="0.8218536376953125"/>
+    <testcase classname="core" name="truncation" time="6.517553091049194"/>
+    <testcase classname="scripts.base.files.x509" name="signed_certificate_timestamp_ocsp" time="0.6965227127075195"/>
+    <testcase classname="scripts.base.files.x509" name="caching-hook" time="0.7413620948791504">
+        <failure type="failure">  % 'btest-diff x509.log' failed unexpectedly (exit code 1)
+  % cat .diag
+  == File ===============================
+  #separator \x09
+  #set_separator	,
+  #empty_field	(empty)
+  #unset_field	-
+  #path	x509
+  #open	2022-12-08-14-14-10
+  #fields	ts	id	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	certificate.modulus	certificate.x	certificate.y	certificate.raw_pkey	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len
+  #types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	string	string	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count
+  1394747126.862409	FgN3AE3of2TRIqaeQe	3	4A2C8628C1010633	CN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US	CN=Google Internet Authority G2,O=Google Inc,C=US	1393341558.000000	1401062400.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91\x02\x03\x01\x00\x01	*.google.com,*.android.com,*.appengine.google.com,*.cloud.google.com,*.google-analytics.com,*.google.ca,*.google.cl,*.google.co.in,*.google.co.jp,*.google.co.uk,*.google.com.ar,*.google.com.au,*.google.com.br,*.google.com.co,*.google.com.mx,*.google.com.tr,*.google.com.vn,*.google.de,*.google.es,*.google.fr,*.google.hu,*.google.it,*.google.nl,*.google.pl,*.google.pt,*.googleapis.cn,*.googlecommerce.com,*.googlevideo.com,*.gstatic.com,*.gvt1.com,*.urchin.com,*.url.google.com,*.youtube-nocookie.com,*.youtube.com,*.youtubeeducation.com,*.ytimg.com,android.com,g.co,goo.gl,google-analytics.com,google.com,googlecommerce.com,urchin.com,youtu.be,youtube.com,youtubeeducation.com	-	-	-	F	-
+  1394747126.862409	Fv2Agc4z5boBOacQi6	3	023A69	CN=Google Internet Authority G2,O=Google Inc,C=US	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	1365174955.000000	1428160555.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri\x02\x03\x01\x00\x01	-	-	-	-	T	0
+  1394747126.862409	Ftmyeg2qgI2V38Dt3g	3	12BBE6	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	OU=Equifax Secure Certificate Authority,O=Equifax,C=US	1021953600.000000	1534824000.000000	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9\x02\x03\x01\x00\x01	-	-	-	-	T	-
+  #close	2022-12-08-14-14-10
+  == Diff ===============================
+  --- /tmp/test-diff.129145.x509.log.baseline.tmp	2022-12-08 14:14:10.624715240 +0000
+  +++ /tmp/test-diff.129145.x509.log.tmp	2022-12-08 14:14:10.616714923 +0000
+  @@ -4,9 +4,9 @@
+  #unset_field	-
+  #path	x509
+  #open XXXX-XX-XX-XX-XX-XX
+  -#fields	ts	id	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len
+  -#types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count
+  -XXXXXXXXXX.XXXXXX	FgN3AE3of2TRIqaeQe	3	4A2C8628C1010633	CN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US	CN=Google Internet Authority G2,O=Google Inc,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	*.google.com,*.android.com,*.appengine.google.com,*.cloud.google.com,*.google-analytics.com,*.google.ca,*.google.cl,*.google.co.in,*.google.co.jp,*.google.co.uk,*.google.com.ar,*.google.com.au,*.google.com.br,*.google.com.co,*.google.com.mx,*.google.com.tr,*.google.com.vn,*.google.de,*.google.es,*.google.fr,*.google.hu,*.google.it,*.google.nl,*.google.pl,*.google.pt,*.googleapis.cn,*.googlecommerce.com,*.googlevideo.com,*.gstatic.com,*.gvt1.com,*.urchin.com,*.url.google.com,*.youtube-nocookie.com,*.youtube.com,*.youtubeeducation.com,*.ytimg.com,android.com,g.co,goo.gl,google-analytics.com,google.com,googlecommerce.com,urchin.com,youtu.be,youtube.com,youtubeeducation.com	-	-	-	F	-
+  -XXXXXXXXXX.XXXXXX	Fv2Agc4z5boBOacQi6	3	023A69	CN=Google Internet Authority G2,O=Google Inc,C=US	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	0
+  -XXXXXXXXXX.XXXXXX	Ftmyeg2qgI2V38Dt3g	3	12BBE6	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	OU=Equifax Secure Certificate Authority,O=Equifax,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	65537	-	-	-	-	-	T	-
+  +#fields	ts	id	certificate.version	certificate.serial	certificate.subject	certificate.issuer	certificate.not_valid_before	certificate.not_valid_after	certificate.key_alg	certificate.sig_alg	certificate.key_type	certificate.key_length	certificate.exponent	certificate.curve	certificate.modulus	certificate.x	certificate.y	certificate.raw_pkey	san.dns	san.uri	san.email	san.ip	basic_constraints.ca	basic_constraints.path_len
+  +#types	time	string	count	string	string	string	time	time	string	string	string	count	string	string	string	string	string	string	vector[string]	vector[string]	vector[string]	vector[addr]	bool	count
+  +XXXXXXXXXX.XXXXXX	FgN3AE3of2TRIqaeQe	3	4A2C8628C1010633	CN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US	CN=Google Internet Authority G2,O=Google Inc,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xd9w\xfb\xb3S\xa7y\x89\xa7=\x07|\xad#\x9b\xf8\xfe&gt;g\xeepa\xbe\x8b\xc2\xa6\x04\xc9\xc1\x16\xc7\xb9\xe0\x07\x0f\xa8\x89\xd3-\xf7\xb5\xf5\xf8\xbb\xc3+o\xc20\xde\x1b .\xb0\xbfUo\x07\xdbi\xca1\x98\xfby&gt;J]\xd7b\x17\xdc\xbb\x1f9&quot;\xb0d\x94\xef\xf3\x93\xa6\xccL\xa3$)|T\xc0f\x11\xdd\x9fo\xc8\xed\x19\xf7g\x030\x99lf\xa8\xe3\x91\xfd\x0d\x90\x00\x7f9\x99Z\xeb\xc0\x97\x14\xb3C\x12\x06\xfd^MQ\xc4\xdd\x9e\x8b\xbb\xc4\x0c\x89@\xa3A\xaex\xf9\x97\x8bO\xb9\x0d\x04\x17\x04nJ\xeb\xb6u\x96t\xa5K\xd8\xa9\x18\xd5\x19\x0f\xfc\xc3\xffX\x1b\x0f\xb8\xdeA/\xe8\xf4\xd3\x9c/\xe2\xd1\xe6\x11\xb4D\x13n\x8b\xf9r\x9e\xe2\x1aT\xefH\x06\x85\xc7\x08\xa7\x9ea\xa7\x0cC\xe4\xf846\xe2(\xf0E\x90\x87}t\xb1\xbe\xca\x09\x7f4\x8d\xcc\xf36d\xeck'1j\x083|\x83\xc3\xb6\xff\xb4\xe8[\xc6\xdfJ\xcbN\xca\x8a/\xc2\x91\x02\x03\x01\x00\x01	*.google.com,*.android.com,*.appengine.google.com,*.cloud.google.com,*.google-analytics.com,*.google.ca,*.google.cl,*.google.co.in,*.google.co.jp,*.google.co.uk,*.google.com.ar,*.google.com.au,*.google.com.br,*.google.com.co,*.google.com.mx,*.google.com.tr,*.google.com.vn,*.google.de,*.google.es,*.google.fr,*.google.hu,*.google.it,*.google.nl,*.google.pl,*.google.pt,*.googleapis.cn,*.googlecommerce.com,*.googlevideo.com,*.gstatic.com,*.gvt1.com,*.urchin.com,*.url.google.com,*.youtube-nocookie.com,*.youtube.com,*.youtubeeducation.com,*.ytimg.com,android.com,g.co,goo.gl,google-analytics.com,google.com,googlecommerce.com,urchin.com,youtu.be,youtube.com,youtubeeducation.com	-	-	-	F	-
+  +XXXXXXXXXX.XXXXXX	Fv2Agc4z5boBOacQi6	3	023A69	CN=Google Internet Authority G2,O=Google Inc,C=US	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\x9c*\x04w\\\xd8P\x91:\x06\xa3\x82\xe0\xd8PH\xbc\x89?\xf1\x19p\x1a\x88F~\xe0\x8f\xc5\xf1\x89\xce!\xeeZ\xfea\x0d\xb72D\x89\xa0t\x0bSOU\xa4\xce\x82b\x95\xee\xebY_\xc6\xe1\x05\x80\x12\xc4^\x94?\xbc[H8\xf4S\xf7$\xe6\xfb\x91\xe9\x15\xc4\xcf\xf4S\x0d\xf4J\xfc\x9fT\xde}\xbe\xa0ko\x87\xc0\xd0P\x1f(0\x03@\xda\x08sQl\x7f\xff:&lt;\xa77\x06\x8e\xbdK\x11\x04\xeb}$\xde\xe6\xf9\xfc1q\xfb\x94\xd5`\xf3.J\xafB\xd2\xcb\xea\xc4j\x1a\xb2\xccS\xdd\x15K\x8b\x1f\xc8\x19a\x1f\xcd\x9d\xa8&gt;c+\x845ie\x84\xc8\x19\xc5F&quot;\xf8S\x95\xbe\xe3\x80J\x10\xc6*\xec\xba\x97 \x11\xc79\x99\x10\x04\xa0\xf0az\x95%\x8cNRu\xe2\xb6\xed\x08\xca\x14\xfc\xce&quot;j\xb3N\xcfF\x03\x97\x97\x03~\xc0\xb1\xde{\xafE3\xcf\xba&gt;q\xb7\xde\xf4%%\xc2\x0d5\x89\x9d\x9d\xfb\x0e\x11y\x89\x1e7\xc5\xaf\x8eri\x02\x03\x01\x00\x01	-	-	-	-	T	0
+  +XXXXXXXXXX.XXXXXX	Ftmyeg2qgI2V38Dt3g	3	12BBE6	CN=GeoTrust Global CA,O=GeoTrust Inc.,C=US	OU=Equifax Secure Certificate Authority,O=Equifax,C=US	XXXXXXXXXX.XXXXXX	XXXXXXXXXX.XXXXXX	rsaEncryption	sha1WithRSAEncryption	rsa	2048	\x01\x00\x01	-	\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9	-	-	0\x82\x01&quot;0\x0d\x06\x09*\x86H\x86\xf7\x0d\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\x0a\x02\x82\x01\x01\x00\xda\xcc\x18c0\xfd\xf4\x17#\x1aV~[\xdf&lt;l8\xe4q\xb7x\x91\xd4\xbc\xa1\xd8L\xf8\xa8C\xb6\x03\xe9M!\x07\x08\x88\xdaX/f9)\xbd\x05x\x8b\x9d8\xe8\x05\xb7j~q\xa4\xe6\xc4`\xa6\xb0\xef\x80\xe4\x89(\x0f\x9e%\xd6\xed\x83\xf3\xad\xa6\x91\xc7\x98\xc9B\x185\x14\x9d\xad\x98F\x92.O\xca\xf1\x87C\xc1\x16\x95W-P\xef\x89-\x80zW\xad\xf2\xee_k\xd2\x00\x8d\xb9\x14\xf8\x14\x155\xd9\xc0F\xa3{r\xc8\x91\xbf\xc9U+\xcd\xd0\x97&gt;\x9c&amp;d\xcc\xdf\xce\x83\x19q\xcaN\xe6\xd4\xd5{\xa9\x19\xcdU\xde\xc8\xec\xd2^8S\xe5\\O\x8c-\xfeP#6\xfcf\xe6\xcb\x8e\xa49\x19\x00\xb7\x95\x029\x91\x0b\x0e\xfe8.\xd1\x1d\x05\x9a\xf6M&gt;o\x0f\x07\x1d\xaf,\x1e\x8f`9\xe2\xfa6S\x139\xd4^&amp;+\xdb=\xa8\x14\xbd2\xeb\x18\x03(R\x04q\xe5\xab3=\xe18\xbb\x076\x84b\x9cy\xea\x160\xf4_\xc0+\xe8qk\xe4\xf9\x02\x03\x01\x00\x01	-	-	-	-	T	-
+  #close XXXX-XX-XX-XX-XX-XX
+  =======================================
+  % cat .stderr
+</failure>
+    </testcase>
+    <testcase classname="scripts.base.frameworks.analyzer" name="enable-analyzer" time="0.7010912895202637"/>
+    <testcase classname="scripts.base.frameworks.analyzer" name="schedule-analyzer" time="0.7180967330932617"/>
+    <testcase classname="scripts.base.files.x509" name="signed_certificate_timestamp" time="0.8344123363494873"/>
+    <testcase classname="scripts.base.files.data_event" name="basic" time="1.064192533493042"/>
+    <testcase classname="language" name="paraglob-serialization" time="3.1110775470733643"/>
+    <testcase classname="language" name="when-order-of-eval" time="1.6691136360168457"/>
+    <testcase classname="scripts.base.frameworks.analyzer" name="disable-analyzer" time="1.0468521118164062"/>
+    <testcase classname="scripts.base.frameworks.config" name="container-options" time="0.6671383380889893"/>
+    <testcase classname="language" name="when" time="1.8245482444763184"/>
+    <testcase classname="scripts.base.frameworks.analyzer" name="register-for-port" time="1.2076423168182373"/>
+    <testcase classname="scripts.base.frameworks.file-analysis.actions" name="data_event" time="0.5549604892730713"/>
+    <testcase classname="scripts.base.frameworks.file-analysis.bifs" name="file_exists_lookup_file" time="0.5374414920806885"/>
+    <testcase classname="scripts.base.frameworks.file-analysis.bifs" name="register_mime_type" time="0.5394086837768555"/>
+    <testcase classname="scripts.base.frameworks.config" name="weird" time="0.6794846057891846"/>
+    <testcase classname="scripts.base.frameworks.file-analysis.bifs" name="remove_action" time="0.48049402236938477"/>
+    <testcase classname="language" name="expire-expr-error" time="4.60542631149292"/>
+    <testcase classname="scripts.base.frameworks.file-analysis.bifs" name="stop" time="0.5716285705566406"/>
+    <testcase classname="core" name="load-file-extension" time="9.295960903167725"/>
+    <testcase classname="scripts.base.frameworks.dpd" name="max_violations" time="0.8212001323699951"/>
+    <testcase classname="scripts.base.frameworks.file-analysis" name="big-bof-buffer" time="0.5125255584716797"/>
+    <testcase classname="scripts.base.frameworks.file-analysis" name="byteranges" time="0.4993865489959717"/>
+    <testcase classname="language" name="type-coerce-numerics" time="2.649876117706299"/>
+    <testcase classname="scripts.base.frameworks.file-analysis" name="ftp" time="0.6655929088592529"/>
+    <testcase classname="scripts.base.frameworks.config" name="basic" time="1.614081621170044"/>
+    <testcase classname="scripts.base.frameworks.config" name="read_config" time="1.4850494861602783"/>
+    <testcase classname="scripts.base.frameworks.file-analysis" name="logging" time="0.5553879737854004"/>
+    <testcase classname="scripts.base.frameworks.config" name="several-files" time="1.4205873012542725"/>
+    <testcase classname="scripts.base.frameworks.config" name="missing-enum-value" time="1.6681604385375977"/>
+    <testcase classname="scripts.base.frameworks.file-analysis" name="irc" time="0.7141847610473633"/>
+    <testcase classname="scripts.base.frameworks.input" name="bad_patterns" time="0.6255168914794922"/>
+    <testcase classname="scripts.base.frameworks.file-analysis.http" name="post" time="0.8472719192504883"/>
+    <testcase classname="scripts.base.frameworks.file-analysis.http" name="multipart" time="1.0308971405029297"/>
+    <testcase classname="scripts.base.frameworks.file-analysis.bifs" name="set_timeout_interval" time="1.431077480316162"/>
+    <testcase classname="scripts.base.files.extract" name="limit" time="2.4876909255981445"/>
+    <testcase classname="core" name="checksums" time="11.090306997299194"/>
+    <testcase classname="scripts.base.frameworks.file-analysis.http" name="get" time="1.211059808731079"/>
+    <testcase classname="scripts.base.frameworks.file-analysis" name="smtp" time="0.9773745536804199"/>
+    <testcase classname="language" name="closure-sending-naming" time="6.1719276905059814"/>
+    <testcase classname="scripts.base.frameworks.file-analysis.http" name="pipeline" time="1.0949208736419678"/>
+    <testcase classname="broker" name="ssl-mismatch" time="11.60987663269043"/>
+    <testcase classname="broker" name="unpeer" time="11.295882940292358"/>
+    <testcase classname="plugins" name="packet-protocol" time="2.9970247745513916">
+        <failure type="failure">  % './configure --zeek-dist=${DIST} &amp;&amp; make' failed unexpectedly (exit code 130)
+  % cat .diag
+  == File ===============================
+  #separator \x09
+  #set_separator	,
+  #empty_field	(empty)
+  #unset_field	-
+  #path	unknown_protocols
+  #open	2022-12-08-14-14-10
+  #fields	ts	analyzer	protocol_id	first_bytes
+  #types	time	string	string	string
+  1599068759.647566	ETHERNET	0x88b5	4920616d20656e636170
+  #close	2022-12-08-14-14-10
+  == Diff ===============================
+  =======================================
+  % cat .stderr
+  hint: Using 'master' as the name for the initial branch. This default branch name
+  hint: is subject to change. To configure the initial branch name to use in all
+  hint: of your new repositories, which will suppress this warning, call:
+  hint:
+  hint: 	git config --global init.defaultBranch &lt;name&gt;
+  hint:
+  hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+  hint: 'development'. The just-created branch can be renamed via this command:
+  hint:
+  hint: 	git branch -m &lt;name&gt;
+</failure>
+    </testcase>
+    <testcase classname="scripts.base.frameworks.file-analysis.input" name="basic" time="1.263181447982788"/>
+</testsuite>
+

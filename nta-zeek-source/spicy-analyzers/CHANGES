@@ -1,0 +1,213 @@
+
+0.2.19 | 2021-07-11 08:51:59 +0200
+
+  * [STUN] Fix indexing. (Keith Jones, Corelight)
+
+0.2.18 | 2021-07-06 20:34:11 +0200
+
+  * Make Facefish detection more robust by requiring two way communication. (Keith Jones, Corelight)
+
+0.2.17-2 | 2021-07-06 20:31:41 +0200
+
+  * GH-46: Fixing false positives discussed in issue #46. (Keith Jones, Corelight)
+
+0.2.17 | 2021-07-05 20:17:24 +0200
+
+  * Added OpenVPN HMAC MD5, SHA256 and SHA512 variants to increase detections. (Keith Jones, Corelight)
+
+0.2.16-6 | 2021-06-24 19:51:38 +0200
+
+  * Added Tailscale. (Keith Jones, Corelight)
+
+  * Add resources developers might find useful in the future. (Keith Jones, Corelight)
+
+0.2.16 | 2021-06-23 12:29:37 +0200
+
+  * Release 0.2.16.
+
+0.2.15-9 | 2021-06-23 12:28:27 +0200
+
+  * Added STUN protocol. (Keith Jones, Corelight)
+
+0.2.15 | 2021-06-08 13:37:39 +0200
+
+  * Release 0.2.15.
+
+0.2.14-10 | 2021-06-08 13:35:56 +0200
+
+  * GH-35: Implement LDAP analyzer enhancements after upstream change.
+
+    - Expose ASN1String as a Spicy string.
+    - Use unit switch &parse-from construct.
+    - Remove workaround for zeek/spicy-plugin#35. (Benjamin Bannier, Corelight)
+
+0.2.14-6 | 2021-06-08 13:34:24 +0200
+
+  * Added Facefish rootkit analyzer. (Keith Jones, Corelight)
+
+0.2.14 | 2021-05-31 12:53:33 +0200
+
+  * Add ZIP analyzer. (Robin Sommer, Corelight)
+
+    This decompresses ZIP files and feeds their content back recursively
+    into Zeek's file analysis.
+
+0.2.13 | 2021-05-31 12:03:12 +0200
+
+  * Make parallel build and test opt-out instead of opt-in. (Benjamin Bannier,
+    Corelight)
+
+  * Build package without any parallelism. (Benjamin Bannier, Corelight)
+
+0.2.12 | 2021-05-19 14:16:26 +0200
+
+  * Add LDAP protocol analyzer. (Seth Grover)
+
+0.2.11 | 2021-05-17 09:39:00 +0200
+
+  * Remove `analyzer_id` from scripts for IPSec. (Keith Jones)
+
+0.2.10-4 | 2021-05-05 11:49:06 +0200
+
+  * Add Aruba Networks vendor ID info. (Keith Jones, Corelight)
+
+0.2.10-2 | 2021-05-04 09:02:25 +0200
+
+  * Removed duplicate line in IPSec constants. (Keith Jones)
+
+0.2.10 | 2021-04-23 10:52:52 +0000
+
+  * [IPSec] Add more vendor IDs. (Keith Jones, Corelight)
+
+0.2.9 | 2021-04-22 11:58:38 +0000
+
+  * [IPSec] Fix various vector parsing issues and remove typing from a
+    type where we don't know all cases yet. (Keith Jones, Corelight)
+
+0.2.8-6 | 2021-04-20 07:11:11 +0000
+
+  * GH-47: Update source for trace file. (Robin Sommer, Corelight)
+
+0.2.8-4 | 2021-04-16 08:40:20 +0000
+
+  * [IPSec] Small cleanup. (Keith Jones, Corelight)
+
+0.2.8 | 2021-03-31 15:54:20 +0000
+
+  * [Wireguard] Add missing existence check. (Keith Jones, Corelight)
+
+0.2.7 | 2021-03-31 09:55:16 +0000
+
+  * GH-36: [DNS] Implement SVR resource record. (Robin Sommer, Corelight)
+
+0.2.6 | 2021-03-31 09:42:47 +0000
+
+  * Add IPSec analyzer. (Keith Jones, Corelight)
+
+0.2.5-5 | 2021-03-31 08:24:57 +0000
+
+  * Document the sources of our traces files. (Robin Sommer, Corelight)
+
+  * GH-40: Add MacOS Big Sur CI task. (Benjamin Bannier, Corelight)
+
+  * Allow running CI as non-root user. (Benjamin Bannier, Corelight)
+
+0.2.5 | 2021-03-29 12:38:45 +0000
+
+  * [Wireguard] Change logging to only have one line per connection
+    that tracks connection establishment as well as the number of
+    handshake initiation and response packets. (Johanna Amann,
+    Corelight)
+
+  * [Wireguard] Fix Zeek 3.x compatibility (Johanna Amann, Corelight)
+
+0.2.4-2 | 2021-03-26 16:36:52 +0000
+
+  * Fix for in-tree Spicy build. (Robin Sommer, Corelight)
+
+0.2.4 | 2021-03-26 15:49:07 +0000
+
+  * GH-31: Install Zeek scripts as well during manual install. (Robin
+    Sommer, Corelight)
+
+  * Let package depend on spicy-plugin. (Robin Sommer, Corelight)
+
+0.2.3-14 | 2021-03-25 19:38:52 +0100
+
+  * Fix test & CI instabilities. (Benjamin Bannier, Corelight)
+
+0.2.3-2 | 2021-03-24 07:05:49 +0000
+
+  * Limit parsing of a PE file's strings to 512 bytes (Jon Siwek,
+    Corelight)
+
+0.2.3 | 2021-03-22 16:47:25 +0000
+
+  * Add OpenVPN protocol analyzer. (Keith Jones, Corelight)
+
+0.2.2-6 | 2021-03-18 15:41:07 +0100
+
+  * Cleanup CI platforms for zeek-4.0.0 as LTS release. (Benjamin
+    Bannier)
+
+  * Disable JIT parallelism in CI. (Benjamin Bannier)
+
+  * Install Spicy from upstream package. (Benjamin Bannier)
+
+0.2.2 | 2021-03-18 12:25:10 +0000
+
+  * GH-10: [HTTP] Fix potential analyzer error reporting unset field.
+    (Robin Sommer, Corelight)
+
+0.2.1 | 2021-03-18 09:47:44 +0000
+
+  * GH-817: Extend PNG test to catch Spicy's #817. (Robin Sommer, Corelight)
+
+  * Add file tests to btest config. (Robin Sommer, Corelight)
+
+0.2.0 | 2021-03-15 19:20:12 +0000
+
+  * Release 0.2.0.
+
+0.1.0-23 | 2021-03-15 19:19:31 +0000
+
+  * Update README. (Robin Sommer, Corelight)
+
+  * GH-10: [DNS] Add missing event parameters. (Robin Sommer,
+    Corelight)
+
+0.1.0-17 | 2021-03-15 19:02:19 +0000
+
+  * GH-10: [DNS] Add missing event parameters.
+
+0.1.0-16 | 2021-03-15 18:46:56 +0000
+
+  * Split CI zkg run into separate test and install steps, and fix
+    test execution. (Robin Sommer, Corelight)
+
+0.1.0-12 | 2021-03-15 13:55:57 +0000
+
+  * Add Portable Executable (PE) file format parser. The current
+    parses headers along with import/export tables. (Jon Siwek,
+    Corelight)
+
+0.1.0-9 | 2021-03-15 10:18:38 +0000
+
+  * [Wireguard] Check zeroes in protocol and tighten DPD. (Johanna
+    Amann, Corelight)
+
+  * [Wireguard] GH-13: Check there is no data after handshake
+    messages. (Johanna Amann, Corelight)
+
+0.1.0-6 | 2021-03-12 17:37:22 +0000
+
+  * Fix missing installation of compiled modules in standalone build.
+    (Robin Sommer, Corelight)
+
+0.1.0-4 | 2021-03-11 13:39:37 +0000
+
+  * Tweaking CMake setup. (Robin Sommer, Corelight)
+
+0.1.0 | 2021-02-18 13:23:44 +0000
+
+  * Starting CHANGES.

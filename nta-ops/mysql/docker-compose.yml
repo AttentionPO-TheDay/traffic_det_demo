@@ -1,0 +1,29 @@
+services:
+  db:
+    # 使用 MySQL 5.7.36 版本
+    image: mysql:5.7.36
+
+    # 把容器名称设成 db，不然太长了用起来很麻烦
+    container_name: db
+
+    # 若挂了则自动重启
+    restart: always
+
+    # 设置相关的环境变量
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD}"
+      - "MYSQL_DATABASE=testdatabase02"
+      
+    # 对外开放 3306 端口
+    ports:
+      - "3306:3306"
+    
+    volumes:
+      # 留下一个放 data 的空间
+      - "/root/data:/data"
+
+      # 允许我直接读取表空间
+      - "/var/lib/mysql:/var/lib/mysql"
+
+      # 防止出现编码问题
+      - ./my.cnf:/etc/mysql/my.cnf

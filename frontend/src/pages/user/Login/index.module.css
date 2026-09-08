@@ -1,0 +1,14 @@
+.container :global(.ant-input) {
+  line-height: 2.4;
+}
+
+.container :global(.captcha) {
+  cursor: pointer;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: contain;
+}
+
+.container :global(.captcha:hover) {
+  opacity: 50%;
+}

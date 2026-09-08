@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xt.mapper.XtAssetDiscoverMapper">
+    <resultMap type="AssetDiscoverRecord" id="AssetDiscoverResult">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="timestamp" column="timestamp" jdbcType="BIGINT"/>
+        <result property="request" column="request" jdbcType="LONGVARCHAR"/>
+        <result property="response" column="response" jdbcType="LONGVARCHAR"/>
+    </resultMap>
+
+    <insert id="insertXtAssetHistory" parameterType="AssetDiscoverRecord">
+        <selectKey keyProperty="id" resultType="java.lang.Integer" order="AFTER">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+        insert into xt_asset_history
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="timestamp != null">timestamp,</if>
+            <if test="request != null">request,</if>
+            <if test="response != null">response,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="timestamp != null">#{timestamp},</if>
+            <if test="request != null">#{request},</if>
+            <if test="response != null">#{response},</if>
+        </trim>
+    </insert>
+
+    <update id="updateXtAssetHistory" parameterType="AssetDiscoverRecord">
+        update xt_asset_history
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="response != null">response = #{response},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <select id="getAssetDiscoverHistory" resultMap="AssetDiscoverResult">
+        select id, timestamp, request from xt_asset_history
+        <where>
+            <if test="minTimestamp != null">timestamp &gt;= #{minTimestamp}</if>
+            <if test="maxTimestamp != null">AND timestamp &lt;= #{maxTimestamp}</if>
+        </where>
+        order by timestamp desc
+    </select>
+
+    <select id="getAssetDiscoverHistoryById" resultType="java.lang.String">
+        select response
+        from xt_asset_history
+        where id = #{id}
+    </select>
+</mapper>

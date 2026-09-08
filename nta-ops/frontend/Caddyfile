@@ -1,0 +1,22 @@
+:80 {
+	# 把 /prod-api/* 的请求反代到后端
+	handle_path /prod-api/* {
+		reverse_proxy http://127.0.0.1:8080
+	}
+
+	handle_path /infer-api/* {
+    reverse_proxy http://217.77.3.119:8000
+  }
+
+	# 访问前端
+	handle {
+		# 设置以下所有指令的根目录
+		root * /root/frontend
+
+		# 如果 path 在 root 下找不到，就把 URL 重写成 /index.html
+		try_files {path} /index.html
+
+		# 创建一个以 root 为根的静态文件服务器
+		file_server
+	}
+}

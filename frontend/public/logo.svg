@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="3">
+    <!-- Shield for security -->
+    <path d="M50 10 L80 30 V50 C80 75 50 90 50 90 C50 90 20 75 20 50 V30 Z" fill="#4A90E2" stroke="#2C3E50"/>
+    
+    <!-- Network nodes and connections -->
+    <circle cx="30" cy="30" r="5" fill="#ECF0F1"/>
+    <circle cx="70" cy="30" r="5" fill="#ECF0F1"/>
+    <circle cx="50" cy="50" r="5" fill="#ECF0F1"/>
+    <circle cx="50" cy="75" r="5" fill="#ECF0F1"/>
+    <line x1="30" y1="30" x2="50" y2="50" stroke="#ECF0F1"/>
+    <line x1="70" y1="30" x2="50" y2="50" stroke="#ECF0F1"/>
+    <line x1="50" y1="50" x2="50" y2="75" stroke="#ECF0F1"/>
+</svg>

@@ -1,0 +1,39 @@
+---
+name: "Zeek-Kafka CI"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    strategy:
+      matrix:
+        platform: [Ubuntu-20.04]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run linting
+        run: make lint
+  e2e:
+    strategy:
+      matrix:
+        platform: [Ubuntu-20.04]
+        zeek-kafka-os: [centos, ubuntu]
+      fail-fast: false
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run e2e tests
+        run: |
+          if [[ -f ~/cache/docker.tar ]]; then
+            echo "Loading ~/cache/docker.tar..."
+            docker load --input ~/cache/docker.tar
+          fi && \
+          make e2e
+        env:
+          ZEEK_KAFKA_OS: ${{ matrix.zeek-kafka-os }}

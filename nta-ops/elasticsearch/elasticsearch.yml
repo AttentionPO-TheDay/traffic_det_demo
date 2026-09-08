@@ -1,0 +1,8 @@
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+
+xpack.security.transport.filter.enabled: true
+xpack.security.transport.filter.allow: [ "38.242.210.211", "127.0.0.1" ]
+xpack.security.transport.filter.deny: "_all"

@@ -1,0 +1,375 @@
+#!/usr/bin/python3
+
+import os
+import sys
+import subprocess
+import json
+import yaml
+
+
+class Flags:
+    def __init__(self, usage="", argv=None):
+        self.argv = sys.argv[1:] if argv == None else argv
+
+        self.flags = []
+        self.flagMap = {}
+        self.usage = usage
+
+        self.ret = {}
+        self.parsed = False
+
+    def addFlag(self, flag="", help="", hasValue=False):
+        if type(flag) != list:
+            flag = [flag]
+
+        fid = len(self.flags)
+
+        temp = []
+        for f in flag:
+            if type(f) == str and f != "":
+                temp.append(f)
+                self.flagMap[f] = fid
+
+        self.flags.append({"flag": temp, "help": help,
+                           "hasValue": hasValue, "id": fid})
+
+    def parse(self):
+        if self.parsed:
+            return self.ret
+
+        argv = self.argv
+        restArgv = []
+
+        ret = {}
+        skip = False
+        for idx, arg in enumerate(argv):
+            if skip:
+                skip = False
+                continue
+            if arg in self.flagMap:
+                fid = self.flagMap[arg]
+                flag = self.flags[fid]
+                value = True
+                if flag.get("hasValue", False) and idx + 1 < len(argv):
+                    value = argv[idx + 1]
+                    skip = True
+                if fid not in ret:
+                    ret[fid] = []
+                ret[fid].append(value)
+            else:
+                restArgv.append(arg)
+
+        for key, value in ret.items():
+            flag = self.flags[key]
+            for f in flag.get("flag", []):
+                self.ret[f] = value
+        self.ret["_"] = restArgv
+        self.parsed = True
+        return self.ret
+
+    def help(self):
+        line = [
+            (
+                " ".join(flag.get("flag", [])) +
+                (" [value]" if flag.get("hasValue", False) else ""),
+                flag["help"],
+            )
+            for flag in self.flags
+        ]
+        maxLen = max([len(x[0]) for x in line])
+        result = [
+                     sys.argv[0] if len(self.usage) == 0 else self.usage,
+                     "Usage:"
+                 ] + [
+                     "  " + f.ljust(maxLen) + "    " + text
+                     for f, text in line
+                 ]
+        return "\n".join(result)
+
+    def showHelp(self):
+        print(self.help())
+        exit(0)
+
+    def bool(self, key):
+        self.parse()
+        return len(self.ret.get(key, [])) > 0
+
+    def string(self, key):
+        self.parse()
+        lst = self.ret.get(key, [])
+        return lst[0] if len(lst) > 0 else ""
+
+    def restArgs(self):
+        self.parse()
+        return self.ret.get("_", [])
+
+
+def generateSuricata():
+    with open(os.path.join(PWD, "suricata/suricata.format.yml")) as f:
+        config = yaml.safe_load(f)
+
+    rules = getRules(os.path.join(PWD, "suricata"))
+    enabled_rules = [rule for rule in rules if not rule.endswith(".disabled")]
+    config["rule-files"] = enabled_rules
+
+    with open(os.path.join(PWD, "suricata/suricata.yml"), "w") as f:
+        f.write("%YAML 1.1\n---\n\n")
+        yaml.dump(config, f)
+
+
+def getRules(path):
+    rules = []
+    for abspath, dirs, files in os.walk(path):
+        for file in files:
+            rules.append(os.path.join(abspath, file))
+    rules = [
+        file[len(path) + 1:]
+        for file in rules
+        if file.endswith(".rules") or file.endswith(".rules.disabled") or
+           file.endswith(".rule") or file.endswith(".rule.disabled")
+    ]
+    return rules
+
+
+def enableRule(filename):
+    if filename.endswith(".disabled"):
+        os.rename(
+            os.path.join(PWD, "suricata", filename),
+            os.path.join(PWD, "suricata", filename[:-len(".disabled")])
+        )
+
+
+def disableRule(filename):
+    if filename.endswith(".rule") or filename.endswith(".rules"):
+        os.rename(
+            os.path.join(PWD, "suricata", filename),
+            os.path.join(PWD, "suricata", "{}.disabled".format(filename))
+        )
+
+
+DEBUG = False
+VERSION = "0.0.1"
+PWD = os.path.split(os.path.realpath(__file__))[0]
+
+
+def debug(value):
+    global DEBUG
+    if DEBUG:
+        print("[DEBUG] {}".format(value))
+
+
+def error(value):
+    print(json.dumps({"message": value, "code": 1, "success": False}))
+    exit(0)
+
+
+def success(**kwargs):
+    print(json.dumps({**kwargs, "code": 0, "success": True}))
+    exit(0)
+
+
+def run(cmd, *, print_result=True):
+    debug(cmd if type(cmd) != list else " ".join(cmd))
+    msg = []
+
+    p = subprocess.Popen(
+        cmd, shell=type(cmd) != list, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    returncode = p.poll()
+    while returncode is None:
+        line = p.stdout.readline()
+        returncode = p.poll()
+        msg.append(line.strip().decode("utf-8"))
+
+    if print_result:
+        print(json.dumps(
+            {"message": ("\n".join(msg)).strip(), "code": returncode}
+        ))
+
+    return returncode
+
+
+def zeek(globalArgs, args):
+    def print_support_and_exit(exit_code = 0):
+        print("zeek support [start|stop|status|pcap|pcap-it]")
+        exit(exit_code)
+
+    if globalArgs.bool("-h"):
+        print_support_and_exit()
+
+    ZeekImage = "ipid/zeek:1.0.7"
+    ZeekName = "zeek"
+
+    command = args[0] if len(args) > 0 else ""
+    if command == "start":
+        debug("zeek start")
+        net = args[1] if len(args) > 1 else "eth0"
+        run([
+            "docker", "run",
+            "-d", "--rm", "--net=host", "--privileged",
+            "--name", ZeekName,
+            "-v", "{}:/data".format(PWD),
+            ZeekImage,
+            "-C", "-i", net,
+            ".", "Sensor::isLive=T"
+        ])
+    elif command == "pcap" or command == 'pcap-it':
+        debug("zeek pcap")
+        if len(args) < 2:
+            error("zeek pcap requires pcap path")
+        pcap = os.path.abspath(args[1])
+        pcap_dir = os.path.dirname(pcap)
+        pcap_file = os.path.basename(pcap)
+        debug("pcap: %s %s" % (pcap_dir, pcap_file))
+
+        run(['docker', 'run',
+            '-d' if command == 'pcap' else '-it',
+            "--rm", "--net=host", "--privileged",
+            "-v", "{}:/data".format(PWD),
+            "-v", "{}:/pcap".format(pcap_dir),
+            ZeekImage,
+            "-C", "-r", "/pcap/%s" % pcap_file,
+            ".", "Sensor::isLive=F"
+        ])
+    elif command == "debug":
+        debug("zeek pcap(debug)")
+        if len(args) < 2:
+            error("zeek debug requires pcap path")
+        pcap = os.path.abspath(args[1])
+        pcap_dir = os.path.dirname(pcap)
+        pcap_file = os.path.basename(pcap)
+        debug("pcap: %s %s" % (pcap_dir, pcap_file))
+
+        run([
+            'docker', 'run',
+            "--rm", "--net=host", "--privileged",
+            "-v", "{}:/data".format(PWD),
+            "-v", "{}:/pcap".format(pcap_dir),
+            ZeekImage,
+            "-C", "-r", "/pcap/%s" % pcap_file,
+            "./debugging/print-all-events.zeek",
+        ])
+    elif command == "stop":
+        debug("zeek stop")
+        run(["docker", "stop", "zeek"])
+    elif command == "status":
+        debug("zeek status")
+        run([
+            "docker", "ps",
+            "-f", "name={}".format(ZeekName),
+            "-q",
+        ])
+    else:
+        print("zeek doesn't know the command: {}".format(command))
+        print_support_and_exit(1)
+
+
+def suricata(globalArgs, args):
+    if globalArgs.bool("-h"):
+        print(
+            "suricata support [start|stop|status|rules [enable|disable|list] {rule fules}]")
+        exit(0)
+
+    SuricataImage = "ohyee/suricata:1.0.0"
+    SuricataName = "suricata"
+    net = args[1] if len(args) > 1 else "eth0"
+
+    def hotReload(*, print_result=False):
+        # 让 Suricata 在运行的过程中重新加载配置，实现规则的热更新
+        return_code = run(["docker", "kill", "--signal=USR2", SuricataName], print_result=print_result)
+        if return_code != 0:
+            debug("热重载失败，可能是因为 Suricata 还没有启动")
+
+    command = args[0] if len(args) > 0 else ""
+    if command == "start":
+        debug("suricata start")
+        generateSuricata()
+        run([
+            "docker", "run",
+            "-d", "--rm", "--net=host", "--privileged",
+            "--name", SuricataName,
+            "-v", "{}/suricata:/data".format(PWD),
+            SuricataImage,
+            "-i", net,
+            "-c", "/data/suricata.yml",
+            "-vvvvv"
+        ])
+    elif command == "stop":
+        debug("suricata stop")
+        run(["docker", "stop", SuricataName])
+    elif command == "status":
+        debug("suricata status")
+        run([
+            "docker", "ps",
+            "-f", "name={}".format(SuricataName),
+            "-q",
+        ])
+    elif command == "rules":
+        subCommand = args[1] if len(args) > 1 else ""
+        files = args[2:]
+        if subCommand == "enable":
+            debug("suricata rules enable: {}".format(files))
+            for file in files:
+                enableRule(file)
+            rules = getRules(os.path.join(PWD, "suricata"))
+            generateSuricata()
+            hotReload()
+
+            success(rules=rules)
+
+        elif subCommand == "disable":
+            debug("suricata rules disable: {}".format(files))
+            for file in files:
+                disableRule(file)
+            rules = getRules(os.path.join(PWD, "suricata"))
+            generateSuricata()
+            hotReload()
+
+            success(rules=rules)
+
+        elif subCommand == "list":
+            debug("suricata rules list")
+            rules = getRules(os.path.join(PWD, "suricata"))
+            success(rules=rules)
+
+        elif subCommand == "reload":
+            debug("suricata rules reload")
+            generateSuricata()
+            hotReload(print_result=True)
+
+        else:
+            error("suricata doesn't know the sub command: {}".format(subCommand))
+    else:
+        error("suricata doesn't know the command: {}".format(command))
+
+
+if __name__ == '__main__':
+    flags = Flags("{} [zeek|suricata|kafka]".format(sys.argv[0]))
+    flags.addFlag(["-h", "--help"], "show help", False)
+    flags.addFlag(["-v", "--version"], "show version", False)
+    flags.addFlag(["-n", "--num"], "set number", True)
+    flags.addFlag(["-d", "--debug"], "set debug mode", False)
+    flags.addFlag(["zeek", "-z", "--zeek"], "control zeek", False)
+    flags.addFlag(["suricata", "-s", "--suricata"], "control suricata", False)
+    flags.addFlag(["kafka", "-k", "--kafka"], "set kafka", False)
+
+    fp = flags.parse()
+
+    if flags.string("-d"):
+        DEBUG = True
+    debug(flags.parse())
+
+    if flags.bool("-v"):
+        print(VERSION)
+        exit(0)
+
+    restArgs = flags.restArgs()
+
+    if flags.bool("zeek"):
+        zeek(flags, restArgs)
+    if flags.bool("suricata"):
+        suricata(flags, restArgs)
+    if flags.bool("kafka"):
+        suricata(flags, restArgs)
+
+    if flags.bool("-h"):
+        flags.showHelp()

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xt.mapper.XtThreatMapper">
+
+    <resultMap type="XtThreat" id="XtThreatResult">
+        <result property="threatId" column="threat_id"/>
+        <result property="name" column="name"/>
+        <result property="source" column="source"/>
+        <result property="hostid" column="hostid"/>
+        <result property="srcIp" column="src_ip"/>
+        <result property="dstIp" column="dst_ip"/>
+        <result property="srcPort" column="src_port"/>
+        <result property="dstPort" column="dst_port"/>
+        <result property="timestamp" column="timestamp"/>
+        <result property="handled" column="handled"/>
+        <result property="uid" column="uid"/>
+        <result property="isThreat" column="is_threat"/>
+        <result property="modelName" column="model_name"/>
+    </resultMap>
+
+    <resultMap type="XtThreatNum" id="XtThreatNumResult">
+        <result property="num" column="num" jdbcType="INTEGER"/>
+        <result property="date" column="date_time" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="selectXtThreatVo">
+        select threat_id,
+               name,
+               source,
+               hostid,
+               src_ip,
+               dst_ip,
+               src_port,
+               dst_port,
+               timestamp,
+               handled,
+               uid,
+               is_threat,
+               model_name
+        from xt_threat
+    </sql>
+
+    <select id="selectXThreatList" parameterType="XtThreat" resultMap="XtThreatResult">
+        <include refid="selectXtThreatVo"/>
+        <where>
+            <if test="threat_id != null  and threat_id != ''">and threatId = #{threatId}</if>
+        </where>
+    </select>
+
+    <select id="selectXThreatByThreatId" parameterType="Integer" resultMap="XtThreatResult">
+        <include refid="selectXtThreatVo"/>
+        where threatId = #{threatId}
+    </select>
+
+    <select id="selectThreatNumByHostId" parameterType="String" resultType="Integer">
+        select count(*)
+        from xt_threat
+        where hostid = #{hostId}
+          AND is_threat = 1
+    </select>
+
+    <select id="selectThreatGroupByHost" resultType="String">
+        select hostid from xt_threat
+        <where>
+            is_threat=1
+        </where>
+        group by hostid order by COUNT(*) desc
+    </select>
+
+    <select id="selectThreatGroupByName" resultType="String">
+        select name from xt_threat
+        <where>
+            is_threat=1
+        </where>
+        group by name order by COUNT(*) desc
+    </select>
+
+    <insert id="insertXtThreat" parameterType="XtThreat">
+        insert into xt_threat
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">threat_id,</if>
+            <if test="source != null">source,</if>
+            <if test="hostid != null">hostid,</if>
+            <if test="srcIp != null">src_ip,</if>
+            <if test="dstIp != null">dst_ip,</if>
+            <if test="srcPort != null">src_port,</if>
+            <if test="dstPort != null">dst_port,</if>
+            <if test="timestamp != null">timestamp,</if>
+            <if test="handled != null">handled,</if>
+            <if test="uid != null">uid,</if>
+            <if test="isThreat != null">is_threat,</if>
+            <if test="modelName != null">model_name,</if>
+            <if test="name != null">name,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uid != null">#{threatId},</if>
+            <if test="source != null">#{source},</if>
+            <if test="hostid != null">#{hostid},</if>
+            <if test="srcIp != null">#{srcIp},</if>
+            <if test="dstIp != null">#{dstIp},</if>
+            <if test="srcPort != null">#{srcPort},</if>
+            <if test="dstPort != null">#{dstPort},</if>
+            <if test="timestamp != null">#{timestamp},</if>
+            <if test="handled != null">#{handled},</if>
+            <if test="uid != null">#{uid},</if>
+            <if test="isThreat != null">#{isThreat},</if>
+            <if test="modelName != null">#{modelName},</if>
+            <if test="name != null">#{name},</if>
+        </trim>
+    </insert>
+
+
+    <select id="selectThreatDateByName" resultType="String">
+        select DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d') from xt_threat
+        <where>
+            name = #{name}
+        </where>
+        GROUP BY DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d')
+    </select>
+
+    <select id="selectThreatDateByNameAndDate" resultType="Integer">
+        select count(*) from xt_threat
+        <where>
+            name=#{name}
+            AND DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d')=#{date}
+        </where>
+
+    </select>
+
+
+    <select id="selectThreatGroupByNameAndHost" resultType="String">
+        select name from xt_threat
+        <where>
+            hostid =#{hostId}
+            AND is_threat=1
+        </where>
+        GROUP BY name order by COUNT(*) desc
+    </select>
+
+    <select id="selectThreatDateByNameAndHostId" resultType="String">
+        select DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d') from xt_threat
+        <where>
+            name =#{name}
+            AND hostid =#{hostId}
+        </where>
+        GROUP BY DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d')
+    </select>
+
+
+    <select id="selectThreatNumByNameAndDateAndHostId" resultMap="XtThreatNumResult">
+        select count(*) as num, DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d') as date_time from xt_threat
+        <where>
+            name =#{name}
+            AND hostid =#{hostId}
+        </where>
+        GROUP BY DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d')
+    </select>
+
+
+    <select id="selectThreatGroupByNameAndHostList" resultType="String">
+        select name from xt_threat
+        <where>
+            hostid in
+            <foreach item="hostids" collection="hostIdList" open="(" separator="," close=")">
+                #{hostids}
+            </foreach>
+            AND is_threat=1
+        </where>
+        GROUP BY name ORDER BY COUNT(*) desc
+    </select>
+
+
+    <select id="selectThreatDateByNameAndHostIdList" resultType="String">
+        select DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d') from xt_threat
+        <where>
+            hostid in
+            <foreach item="hostids" collection="hostIdList" open="(" separator="," close=")">
+                #{hostids}
+            </foreach>
+            AND name=#{name}
+        </where>
+        GROUP BY DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d')
+    </select>
+
+    <select id="selectThreatNumByNameAndDateAndHostIdList" resultMap="XtThreatNumResult">
+        select count(*) as num, DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d') as date_time from xt_threat
+        <where>
+            hostid in
+            <foreach item="hostids" collection="hostIdList" open="(" separator="," close=")">
+                #{hostids}
+            </foreach>
+            AND name=#{name}
+        </where>
+        GROUP BY DATE_FORMAT(FROM_UNIXTIME(timestamp),'%Y-%m-%d')
+    </select>
+
+
+    <select id="selectThreatDetailNumByHandle" resultType="Integer">
+        select count(*) from xt_threat
+        <where>
+            <if test="name != null">name=#{name}</if>
+            <if test="source != null">AND source=#{source}</if>
+            <if test="minTimestamp != null">AND timestamp &gt;= #{minTimestamp}</if>
+            <if test="maxTimestamp != null">AND timestamp &lt;= #{maxTimestamp}</if>
+            AND handled =#{handle}
+            AND is_threat=1
+        </where>
+    </select>
+
+    <select id="selectThreatDetailNumNotHandle" resultType="Integer">
+        select count(*) from xt_threat
+        <where>
+            <if test="name != null">name=#{name}</if>
+            <if test="source != null">AND source=#{source}</if>
+            <if test="minTimestamp != null">AND timestamp &gt;= #{minTimestamp}</if>
+            <if test="maxTimestamp != null">AND timestamp &lt;= #{maxTimestamp}</if>
+            AND is_threat=1
+        </where>
+    </select>
+
+    <select id="selectThreatDetailNumByHandleWithHostId" resultType="Integer">
+        select count(*) from xt_threat
+        <where>
+            <if test="name != null">name=#{name}</if>
+            <if test="source != null">AND source=#{source}</if>
+            <if test="minTimestamp != null">AND timestamp &gt;= #{minTimestamp}</if>
+            <if test="maxTimestamp != null">AND timestamp &lt;= #{maxTimestamp}</if>
+            <if test="hostId != null">AND hostid = #{hostId}</if>
+            AND handled =#{handle}
+            AND is_threat=1
+        </where>
+    </select>
+
+
+    <select id="selectThreatDetailNumNotHandleWithHostId" resultType="Integer">
+        select count(*) from xt_threat
+        <where>
+            <if test="name != null">name=#{name}</if>
+            <if test="source != null">AND source=#{source}</if>
+            <if test="minTimestamp != null">AND timestamp &gt;= #{minTimestamp}</if>
+            <if test="maxTimestamp != null">AND timestamp &lt;= #{maxTimestamp}</if>
+            <if test="hostId != null">AND hostid = #{hostId}</if>
+            AND is_threat=1
+        </where>
+    </select>
+
+    <select id="selectThreatHostIdGroupByHostInScope" resultType="String">
+        select hostId from xt_threat
+        where is_threat=1
+        GROUP BY hostid
+        <if test="minThreatNum != null and maxThreatNum != null">HAVING COUNT(*) &gt;=#{minThreatNum} AND COUNT(*) &lt;=#{maxThreatNum}</if>
+        <if test="maxThreatNum != null and minThreatNum == null">HAVING COUNT(*) &lt;=#{maxThreatNum}</if>
+        <if test="maxThreatNum == null and minThreatNum != null">HAVING COUNT(*) &gt;=#{minThreatNum}</if>
+    </select>
+
+
+    <select id="selectThreatDetailByHandle" resultMap="XtThreatResult">
+        <include refid="selectXtThreatVo"/>
+        <where>
+            <if test="name != null">name = #{name}</if>
+            <if test="source!= null">AND source = #{source}</if>
+            <if test="minTimestamp != null">AND timestamp &gt;= #{minTimestamp}</if>
+            <if test="maxTimestamp != null">AND timestamp &lt;= #{maxTimestamp}</if>
+            AND handled = #{handled}
+            AND is_threat=1
+        </where>
+        order by threat_id desc
+    </select>
+
+
+    <select id="selectThreatDetailNotHandle" resultMap="XtThreatResult">
+        <include refid="selectXtThreatVo"/>
+        <where>
+            <if test="name != null">name = #{name}</if>
+            <if test="source!= null">AND source = #{source}</if>
+            <if test="minTimestamp != null">AND timestamp &gt;= #{minTimestamp}</if>
+            <if test="maxTimestamp != null">AND TIMESTAMP &lt;= #{maxTimestamp}</if>
+            AND is_threat=1
+        </where>
+        order by threat_id desc
+    </select>
+
+
+    <select id="selectThreatByThreatId" resultMap="XtThreatResult">
+        <include refid="selectXtThreatVo"/>
+        <where>
+            threat_id = #{threatId}
+        </where>
+    </select>
+
+    <select id="selectThreatDetailByHandleWithHostId" resultMap="XtThreatResult">
+        <include refid="selectXtThreatVo"/>
+        <where>
+            <if test="name != null">name = #{name}</if>
+            <if test="source!= null">AND source = #{source}</if>
+            <if test="minTimestamp != null">AND timestamp &gt;= #{minTimestamp}</if>
+            <if test="maxTimestamp != null">AND timestamp &lt;= #{maxTimestamp}</if>
+            AND handled = #{handled}
+            AND hostid =#{hostId}
+            AND is_threat=1
+        </where>
+        order by timestamp desc
+    </select>
+
+    <select id="selectThreatDetailNotHandleWithHostId" resultMap="XtThreatResult">
+        <include refid="selectXtThreatVo"/>
+        <where>
+            <if test="name != null">name = #{name}</if>
+            <if test="source!= null">AND source = #{source}</if>
+            <if test="minTimestamp != null">AND timestamp &gt;= #{minTimestamp}</if>
+            <if test="maxTimestamp != null">AND timestamp &lt;= #{maxTimestamp}</if>
+            AND hostid =#{hostId}
+            AND is_threat=1
+        </where>
+        order by timestamp desc
+    </select>
+
+    <select id="selectThreatName" resultType="String">
+        select DISTINCT name
+        from xt_threat
+        where is_threat = 1
+    </select>
+
+    <select id="selectHostInScopeGroupByHostId" resultType="Integer">
+        select COUNT(*) from xt_threat
+        <where>is_threat=1</where>
+        GROUP BY hostid
+        <if test="minThreatNum != null and maxThreatNum != null">HAVING COUNT(*) &gt;=#{minThreatNum} AND COUNT(*) &lt;=#{maxThreatNum}</if>
+        <if test="maxThreatNum != null and minThreatNum == null">HAVING COUNT(*) &lt;=#{maxThreatNum}</if>
+        <if test="maxThreatNum == null and minThreatNum != null">HAVING COUNT(*) &gt;=#{minThreatNum}</if>
+    </select>
+
+
+    <update id="updateThreatStatus">
+        update xt_threat
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="handle != null">handled = #{handle},</if>
+
+        </trim>
+        where threat_id = #{threatId}
+    </update>
+
+    <!--<delete id="deleteXtMetaDataBuUid" parameterType="String">-->
+    <!--delete from xt_metadata where uid = #{uid}-->
+    <!--</delete>-->
+
+    <!--<delete id="deleteXtMetaDataBuUids" parameterType="String">-->
+    <!--delete from xt_metadata where uid in-->
+    <!--<foreach item="uid" collection="array" open="(" separator="," close=")">-->
+    <!--#{uid}-->
+    <!--</foreach>-->
+    <!--</delete>-->
+</mapper>

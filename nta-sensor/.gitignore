@@ -1,0 +1,4 @@
+*.log
+.env
+extract_files
+temp/*

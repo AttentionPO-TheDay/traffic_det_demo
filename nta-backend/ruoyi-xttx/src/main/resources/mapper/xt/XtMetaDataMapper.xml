@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.xt.mapper.XtMetaDataMapper">
+
+    <resultMap type="XtMetaData" id="XtMetaDataResult">
+        <result property="uid" column="uid"/>
+        <result property="metadata" column="metadata"/>
+        <result property="srcIp" column="src_ip"/>
+        <result property="dstIp" column="dst_ip"/>
+        <result property="srcPort" column="src_port"/>
+        <result property="dstPort" column="dst_port"/>
+        <result property="isEncrypted" column="is_encrypted"/>
+        <result property="timestamp" column="timestamp"/>
+    </resultMap>
+
+    <sql id="selectXtMetaDataVo">
+        select uid, metadata, src_ip, dst_ip, src_port, dst_port, is_encrypted
+        from xt_metadata
+    </sql>
+
+    <select id="selectXtMetaDataList" parameterType="XtMetaData" resultMap="XtMetaDataResult">
+        <include refid="selectXtMetaDataVo"/>
+        <where>
+            <if test="uid != null  and uid != ''">and uid = #{uid}</if>
+        </where>
+    </select>
+
+    <select id="selectIsEncryptedXtMetaDataList" parameterType="Integer" resultMap="XtMetaDataResult">
+        <include refid="selectXtMetaDataVo"/>
+        <where>
+            is_encrypted =#{isEncrypted}
+        </where>
+    </select>
+
+    <select id="selectIsEncryptedXtMetaDataListWithoutMetadata" parameterType="Integer" resultMap="XtMetaDataResult">
+        select uid,src_ip,dst_ip,src_port,dst_port,is_encrypted,timestamp from xt_metadata
+        <where>
+            <if test="isEncrypted != null">is_encrypted =#{isEncrypted}</if>
+            <if test="srcPort != null">AND src_port = #{srcPort}</if>
+            <if test="dstPort != null">AND dst_port = #{dstPort}</if>
+        </where>
+        ORDER BY timestamp DESC
+    </select>
+
+    <select id="selectIsNotEncryptedXtMetaDataListWithoutMetadata" parameterType="Integer" resultMap="XtMetaDataResult">
+        select uid,src_ip,dst_ip,src_port,dst_port,is_encrypted,timestamp from xt_metadata
+        <where>
+            <if test="isEncrypted != null">is_encrypted =#{isEncrypted}</if>
+            <if test="srcPort != null">AND src_port = #{srcPort}</if>
+            <if test="dstPort != null">AND dst_port = #{dstPort}</if>
+        </where>
+        ORDER BY timestamp DESC
+    </select>
+
+    <select id="selectXtMetaDataByUid" parameterType="String" resultMap="XtMetaDataResult">
+        <include refid="selectXtMetaDataVo"/>
+        where uid = #{uid}
+    </select>
+    <select id="selectXtMetadataNumWithEncrypted" resultType="Integer">
+        select count(*) from xt_metadata
+        <where>
+            <if test="srcPort != null">src_port = #{srcPort}</if>
+            <if test="dstPort != null">AND dst_port = #{dstPort}</if>
+            AND is_encrypted=#{isEncrypted}
+        </where>
+    </select>
+
+    <select id="selectXtMetadataNum" resultType="Integer">
+        select count(*) from xt_metadata
+        <where>
+            <if test="srcPort != null">src_port = #{srcPort}</if>
+            <if test="dstPort != null">AND dst_port = #{dstPort}</if>
+        </where>
+    </select>
+
+    <insert id="insertXtMetaData" parameterType="XtMetaData">
+        insert into xt_metadata
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">uid,</if>
+            <if test="metadata != null">metadata,</if>
+            <if test="srcIp != null">src_ip,</if>
+            <if test="dstIp != null">dst_ip,</if>
+            <if test="srcPort != null">src_port,</if>
+            <if test="dstPort != null">dst_port,</if>
+            <if test="isEncrypted != null">is_encrypted,</if>
+            <if test="timestamp != null">timestamp,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uid != null">#{uid},</if>
+            <if test="metadata != null">#{metadata},</if>
+            <if test="srcIp != null">#{srcIp},</if>
+            <if test="dstIp != null">#{dstIp},</if>
+            <if test="srcPort != null">#{srcPort},</if>
+            <if test="dstPort != null">#{dstPort},</if>
+            <if test="isEncrypted != null">#{isEncrypted},</if>
+            <if test="timestamp != null">#{timestamp},</if>
+        </trim>
+    </insert>
+
+    <update id="updateXtMetaData" parameterType="XtMetaData">
+        update xt_ip
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="metadata != null">metadata = #{metadata},</if>
+
+        </trim>
+        where uid = #{uid}
+    </update>
+
+    <delete id="deleteXtMetaDataByUid" parameterType="String">
+        delete
+        from xt_metadata
+        where uid = #{uid}
+    </delete>
+
+    <delete id="deleteXtMetaDataByUids" parameterType="String">
+        delete from xt_metadata where uid in
+        <foreach item="uid" collection="array" open="(" separator="," close=")">
+            #{uid}
+        </foreach>
+    </delete>
+</mapper>
