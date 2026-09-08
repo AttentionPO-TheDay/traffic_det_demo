@@ -8,6 +8,7 @@ import { getUserInfo, putUserInfo } from "@/services/user/profile";
 import { uploadAvatar } from "@/services/user/avatar";
 import { useAuth } from "@/context/AuthContext";
 import { changePassword } from "@/services/user/auth";
+import { assetUrl } from "@/config";
 
 
 // 头像上传组件
@@ -69,7 +70,7 @@ const AvatarUpload = () => {
       >
         {(
           <img
-            src={profile?.avatar ? `http://217.77.3.118/prod-api${profile.avatar}` : 'default_avatar.svg'}
+            src={profile?.avatar ? assetUrl(profile.avatar) : 'default_avatar.svg'}
             alt="avatar"
             style={{
               width: "100%",

@@ -16,6 +16,7 @@ import com.ruoyi.xt.service.AsyncService;
 import io.swagger.annotations.Api;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -37,7 +38,12 @@ import java.util.Map;
 @RequestMapping("/xt/assets")
 @Api("资产发现相关接口")
 public class AssetController extends BaseController {
-    String BASE_URL = "http://127.0.0.1:8888/";
+
+    /**
+     * 边缘辅助服务地址，通过环境变量 EDGE_BASE_URL 注入（application.yml 已映射 edge.base-url）
+     */
+    @Value("${edge.base-url:http://127.0.0.1:8888/}")
+    String BASE_URL;
     String STOP_SUB_URL = "stop";
     String STATUS_SUB_URL = "status";
     String DATA_FRAME_URL = "dataFrame";

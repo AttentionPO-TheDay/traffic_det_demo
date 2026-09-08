@@ -1,6 +1,7 @@
 import axios from "axios";
+import { INFER_BASE_URL } from "@/config";
 
-const prefix = 'http://217.77.3.119:8000';
+const prefix = INFER_BASE_URL;
 const request = axios.create({
   baseURL: prefix,
   timeout: 10000

@@ -1,0 +1,178 @@
+# 内网流量智能检测系统 —— 单机一体化部署编排
+# 使用前请先复制 .env.example 为 .env 并填写必填变量（MYSQL_ROOT_PASSWORD、JWT_SECRET）。
+services:
+  mysql:
+    image: mysql:5.7.36
+    container_name: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?请设置 MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-traffic_platform}
+      TZ: Asia/Shanghai
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_general_ci
+      - --default-time-zone=+08:00
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  # 数据库初始化：按顺序导入若依基础库、定时任务表、业务表
+  db-init:
+    image: mysql:5.7.36
+    container_name: db-init
+    restart: "no"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?请设置 MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-traffic_platform}
+    volumes:
+      - ./nta-backend/sql:/sql:ro
+    entrypoint: ["bash", "-c"]
+    command:
+      - |
+        set -e
+        echo ">> init ry_20210731.sql ..."
+        mysql --default-character-set=utf8mb4 -hmysql -uroot -p"$$MYSQL_ROOT_PASSWORD" "$$MYSQL_DATABASE" < /sql/ry_20210731.sql
+        echo ">> init quartz.sql ..."
+        mysql --default-character-set=utf8mb4 -hmysql -uroot -p"$$MYSQL_ROOT_PASSWORD" "$$MYSQL_DATABASE" < /sql/quartz.sql
+        echo ">> init nta.sql ..."
+        mysql --default-character-set=utf8mb4 -hmysql -uroot -p"$$MYSQL_ROOT_PASSWORD" "$$MYSQL_DATABASE" < /sql/nta.sql
+        echo ">> database initialized."
+
+  redis:
+    image: redis:5.0.14-alpine
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6380}:6379"
+
+  elasticsearch:
+    image: elasticsearch:6.8.13
+    container_name: elasticsearch
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "${ES_PORT:-9200}:9200"
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+
+  kafka:
+    image: apache/kafka:latest
+    container_name: kafka
+    restart: unless-stopped
+    ports:
+      # 仅暴露宿主机外部监听口给探针使用；容器内服务通过 kafka:9092 直连，无需宿主映射
+      - "${KAFKA_EXTERNAL_PORT:-9094}:9094"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,EXTERNAL://0.0.0.0:9094,CONTROLLER://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_NUM_PARTITIONS: 3
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+
+  infer-service:
+    build: ./infer-service
+    container_name: infer-service
+    restart: unless-stopped
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      TRAFFIC_TOPIC: ${TRAFFIC_TOPIC:-traffic}
+      RESULT_TOPIC: ${RESULT_TOPIC:-traffic_results}
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:-*}
+      HOST: 0.0.0.0
+      PORT: 8000
+      UPLOAD_FOLDER: /app/uploaded_models
+    ports:
+      - "${INFER_PORT:-8000}:8000"
+    volumes:
+      - infer-models:/app/uploaded_models
+    depends_on:
+      - kafka
+
+  py-edge-services:
+    build: ./py-edge-services
+    container_name: py-edge-services
+    restart: unless-stopped
+    environment:
+      ELASTIC_SEARCH_ADDRESS: elasticsearch
+    volumes:
+      - dataframes:/root/dataframes
+    depends_on:
+      - elasticsearch
+
+  backend:
+    build: ./nta-backend
+    container_name: backend
+    restart: unless-stopped
+    environment:
+      DB_URL: ${DB_URL:-jdbc:mysql://mysql:3306/traffic_platform?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai}
+      DB_USERNAME: ${DB_USERNAME:-root}
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD:?请设置 MYSQL_ROOT_PASSWORD}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ""
+      ES_HOST: elasticsearch
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      INFER_BASE_URL: http://infer-service:8000
+      EDGE_BASE_URL: http://py-edge-services:8888/
+      ELASTIC_SEARCH_ADDRESS: elasticsearch
+      JWT_SECRET: ${JWT_SECRET:?请设置 JWT_SECRET}
+      DRUID_USERNAME: ${DRUID_USERNAME:-admin}
+      DRUID_PASSWORD: ${DRUID_PASSWORD:-admin123}
+      SENSOR_ROOT_PATH: /root/sensor
+      PCAP_DIR: /root/pcap
+      TZ: Asia/Shanghai
+    ports:
+      - "${BACKEND_PORT:-8082}:8080"
+    depends_on:
+      db-init:
+        condition: service_completed_successfully
+      redis:
+        condition: service_started
+      elasticsearch:
+        condition: service_started
+      kafka:
+        condition: service_started
+      infer-service:
+        condition: service_started
+      py-edge-services:
+        condition: service_started
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-8085}:80"
+    depends_on:
+      - backend
+      - infer-service
+
+volumes:
+  mysql-data:
+  es-data:
+  kafka-data:
+  infer-models:
+  dataframes:

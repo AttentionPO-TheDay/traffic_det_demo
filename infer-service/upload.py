@@ -10,8 +10,9 @@ import shutil
 router = APIRouter()
 
 upload_task = {}
-UPLOAD_MODEL_FOLDER = "./uploaded_models"
-UPLOAD_CHUNK_FOLDER = './uploaded_chunks'
+# 与 main.py 中的 UPLOAD_FOLDER 保持一致，均通过环境变量注入
+UPLOAD_MODEL_FOLDER = os.getenv("UPLOAD_FOLDER", "./uploaded_models")
+UPLOAD_CHUNK_FOLDER = os.getenv("UPLOAD_CHUNK_FOLDER", "./uploaded_chunks")
 
 @router.post("/upload")
 def upload_init(

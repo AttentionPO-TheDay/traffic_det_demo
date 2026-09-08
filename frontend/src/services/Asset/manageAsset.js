@@ -1,4 +1,5 @@
 import request from '@/utils/request';
+import { API_BASE_URL } from '@/config';
 
 export async function getAssetInfo(pageNum, pageSize, hostName, hostIP, responStaff) {
   const requestParams = {
@@ -70,6 +71,6 @@ export async function addAssetBatch(file) {
 }
 
 export async function downloadAssetList(filename) {
-  const baseURL = 'http://217.77.3.118/prod-api';
+  const baseURL = API_BASE_URL.replace(/\/+$/, '');
   window.location.href = baseURL + "/common/download?fileName=" + encodeURI(filename) + "&delete=" + true;
 }

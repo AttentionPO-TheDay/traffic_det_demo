@@ -13,6 +13,10 @@ redef Kafka::logs_to_send = set(Sensor::LOG);
 redef Kafka::topic_name = "";
 redef Kafka::tag_json = F;
 
+# Kafka broker 地址，可在部署脚本/local.zeek 中 redef 覆盖，例如：
+#   redef Kafka::broker_list = "192.168.1.10:9092";
+const broker_list = "localhost:9092" &redef;
+
 
 function send_to_kafka(id: Log::ID): bool {
     if (|logs_to_send| == 0 && send_all_active_logs == F)
@@ -32,7 +36,7 @@ event zeek_init() &priority=-10 {
                     $writer = Log::WRITER_KAFKAWRITER,
                     $config = table(
                         ["stream_id"] = fmt("%s", stream_id),
-                        ["metadata.broker.list"] = "localhost:9092"
+                        ["metadata.broker.list"] = Kafka::broker_list
                     ),
                     $path = "zeek"
             ];

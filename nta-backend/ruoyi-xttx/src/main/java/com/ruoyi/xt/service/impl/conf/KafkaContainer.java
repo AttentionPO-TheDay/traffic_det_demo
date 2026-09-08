@@ -1,7 +1,8 @@
 package com.ruoyi.xt.service.impl.conf;
 
-import com.fasterxml.jackson.databind.deser.std.StringDeserializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.common.serialization.StringDeserializer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
@@ -20,6 +21,10 @@ import java.util.Map;
  */
 @Configuration
 public class KafkaContainer {
+
+    @Value("${spring.kafka.bootstrap-servers:127.0.0.1:9092}")
+    private String bootstrapServers;
+
     @Bean
     public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> listenerContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
@@ -39,7 +44,7 @@ public class KafkaContainer {
 
     public Map<String, Object> consumerConfigs() {
         Map<String, Object> propsMap = new HashMap<>();
-        propsMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "64.112.41.70:9092");
+        propsMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         propsMap.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true);
         propsMap.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, 1000);
         // 最大拉取消息条数， 默认 500 ,可以调大此参数， 此参数过大， 也可能会出现 OOM

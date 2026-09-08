@@ -2,6 +2,11 @@
 
 export SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
 
+# Kafka broker 地址，默认本机
+export KAFKA_BOOTSTRAP_SERVERS="${KAFKA_BOOTSTRAP_SERVERS:-127.0.0.1:9092}"
+# Zeek 元数据输出 topic
+export ZEEK_TOPIC="${ZEEK_TOPIC:-zeek}"
+
 function func_help() {
     echo "- start       启动 kafka Docker"
     echo "- stop        关闭 kafka Docker"
@@ -21,7 +26,7 @@ case $1 in
     #             echo './configure --with-librdkafka=$librdkafka_root' \
     #             echo 'make' \
     #             echo 'sudo make install';;
-    "consumer") docker exec kafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server 140.82.10.193:9094 --topic=zeek;;
-    "producer") docker exec -i kafka /opt/kafka/bin/kafka-console-producer.sh --bootstrap-server 140.82.10.193:9094 --topic=aimodeltopic;;
+    "consumer") docker exec kafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server ${KAFKA_BOOTSTRAP_SERVERS} --topic=${ZEEK_TOPIC};;
+    "producer") docker exec -i kafka /opt/kafka/bin/kafka-console-producer.sh --bootstrap-server ${KAFKA_BOOTSTRAP_SERVERS} --topic=aimodeltopic;;
     *)          func_help;;
 esac

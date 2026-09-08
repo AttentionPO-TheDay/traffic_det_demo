@@ -1,0 +1,13 @@
+# 训练/研究资产不入镜像（运行时只需 main.py/upload.py/model_*.py 与上传模型目录）
+InstrusionDetection/
+UserBehavior/
+# 运行时目录
+uploaded_models/
+uploaded_chunks/
+# 版本控制与缓存
+.git/
+.gitignore
+__pycache__/
+*.pyc
+.venv/
+.DS_Store

@@ -9,6 +9,7 @@ import styles from './Screen.module.css';
 import Traffic from '../pages/Traffic';
 import UserCenter from '../pages/user/UserCenter';
 import { useAuth } from '../context/AuthContext';
+import { assetUrl } from '@/config';
 
 import logo from '@/assets/logo.svg';
 
@@ -137,7 +138,7 @@ export default function Screen() {
           locale: false
         }}
         avatarProps={{
-          src: profile?.avatar ? `http://217.77.3.118/prod-api/${profile.avatar}` : 'default_avatar.svg',
+          src: profile?.avatar ? assetUrl(profile.avatar) : 'default_avatar.svg',
           title: profile?.nickName,
           render: (_, avatarChildren) => {
             return (

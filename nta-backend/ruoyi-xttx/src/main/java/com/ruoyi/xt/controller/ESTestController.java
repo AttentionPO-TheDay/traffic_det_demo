@@ -12,6 +12,7 @@ import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -33,6 +34,15 @@ public class ESTestController {
 
     @Autowired
     private EsUtil esUtil;
+
+    @Value("${es.scheme:http}")
+    private String esScheme;
+
+    @Value("${es.host:127.0.0.1}")
+    private String esHost;
+
+    @Value("${es.port:9200}")
+    private String esPort;
 
 
     /**
@@ -86,7 +96,7 @@ public class ESTestController {
     @PostMapping("/query_traffic")
     public AjaxResult searchTrafficByQueryApi(@RequestBody String queryJson) {
 
-        String url = "http://64.112.41.70:9200/test-traffic/_search";
+        String url = esScheme + "://" + esHost + ":" + esPort + "/test-traffic/_search";
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.valueOf("application/json;UTF-8"));

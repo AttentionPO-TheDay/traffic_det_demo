@@ -5,6 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.ruoyi.xt.domain.*;
 import com.ruoyi.xt.service.XtThreatService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -23,7 +25,12 @@ import java.util.Map;
 public class AiModel {
     @Autowired
     XtThreatService xtThreatService;
-    public static final String BASE_URL = "http://64.112.41.70:8000";
+
+    /**
+     * 推理服务地址，通过环境变量 INFER_BASE_URL 注入（application.yml 中已映射 infer.base-url）
+     */
+    @Value("${infer.base-url:http://127.0.0.1:8000}")
+    public String baseUrl;
 
     public List<XtThreat> sendVector(Map<String, Object> message, String srcIp, String dstIp, Integer srcPort, Integer dstPort, String timestamp, String hostId) {
         //        System.out.println("message is :");
@@ -31,7 +38,7 @@ public class AiModel {
         //        模型端进行
 
         List<XtThreat> resList = new ArrayList<>();
-        String url = BASE_URL;
+        String url = baseUrl;
         RestTemplate restTemplate = new RestTemplate();
         String str = JSONObject.toJSONString(message);
         ResponseEntity<String> response = restTemplate.postForEntity(url, str, String.class);
@@ -84,99 +91,85 @@ public class AiModel {
         return resList;
     }
 
-    public AiModelSingleStatusResponse getSingleStatus(String name) {
-        String url = BASE_URL + "/get_state/" + name;
+    /**
+     * 查询单个模型状态。新版 infer-service 没有单模型查询接口，
+     * 这里通过 GET /models 列表按 modelId 匹配得到状态。
+     */
+    public AiModelSingleStatusResponse getSingleStatus(String id) {
+        String url = baseUrl + "/models";
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> aiModelSingleStatusResponse = restTemplate.getForEntity(url, String.class);
-
-        if (aiModelSingleStatusResponse != null && aiModelSingleStatusResponse.getStatusCodeValue() == 200) {
-            String resStr = aiModelSingleStatusResponse.getBody();
-            //            System.out.println(resStr);
-            if (resStr != null && resStr.length() != 0) {
-                AiModelSingleStatusResponse modelRes = JSON.parseObject(resStr, AiModelSingleStatusResponse.class);
-                return modelRes;
-            } else {
-                return null;
+        AiModelSingleStatusResponse res = new AiModelSingleStatusResponse();
+        res.setSuccess(false);
+        try {
+            ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+            if (response != null && response.getStatusCodeValue() == 200 && response.getBody() != null) {
+                List<Map<String, Object>> models = JSON.parseObject(response.getBody(), List.class);
+                for (Map<String, Object> model : models) {
+                    if (id != null && id.equals(String.valueOf(model.get("modelId")))) {
+                        res.setSuccess(true);
+                        res.setName((String) model.get("name"));
+                        res.setState(Boolean.TRUE.equals(model.get("enabled")) ? "on" : "off");
+                        res.setMsg("");
+                        return res;
+                    }
+                }
             }
-
-        } else {
-            return null;
+        } catch (Exception e) {
+            res.setMsg(e.getMessage());
         }
-
+        return res;
     }
 
+    /**
+     * 查询所有模型状态，映射为前端所需的结构：{name, id, type, status}
+     */
     public List<Map<String, Object>> getStatus() {
-        String url = BASE_URL + "/get_all_state/";
+        String url = baseUrl + "/models";
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
-        //        System.out.println(responseEntity);
         List<Map<String, Object>> res = new ArrayList<>();
-        Map<String, Object> resElem;
-        if (responseEntity != null && responseEntity.getStatusCodeValue() == 200) {
-            String aiModelAllStatusResponseStr = responseEntity.getBody();
-            if (aiModelAllStatusResponseStr != null && aiModelAllStatusResponseStr.length() != 0) {
-                AiModelAllStatusResponse aiModelAllStatusResponse = JSON.parseObject(aiModelAllStatusResponseStr, AiModelAllStatusResponse.class);
-                if (aiModelAllStatusResponse.isSuccess()) {
-                    for (int i = 0; i < aiModelAllStatusResponse.getStates().size(); i++) {
-                        AiModelStatus status = aiModelAllStatusResponse.getStates().get(i);
-                        resElem = new HashMap<>();
-                        resElem.put("name", status.getName());
-                        resElem.put("type", "aimodel");
-                        if (status.getState().equals("on")) {
-                            resElem.put("status", true);
-                        } else {
-                            resElem.put("status", false);
-                        }
-
-                        res.add(resElem);
-                    }
-                    return res;
-                } else {
-                    return null;
+        try {
+            ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+            if (response != null && response.getStatusCodeValue() == 200 && response.getBody() != null) {
+                List<Map<String, Object>> models = JSON.parseObject(response.getBody(), List.class);
+                for (Map<String, Object> model : models) {
+                    Map<String, Object> resElem = new HashMap<>();
+                    resElem.put("name", model.get("name"));
+                    resElem.put("id", model.get("modelId"));
+                    resElem.put("type", "aimodel");
+                    resElem.put("status", Boolean.TRUE.equals(model.get("enabled")));
+                    res.add(resElem);
                 }
-            } else {
-                return null;
             }
-
-        } else {
-            return null;
+        } catch (Exception e) {
+            // 推理服务不可用时返回空列表，由上层判断
         }
+        return res;
     }
 
-    public Map<String, Object> setStatus(String name) {
-        String url = BASE_URL + "/change_state/" + name;
+    /**
+     * 启用/停用模型。新版 infer-service 使用 PUT /models/{id}/status?enabled=true|false
+     */
+    public Map<String, Object> setStatus(String id, boolean enabled) {
+        String url = baseUrl + "/models/" + id + "/status?enabled=" + enabled;
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> testEntity = restTemplate.postForEntity(url, "", String.class);
-        //        System.out.println(testEntity.getBody());
         Map<String, Object> res = new HashMap<>();
-        if (testEntity != null && testEntity.getStatusCodeValue() == 200) {
-            String aiModelSingleStatusResponseStr = testEntity.getBody();
-            if (aiModelSingleStatusResponseStr != null && aiModelSingleStatusResponseStr.length() != 0) {
-                AiModelSingleStatusResponse aiModelSingleStatusResponse = JSON.parseObject(aiModelSingleStatusResponseStr, AiModelSingleStatusResponse.class);
-                if (aiModelSingleStatusResponse.isSuccess()) {
-                    res.put("name", aiModelSingleStatusResponse.getName());
-                    if (aiModelSingleStatusResponse.getState().equals("on")) {
-                        res.put("status", true);
-                    } else {
-                        res.put("status", false);
-                    }
-                    res.put("type", "aimodel");
-                    return res;
-                } else {
-                    return null;
-                }
+        try {
+            ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.PUT, null, String.class);
+            if (response != null && response.getStatusCodeValue() == 200) {
+                res.put("name", id);
+                res.put("type", "aimodel");
+                res.put("status", enabled);
             } else {
-                return null;
+                res.put("error", "cannot set status, HTTP " + (response == null ? "null" : response.getStatusCodeValue()));
             }
-
-        } else {
-            return null;
+        } catch (Exception e) {
+            res.put("error", e.getMessage());
         }
-
+        return res;
     }
 
     public Map<String, Object> addModel(String fileName) {
-        String url = BASE_URL + "/add_model/" + fileName;
+        String url = baseUrl + "/add_model/" + fileName;
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> testEntity = restTemplate.postForEntity(url, "", String.class);
         Map<String, Object> res = new HashMap<>();

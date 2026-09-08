@@ -1,0 +1,18 @@
+:80 {
+	# /prod-api/* 反代到后端（RuoYi）
+	handle_path /prod-api/* {
+		reverse_proxy backend:8080
+	}
+
+	# /infer-api/* 反代到推理服务
+	handle_path /infer-api/* {
+		reverse_proxy infer-service:8000
+	}
+
+	# 其余请求托管前端静态资源
+	handle {
+		root * /srv
+		try_files {path} /index.html
+		file_server
+	}
+}

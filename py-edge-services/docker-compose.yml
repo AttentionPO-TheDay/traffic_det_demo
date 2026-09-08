@@ -1,10 +1,12 @@
 services:
     py-edge-servies:
         build: .
+        environment:
+            - ELASTIC_SEARCH_ADDRESS=${ELASTIC_SEARCH_ADDRESS:-127.0.0.1}
         volumes:
             - /root/dataframes:/root/dataframes
             - ./py-code:/py-code
         ports:
             - 127.0.0.1:8888:8888
         container_name: py-edge-services
-        command: ["$ELASTIC_SEARCH_ADDRESS"]
+        command: ["${ELASTIC_SEARCH_ADDRESS:-127.0.0.1}"]

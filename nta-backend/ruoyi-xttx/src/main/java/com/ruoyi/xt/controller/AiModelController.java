@@ -11,6 +11,7 @@ import com.ruoyi.xt.service.impl.KafkaListenerSensor;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,24 +55,38 @@ public class AiModelController {
     @Autowired
     CommandService commandService;
 
-    private static final String ROOT_PATH = "/root/sensor/";
+    @Autowired
+    AiModel aiModel;
+
+    /**
+     * 探针脚本根目录，通过环境变量 SENSOR_ROOT_PATH 注入（application.yml 已映射 sensor.root-path）
+     */
+    @Value("${sensor.root-path:/root/sensor}")
+    private String rootPath;
+
+    /**
+     * 模型解压目录，通过环境变量 MODEL_MODELS_DIR 注入（application.yml 已映射 model.models-dir）
+     */
+    @Value("${model.models-dir:/root/Model/models/}")
+    private String modelModelsDir;
+
     private static final String LIST_RULE_COMMAND = "script -s rules list";
     private static final String ENABLE_RULE_COMMAND = "script -s rules enable ";
     private static final String DISABLE_RULE_COMMAND = "script -s rules disable ";
     private static final String RELOAD_RULE_COMMAND = "script -s rules reload";
-    private static final String UNZIP_COMMAND = "unzip -nq -d /root/Model/models/ ";
+    private static final String UNZIP_COMMAND = "unzip -nq -d ";
 
     @PostMapping("/addRules")
     @ApiOperation("增加suricata规则")
     public AjaxResult addSuricataRules(@RequestParam("file") MultipartFile file) {
         try {
             String fileName = file.getOriginalFilename();
-            File dest = new File(ROOT_PATH + "suricata/" + fileName + ".disabled");
+            File dest = new File(rootPath + "/suricata/" + fileName + ".disabled");
             if (dest.exists()) {
                 return AjaxResult.error("文件已存在");
             }
             file.transferTo(dest);
-            asyncService.reloadRules(ROOT_PATH, RELOAD_RULE_COMMAND);
+            asyncService.reloadRules(rootPath + "/", RELOAD_RULE_COMMAND);
         } catch (Exception e) {
             return AjaxResult.error("增加suricata规则失败");
         }
@@ -82,7 +97,7 @@ public class AiModelController {
     @ApiOperation("下载suricata规则")
     public ResponseEntity<Resource> downloadSuricataRules(@RequestParam String fileName) {
         try {
-            Path filePath = Paths.get(ROOT_PATH + "suricata/").resolve(fileName).normalize();
+            Path filePath = Paths.get(rootPath + "/suricata/").resolve(fileName).normalize();
             Resource resource = new UrlResource(filePath.toUri());
 
             if (!resource.exists()) {
@@ -106,14 +121,14 @@ public class AiModelController {
     @ApiOperation("删除suricata规则")
     public AjaxResult deleteSuricataRules(@RequestParam("file") String fileName) {
         try {
-            File file = new File(ROOT_PATH + "suricata/" + fileName);
+            File file = new File(rootPath + "/suricata/" + fileName);
             if (!file.exists()) {
                 return AjaxResult.error("文件不存在");
             }
             if (!file.delete()) {
                 return AjaxResult.error("删除suricata规则失败");
             }
-            asyncService.reloadRules(ROOT_PATH, RELOAD_RULE_COMMAND);
+            asyncService.reloadRules(rootPath + "/", RELOAD_RULE_COMMAND);
         } catch (Exception e) {
             return AjaxResult.error("删除suricata规则失败");
         }
@@ -126,7 +141,7 @@ public class AiModelController {
         List<Map<String, Object>> res = new ArrayList<>();
         Map<String, Object> resElem;
         if (type.equals("rule")) {
-            Map<String, String> cmdRes = commandService.executeCmd(ROOT_PATH + LIST_RULE_COMMAND);
+            Map<String, String> cmdRes = commandService.executeCmd(rootPath + "/" + LIST_RULE_COMMAND);
 
             if (cmdRes != null) {
                 String cmdStr = cmdRes.get("command_result");
@@ -155,7 +170,6 @@ public class AiModelController {
                 }
             }
         } else {
-            AiModel aiModel = new AiModel();
             res = aiModel.getStatus();
         }
         if (res == null) {
@@ -179,11 +193,11 @@ public class AiModelController {
         if (type != null && type.length() != 0) {
             if (type.equals("rule")) {
                 if (status) {
-                    cmdRes = commandService.executeCmd(ROOT_PATH + ENABLE_RULE_COMMAND + id);
+                    cmdRes = commandService.executeCmd(rootPath + "/" + ENABLE_RULE_COMMAND + id);
                     //                    name = id.split("\\.")[0];
                     name = id.replace(".disabled", "");
                 } else {
-                    cmdRes = commandService.executeCmd(ROOT_PATH + DISABLE_RULE_COMMAND + id);
+                    cmdRes = commandService.executeCmd(rootPath + "/" + DISABLE_RULE_COMMAND + id);
                     name = id + ".disabled";
                 }
                 if (cmdRes != null) {
@@ -212,33 +226,23 @@ public class AiModelController {
                 }
 
             } else if (type.equals("aimodel")) {
-                AiModel aiModel = new AiModel();
                 AiModelSingleStatusResponse aiModelSingleStatusResponse = aiModel.getSingleStatus(id);
-                if (aiModel == null) {
+                if (aiModelSingleStatusResponse == null || !aiModelSingleStatusResponse.isSuccess()) {
                     return AjaxResult.error("cannot set status");
-                } else {
-                    boolean statusNow;
-                    if (aiModelSingleStatusResponse.isSuccess()) {
-                        if (aiModelSingleStatusResponse.getState().equals("on")) {
-                            statusNow = true;
-                        } else {
-                            statusNow = false;
-                        }
-                        if (status == statusNow) {
-                            res = new HashMap<>();
-                            res.put("status", status);
-                            res.put("type", "rule");
-                            res.put("name", id);
-                            return AjaxResult.success(res);
-                        } else {
-                            res = aiModel.setStatus(id);
-                            return AjaxResult.success(res);
-                        }
-
-                    } else {
-                        return AjaxResult.error("cannot set status");
-                    }
                 }
+                boolean statusNow = "on".equals(aiModelSingleStatusResponse.getState());
+                if (status == statusNow) {
+                    res = new HashMap<>();
+                    res.put("status", status);
+                    res.put("type", "aimodel");
+                    res.put("name", id);
+                    return AjaxResult.success(res);
+                }
+                res = aiModel.setStatus(id, status);
+                if (res != null && res.containsKey("error")) {
+                    return AjaxResult.error("cannot set status");
+                }
+                return AjaxResult.success(res);
 
             } else {
                 return AjaxResult.error("cannot set status");
@@ -261,8 +265,8 @@ public class AiModelController {
         try {
             dest = new File("/root/" + fileName);
             file.transferTo(dest);
-            System.out.println(UNZIP_COMMAND + "/root/" + fileName);
-            commandService.executeCmd(UNZIP_COMMAND + "/root/" + fileName);
+            System.out.println(UNZIP_COMMAND + modelModelsDir + " " + "/root/" + fileName);
+            commandService.executeCmd(UNZIP_COMMAND + modelModelsDir + " " + "/root/" + fileName);
         } catch (Exception e) {
             System.out.println("解压缩失败");
             System.out.println(fileName);
@@ -271,7 +275,6 @@ public class AiModelController {
         } finally {
             dest.delete();
         }
-        AiModel aiModel = new AiModel();
         Map<String, Object> m = aiModel.addModel(fileBaseName);
         if (m.get("res").equals(true)) {
             return AjaxResult.success("success");

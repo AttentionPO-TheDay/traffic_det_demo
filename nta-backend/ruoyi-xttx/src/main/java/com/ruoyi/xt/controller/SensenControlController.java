@@ -12,6 +12,7 @@ import com.ruoyi.xt.util.CommandServiceUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -38,7 +39,11 @@ public class SensenControlController extends BaseController {
     XtSensorService xtSensorService;
 
 
-    private static final String RootPath = "/root/sensor";
+    /**
+     * 探针脚本根目录，通过环境变量 SENSOR_ROOT_PATH 注入（application.yml 已映射 sensor.root-path）
+     */
+    @Value("${sensor.root-path:/root/sensor}")
+    private String RootPath;
 
     private static final String KEY_INTERFACE = "SENSOR_INTERFACE";
 

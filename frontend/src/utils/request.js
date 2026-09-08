@@ -1,11 +1,12 @@
 import axios from 'axios';
+import { API_BASE_URL } from '@/config';
 
 export const callbacks = {
   logoutCallback: () => {}
 };
 
 const request = axios.create({
-  baseURL: 'http://217.77.3.118/prod-api/',
+  baseURL: API_BASE_URL,
   timeout: 30000
 });
 

@@ -11,6 +11,7 @@ import com.ruoyi.xt.service.impl.CommandServiceImpl;
 import com.ruoyi.xt.service.impl.XtSensorServiceImpl;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -30,7 +31,12 @@ import java.util.Map;
 @RequestMapping("/xt/pcap")
 @Api("Pcap上传接口")
 public class PcapUpload {
-    private static final String uploadFilePath = "/root/pcap";
+
+    /**
+     * 以下路径均通过环境变量注入（application.yml 已映射 sensor.root-path / pcap.dir）
+     */
+    @Value("${pcap.dir:/root/pcap}")
+    private String uploadFilePath;
 
     @Autowired
     CommandServiceImpl commandService;
@@ -41,14 +47,17 @@ public class PcapUpload {
     @Autowired
     XtPcapService xtpcapService;
 
-    private static final String RootPath = "/root/sensor";
+    @Value("${sensor.root-path:/root/sensor}")
+    private String RootPath;
 
     // status final
     private static final String PcapAnalyse = "/script zeek pcap ";
 
-    private static final String PcapPath = "/root/pcap/";
+    @Value("${pcap.dir:/root/pcap}")
+    private String PcapPath;
 
-    private static final String PcapDownloadPath = "/root/sensor/extract_files";
+    @Value("${sensor.extract-dir:/root/sensor/extract_files}")
+    private String PcapDownloadPath;
 
     @PostMapping("/upload")
     public AjaxResult httpUpload(@RequestParam("files") MultipartFile[] files) {
@@ -78,7 +87,7 @@ public class PcapUpload {
             }
 
             xtpcapService.insertXtPcap(xtPcap);
-            pcapExecute(PcapPath + fileName);
+            pcapExecute(PcapPath + "/" + fileName);
             Map<String, Object> tmp = new HashMap<>();
             tmp.put("result", "成功");
             res.add(tmp);

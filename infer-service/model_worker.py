@@ -9,13 +9,18 @@ import signal
 
 
 ERROR_DIR_INVALID = -2
-TRAFFIC_TOPIC = "traffic"
-RESULT_TOPIC = "traffic_results"
+TRAFFIC_TOPIC = os.getenv("TRAFFIC_TOPIC", "traffic")
+RESULT_TOPIC = os.getenv("RESULT_TOPIC", "traffic_results")
 
 MODEL_FILENAME = "model.pt"
 PREPROCESSOR_FILENAME = "preprocessor.py"
 
-broker_list = ["127.0.0.1:9092","192.168.242.128:9092","64.112.41.70:9092"]
+# Kafka broker 地址列表，逗号分隔，通过环境变量注入
+broker_list = [
+    b.strip()
+    for b in os.getenv("KAFKA_BOOTSTRAP_SERVERS", "127.0.0.1:9092").split(",")
+    if b.strip()
+]
 
 
 # handle SIGTERM signal to exit elegantly

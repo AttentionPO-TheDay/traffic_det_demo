@@ -1,1 +1,14 @@
 .omc/
+
+# 部署环境变量（含密钥，禁止提交）
+.env
+# 本地 Maven 仓库（部署验证用，不入库）
+.m2-repo/
+.npm-cache/
+.jdk8/
+
+# 本地诊断工具（pymysql，不入库）
+.pydeptools/
+
+# vendored 第三方源码树中不应追踪的文件
+nta-zeek-source/zeek/auxil/rapidjson/doc/diagram/makefile

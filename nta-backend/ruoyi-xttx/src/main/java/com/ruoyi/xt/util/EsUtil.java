@@ -152,7 +152,7 @@ public class EsUtil {
 
 
     @Value("${es.host}")
-    public String host = "64.112.41.70";
+    public String host = "127.0.0.1";
     @Value("${es.port}")
     public String port;
     @Value("${es.scheme}")

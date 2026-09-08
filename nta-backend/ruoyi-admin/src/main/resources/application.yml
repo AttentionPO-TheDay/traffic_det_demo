@@ -59,13 +59,13 @@ spring:
   # redis 配置
   redis:
     # 地址
-    host: 127.0.0.1
+    host: ${REDIS_HOST:127.0.0.1}
     # 端口，默认为6379
-    port: 6379
+    port: ${REDIS_PORT:6379}
     # 数据库索引
-    database: 0
+    database: ${REDIS_DATABASE:0}
     # 密码
-    password:
+    password: ${REDIS_PASSWORD:}
     # 连接超时时间
     timeout: 10s
     lettuce:
@@ -108,6 +108,25 @@ es:
   host: ${ES_HOST:127.0.0.1}
   port: 9200
   scheme: http
+
+# 业务服务地址与路径配置（均支持环境变量覆盖）
+infer:
+  # 推理服务地址
+  base-url: ${INFER_BASE_URL:http://127.0.0.1:8000}
+edge:
+  # 边缘辅助服务地址
+  base-url: ${EDGE_BASE_URL:http://127.0.0.1:8888/}
+sensor:
+  # 探针脚本根目录
+  root-path: ${SENSOR_ROOT_PATH:/root/sensor}
+  # 探针提取文件目录
+  extract-dir: ${SENSOR_EXTRACT_DIR:/root/sensor/extract_files}
+pcap:
+  # 离线 pcap 上传目录
+  dir: ${PCAP_DIR:/root/pcap}
+model:
+  # 模型解压目录
+  models-dir: ${MODEL_MODELS_DIR:/root/Model/models/}
 
 # token配置
 token:

@@ -15,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from model_manger import ModelWorkerManager
 
-UPLOAD_FOLDER = "./uploaded_models"
+UPLOAD_FOLDER = os.getenv("UPLOAD_FOLDER", "./uploaded_models")
 DB_FILE = "db.json"
 MAX_FILE_SIZE = 2 * 1024 * 1024 * 1024  # 2GB
 ALLOWED_EXTENSIONS = {".zip"}
@@ -63,9 +63,13 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 # handle Cross-Origin Resource Sharing (CORS)
+# 通过环境变量配置允许来源，逗号分隔；默认 * 仅用于开发，生产建议显式指定前端地址
+_cors_origins = os.getenv("CORS_ALLOW_ORIGINS", "*")
+cors_allow_origins = [o.strip() for o in _cors_origins.split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=cors_allow_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -183,4 +187,8 @@ def delete_model(model_id: str):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(
+        app,
+        host=os.getenv("HOST", "0.0.0.0"),
+        port=int(os.getenv("PORT", "8000")),
+    )

@@ -3,15 +3,18 @@ from elasticsearch import Elasticsearch
 from flask import Flask, request
 import json
 import nmap
+import os
 import sys
 
 from nistrng import pack_sequence, check_eligibility_all_battery, SP800_22R1A_BATTERY, run_all_battery
 
-if len(sys.argv) != 2:
-    print(f'参数不合法。命令行参数：{sys.argv[0]} <ES 服务器地址>\n')
-    exit(1)
-
-ELASTIC_HOST = sys.argv[1]
+# ES 服务器地址优先从环境变量读取，其次取命令行参数
+ELASTIC_HOST = os.getenv("ELASTIC_SEARCH_ADDRESS")
+if not ELASTIC_HOST:
+    if len(sys.argv) != 2:
+        print(f'参数不合法。命令行参数：{sys.argv[0]} <ES 服务器地址>，或设置环境变量 ELASTIC_SEARCH_ADDRESS\n')
+        exit(1)
+    ELASTIC_HOST = sys.argv[1]
 
 app = Flask(__name__)
 app.config.from_object(__name__)
